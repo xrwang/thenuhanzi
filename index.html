@@ -27,21 +27,15 @@
       canvas.add(rect);
 
 
-      fabric.loadSVGFromURL('../assets/SVG/Artboard 11.svg', function(objects, options) {
+      fabric.loadSVGFromURL('../assets/test-2-radicals.svg', function(objects, options) {
+        // var loadedObject = fabric.util.groupSVGElements(objects, options);
+        console.log(objects)
+        objects.forEach((item, i) => {
+          canvas.add(item);
+        });
 
-        var shape = fabric.util.groupSVGElements(objects, options);
-        canvas.add(shape.scale(0.6));
-        shape.set({ left: 200, top: 100 }).setCoords();
-        canvas.renderAll()
+        canvas.renderAll();
 
-        canvas.forEachObject(function(obj) {
-          var setCoords = obj.setCoords.bind(obj);
-          obj.on({
-            moving: setCoords,
-            scaling: setCoords,
-            rotating: setCoords
-          });
-        })
       });
 
     </script>
