@@ -42,11 +42,11 @@
 <body>
 
     <div id="images">
-      <img draggable="true" src="../assets/SVG/Artboard 220.svg" width="100" height="100">
     </div>
 
     <div id="canvas-container">
-      <canvas id="canvas" width="800" height="500" style="border:1px solid #ccc"></canvas>
+      <canvas id="canvas" width="800" height="500" style="border:3px solid red"></canvas>
+
     </div>
 
     <script type="text/javascript">
@@ -63,6 +63,11 @@
 
     $(window).bind("load",function() {
       var canvas = new fabric.Canvas('canvas');
+
+
+      var text = new fabric.Text('drag above svgs onto this canvas', { left: 100, top: 100 });
+      canvas.add(text);
+
       var currentlyDragging;
       console.log('!!!!!!!!!!!!!')
       console.log(currentlyDragging)
@@ -160,11 +165,11 @@
     });
 
 
-      //=================
-      //
-      //Below is commented out, it loads *all of the characters* as svg and each of them become draggable
-      //
-      //====================
+      /*
+      ==============
+      Below is commented out, it loads *all of the characters* as svg and each of them become draggable
+      ==============
+      */
       // var canvas = new fabric.Canvas('canvas');
       //
       // var rect = new fabric.Rect({
