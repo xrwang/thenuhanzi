@@ -1,6 +1,4 @@
-/* #canvas {
-}
-
+/*
 .upper-canvas{
 }
 
@@ -11,3 +9,11 @@
   width: 900px !important;
   border: 1px solid red !important;
 } */
+
+body {
+  background-color: #FFF3ED;
+}
+
+#canvas {
+  background-color: white;
+}
