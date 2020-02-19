@@ -52,7 +52,6 @@
     <script type="text/javascript">
 
 
-
     /*
     ==============
     section below deals with draggin onto the canvas
@@ -60,13 +59,19 @@
     */
 
 
-
     $(window).bind("load",function() {
       var canvas = new fabric.Canvas('canvas');
 
 
-      var text = new fabric.Text('drag above svgs onto this canvas', { left: 100, top: 100 });
-      canvas.add(text);
+      var textbox = new fabric.Textbox('Drag above characters onto this canvas, double click me to type', {
+        left:100,
+        top: 100,
+        width: 100,
+        fontSize: 20
+      });
+
+      canvas.add(textbox).setActiveObject(textbox);
+
 
       var currentlyDragging;
       console.log('!!!!!!!!!!!!!')
