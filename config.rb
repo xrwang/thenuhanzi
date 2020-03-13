@@ -15,6 +15,16 @@ page '/*.txt', layout: false
 
 set :images_dir, 'assets/images'
 
+# # Global site settings (not shown here)
+# set :site_url, ""
+# # ...
+#
+# configure :build do
+#   # Relative assets needed to deploy to Github Pages
+#   activate :relative_assets
+#   set :site_url, "/thenuhanzi"
+# end
+
 
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
@@ -47,3 +57,10 @@ set :images_dir, 'assets/images'
 #   activate :minify_css
 #   activate :minify_javascript
 # end
+
+
+configure :build do
+  activate :minify_css
+  activate :minify_javascript
+  set :http_prefix, '/thenuhanzi'
+end
