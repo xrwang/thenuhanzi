@@ -23,7 +23,7 @@ title: Welcome to Middleman
   <h1>Friends</h1>
   <ol>
     <% data.radicals.each do |f| %>
-    <pre><%= image_tag "svg/Artboard%20#{f.id}.svg"%>
+    <pre><%= image_tag "svg/Artboard%20#{f.id}.svg", :draggable => 'true'%>
       <br>
       <%=h f.id %>, <%=h f.definition %></pre>
     <% end %>
