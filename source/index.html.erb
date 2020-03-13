@@ -19,12 +19,15 @@ title: Welcome to Middleman
     <li>Count <%= num %></li>
   <% end %>
 
-  <% blog.articles.each do |article| %>
-  <li>
-    <%= link_to article.title, article.path, :relative => true %>
-    <%# Note `article.path` in the second argument %>
-  </li>
-  <% end %>
+
+  <h1>Friends</h1>
+  <ol>
+    <% data.radicals.each do |f| %>
+    <pre><%= image_tag "svg/Artboard%20#{f.id}.svg"%>
+      <br>
+      <%=h f.id %>, <%=h f.definition %></pre>
+    <% end %>
+  </ol>
 
 </h1>
 
