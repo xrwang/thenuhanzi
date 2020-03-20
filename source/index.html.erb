@@ -1,38 +1,198 @@
 ---
-title: Welcome to Middleman
+title: hanzimaker
 ---
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 340" class="middleman-logo" aria-labelledby="middleman-logo__title" role="img">
-  <title id="middleman-logo__title">Middleman</title>
-  <path class="middleman-logo__top-left-bar" fill-opacity=".45" d="M0 40L200 0v30L0 60z"/>
-  <path class="middleman-logo__top-right-bar" fill="#fff" d="M200 0l200 40v20L200 30z"/>
-  <path class="middleman-logo__left-m" fill-opacity=".45" d="M0 78v184l45 5V152l45 83 47-83v129l53 7V52l-57 8-43 83-43-70z"/>
-  <path class="middleman-logo__right-m" fill="#fff" d="M400 78v184l-45 5V152l-45 83-47-83v129l-53 7V52l57 8 43 83 43-70z"/>
-  <path class="middleman-logo__bottom-left-bar" fill-opacity=".45" d="M0 300l200 40v-30L0 280z"/>
-  <path class="middleman-logo__bottom-right-bar" fill="#fff" d="M200 340l200-40v-20l-200 30z"/>
-</svg>
-
 <h1>
-  Middleman is Running
-
-  <% 5.times do |num| %>
-    <li>Count <%= num %></li>
-  <% end %>
+  hanzimaker
+</h1>
 
 
-  <h1>Friends</h1>
+  <h1>Radicals</h1>
   <ol>
     <% data.radicals.each do |f| %>
-    <pre><%= image_tag "svg/Artboard%20#{f.id}.svg", :draggable => 'true'%>
-      <br>
-      <%=h f.id %>, <%=h f.definition %></pre>
+    <div class="radical-svg">
+      <pre><%= image_tag "svg/Artboard%20#{f.id}.svg", :draggable => 'true'%></pre>
+    </div>
+      <div class="svg-definition">
+        <%=h f.id %>, <%=h f.definition %>
+      </div>
     <% end %>
   </ol>
 
-</h1>
+<div id="images">
+</div>
 
-<%= link_to(
-  "Read Documentation",
-  "https://middlemanapp.com/basics/templating_language/",
-  target: "_blank"
-) %>
+<div id="canvas-container">
+  <canvas id="canvas" width="800" height="500" style="border:3px solid red"></canvas>
+
+</div>
+
+<script type="text/javascript">
+
+
+/*
+==============
+section below deals with draggin onto the canvas
+==============
+*/
+
+
+$(window).bind("load",function() {
+
+
+
+
+  var canvas = new fabric.Canvas('canvas');
+
+
+  var textbox = new fabric.Textbox('Drag above characters onto this canvas, double click me to type', {
+    left:100,
+    top: 100,
+    width: 100,
+    fontSize: 20
+  });
+
+  canvas.add(textbox).setActiveObject(textbox);
+
+
+  var currentlyDragging;
+  console.log('!!!!!!!!!!!!!')
+  console.log(currentlyDragging)
+  function handleDragStart(e) {
+      [].forEach.call(images, function (img) {
+          img.classList.remove('img_dragging');
+      });
+      console.log(e)
+
+      this.classList.add('img_dragging');
+      currentlyDragging = e.target;
+  }
+
+  function handleDragOver(e) {
+      if (e.preventDefault) {
+          e.preventDefault(); // Necessary. Allows us to drop.
+      }
+      e.dataTransfer.dropEffect = 'copy'; // See https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/dropEffect
+      return false;
+  }
+
+  function handleDragEnter(e) {
+    console.log(e)
+      // this / e.target is the current hover target.
+      this.classList.add('over');
+  }
+
+  function handleDragLeave(e) {
+      this.classList.remove('over'); // this / e.target is previous target element.
+  }
+
+  function handleDrop(e) {
+      if (e.preventDefault) {
+        e.preventDefault();
+      }
+
+      if (e.stopPropagation) {
+          e.stopPropagation(); // stops the browser from redirecting.
+      }
+
+      console.log('event: ', e);
+      var ext = currentlyDragging.src.substr(-3);
+      if (ext === 'svg') {
+        fabric.loadSVGFromURL(currentlyDragging.src, function(objects, options) {
+          var svg = fabric.util.groupSVGElements(objects, options);
+          svg.left = e.layerX;
+          svg.top = e.layerY;
+          canvas.add(svg);
+        });
+      } else {
+         var newImage = new fabric.Image(currentlyDragging, {
+            width: currentlyDragging.width,
+            height: currentlyDragging.height,
+            // Set the center of the new object based on the event coordinates relative
+            // to the canvas container.
+            left: e.layerX,
+            top: e.layerY
+        });
+        canvas.add(newImage);
+      }
+      return false;
+  }
+
+  function handleDragEnd(e) {
+      // this/e.target is the source node.
+      [].forEach.call(images, function (img) {
+          img.classList.remove('img_dragging');
+      });
+  }
+
+  if (Modernizr.draganddrop) {
+      // Browser supports HTML5 DnD.
+
+      // Bind the event listeners for the image elements
+      var images = document.querySelectorAll('img');
+      var objects = document.querySelectorAll('#images object');
+      [].forEach.call(images, function (img) {
+          img.addEventListener('dragstart', handleDragStart, false);
+          img.addEventListener('dragend', handleDragEnd, false);
+      });
+      [].forEach.call(objects, function (obj) {
+          obj.addEventListener('dragstart', handleDragStart, false);
+          obj.addEventListener('dragend', handleDragEnd, false);
+      });
+      // Bind the event listeners for the canvas
+      var canvasContainer = document.getElementById('canvas-container');
+      canvasContainer.addEventListener('dragenter', handleDragEnter, false);
+      canvasContainer.addEventListener('dragover', handleDragOver, false);
+      canvasContainer.addEventListener('dragleave', handleDragLeave, false);
+      canvasContainer.addEventListener('drop', handleDrop, false);
+    } else {
+        // Replace with a fallback to a library solution.
+        alert("This browser doesn't support the HTML5 Drag and Drop API.");
+    }
+
+    // $('img').mouseover(function(){
+    //   $(".svg-definition").hide();
+    //   $(".svg-definition").show();
+    //   console.log('hi')
+    // });
+
+
+
+});
+
+
+  /*
+  ==============
+  Below is commented out, it loads *all of the characters* as svg and each of them become draggable
+  ==============
+  */
+  // var canvas = new fabric.Canvas('canvas');
+  //
+  // var rect = new fabric.Rect({
+  //   left: 100,
+  //   top: 50,
+  //   width: 100,
+  //   height: 100,
+  //   fill: 'green',
+  //   angle: 20,
+  //   padding: 10
+  // });
+  // canvas.add(rect);
+  //
+  //
+  // fabric.loadSVGFromURL('../assets/test-2-radicals.svg', function(objects, options) {
+  //   // var loadedObject = fabric.util.groupSVGElements(objects, options);
+  //   console.log(objects)
+  //   objects.forEach((item, i) => {
+  //     canvas.add(item);
+  //   });
+  //
+  //   canvas.renderAll();
+  //
+  // });
+
+
+
+
+
+</script>
