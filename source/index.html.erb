@@ -45,7 +45,48 @@ $(window).bind("load",function() {
 
 
 
-  var canvas = new fabric.Canvas('canvas');
+  var canvas = new fabric.Canvas('canvas', {
+    selection: false,
+    height: 800,
+    width: 800
+    });
+
+
+drawGrid(canvas);
+
+
+  function drawGrid(c) {
+  const options = {
+      distance: c.width/2,
+      width: c.width,
+      height: c.height,
+      param: {
+        stroke: "#ebebeb",
+        strokeWidth: 1,
+        selectable: false
+      }
+    },
+    gridLen = options.width / options.distance;
+
+console.log(gridLen)
+  for (var i = 0; i < gridLen; i++) {
+    var distance = i * options.distance,
+      horizontal = new fabric.Line(
+        [distance, 0, distance, options.width],
+        options.param
+      ),
+      vertical = new fabric.Line(
+        [0, distance, options.width, distance],
+        options.param
+      );
+    c.add(horizontal);
+    c.add(vertical);
+    if (i % 4 === 0) {
+      horizontal.set({ stroke: "#cccccc" });
+      vertical.set({ stroke: "#cccccc" });
+    }
+  }
+}
 
 
   var textbox = new fabric.Textbox('Drag above characters onto this canvas, double click me to type', {
@@ -56,6 +97,8 @@ $(window).bind("load",function() {
   });
 
   canvas.add(textbox).setActiveObject(textbox);
+
+
 
 
   var currentlyDragging;
@@ -198,6 +241,9 @@ $(window).bind("load",function() {
 
 
 
+
+
+
 var link = document.createElement('a');
     link.innerHTML = 'download image';
     link.addEventListener('click', function(ev) {
@@ -206,6 +252,7 @@ var link = document.createElement('a');
 }, false);
 
 document.body.appendChild(link);
+
 
 
 
