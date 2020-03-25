@@ -14,7 +14,7 @@ title: hanzimaker
       <pre><%= image_tag "svg/Artboard%20#{f.id}.svg", :draggable => 'true'%></pre>
     </div>
       <div class="svg-definition">
-        <%=h f.id %>, <%=h f.definition %>
+        <pre><%=h f.id %>, <%=h f.definition %></pre>
       </div>
     <% end %>
   </ol>
@@ -27,7 +27,9 @@ title: hanzimaker
 
 </div>
 
+
 <script type="text/javascript">
+
 
 
 /*
@@ -38,6 +40,7 @@ section below deals with draggin onto the canvas
 
 
 $(window).bind("load",function() {
+
 
 
 
@@ -191,6 +194,18 @@ $(window).bind("load",function() {
   //
   // });
 
+
+
+
+
+var link = document.createElement('a');
+    link.innerHTML = 'download image';
+    link.addEventListener('click', function(ev) {
+    link.href = canvas.toDataURL();
+    link.download = "mypainting.jpg";
+}, false);
+
+document.body.appendChild(link);
 
 
 
