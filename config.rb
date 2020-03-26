@@ -15,6 +15,8 @@ page '/*.txt', layout: false
 
 set :images_dir, 'assets/images'
 
+activate :relative_assets
+set :relative_links, true
 
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
