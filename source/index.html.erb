@@ -28,6 +28,9 @@ title: hanzimaker
 </div>
 <div id="images">
 </div>
+<div id="download-link">
+  <a href="" id="download-link-href"></a>
+</div>
 
 </div>
 
@@ -247,14 +250,14 @@ console.log(gridLen)
 
 
 
-var link = document.createElement('a');
+var link = document.getElementById('download-link-href');
     link.innerHTML = 'download image';
     link.addEventListener('click', function(ev) {
     link.href = canvas.toDataURL();
     link.download = "mypainting.jpg";
 }, false);
 
-document.body.appendChild(link);
+document.body.getElementById('download-link').appendChild(link);
 
 
 
