@@ -40,15 +40,26 @@ a {
 }
 
 .radical-svg {
-  display: block;
-  width: 100px;
+  width: 60px;
 }
 
 .radical-svg:hover+.svg-definition {
-  display: block;
+  display:inline-block;
 }
 
 .svg-definition:hover {
   display: inline-block;
+}
 
+.radical-menu {
+  width: 50%;
+  border: 1px solid green;
+}
+
+.canvas-container {
+  
+}
+
+.parent-container {
+  display: flex;
 }

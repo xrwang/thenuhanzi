@@ -8,25 +8,28 @@ title: hanzimaker
 
 
   <h1>Radicals</h1>
-  <ol>
-    <% data.radicals.each do |f| %>
-    <div class="radical-svg">
-      <pre><%= image_tag "svg/Artboard%20#{f.id}.svg", :draggable => 'true'%></pre>
-    </div>
-      <div class="svg-definition">
-        <pre><%=h f.id %>, <%=h f.definition %></pre>
-      </div>
-    <% end %>
-  </ol>
 
+<div class="parent-container">
+<div id="canvas-container">
+  <canvas id="canvas" style="border:3px solid red"></canvas>
+
+</div>
+
+
+<div class="radicals radical-menu">
+  <% data.radicals.each do |f| %>
+  <div class="radical-svg">
+    <pre><%= image_tag "svg/radical-#{f.id}.svg", :draggable => 'true'%></pre>
+  </div>
+    <div class="svg-definition">
+      <pre><%=h f.id %>, <%=h f.definition %></pre>
+    </div>
+  <% end %>
+</div>
 <div id="images">
 </div>
 
-<div id="canvas-container">
-  <canvas id="canvas" width="800" height="500" style="border:3px solid red"></canvas>
-
 </div>
-
 
 <script type="text/javascript">
 
@@ -47,8 +50,8 @@ $(window).bind("load",function() {
 
   var canvas = new fabric.Canvas('canvas', {
     selection: false,
-    height: 800,
-    width: 800
+    height: 600,
+    width: 600
     });
 
 
