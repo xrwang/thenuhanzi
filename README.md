@@ -1,4 +1,4 @@
-## A tool to create your own Chinese characters (汉子)
+## A tool to create your own Chinese characters (汉字)
 
 
 ### Why?
