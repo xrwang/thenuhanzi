@@ -8,26 +8,34 @@ title: hanzimaker
 
 
   <h1>Radicals</h1>
-  <ol>
-    <% data.radicals.each do |f| %>
-    <div class="radical-svg">
-      <pre><%= image_tag "svg/Artboard%20#{f.id}.svg", :draggable => 'true'%></pre>
-    </div>
-      <div class="svg-definition">
-        <%=h f.id %>, <%=h f.definition %>
-      </div>
-    <% end %>
-  </ol>
 
-<div id="images">
+<div class="parent-container">
+<div id="canvas-container">
+  <canvas id="canvas" style="border:3px solid red"></canvas>
+
 </div>
 
-<div id="canvas-container">
-  <canvas id="canvas" width="800" height="500" style="border:3px solid red"></canvas>
+
+<div class="radicals radical-menu">
+  <% data.radicals.each do |f| %>
+  <div class="radical-svg">
+    <pre><%= image_tag "svg/radical-#{f.id}.svg", :draggable => 'true'%></pre>
+  </div>
+    <div class="svg-definition">
+      <pre><%=h f.id %>, <%=h f.definition %></pre>
+    </div>
+  <% end %>
+</div>
+<div id="images">
+</div>
+<div id="download-link">
+  <a href="" id="download-link-href"></a>
+</div>
 
 </div>
 
 <script type="text/javascript">
+
 
 
 /*
@@ -42,7 +50,49 @@ $(window).bind("load",function() {
 
 
 
-  var canvas = new fabric.Canvas('canvas');
+
+  var canvas = new fabric.Canvas('canvas', {
+    selection: false,
+    height: 600,
+    width: 600
+    });
+
+
+drawGrid(canvas);
+
+
+  function drawGrid(c) {
+  const options = {
+      distance: c.width/2,
+      width: c.width,
+      height: c.height,
+      param: {
+        stroke: "#ebebeb",
+        strokeWidth: 2.5,
+        selectable: false
+      }
+    },
+    gridLen = options.width / options.distance;
+
+console.log(gridLen)
+  for (var i = 0; i < gridLen; i++) {
+    var distance = i * options.distance,
+      horizontal = new fabric.Line(
+        [distance, 0, distance, options.width],
+        options.param
+      ),
+      vertical = new fabric.Line(
+        [0, distance, options.width, distance],
+        options.param
+      );
+    c.add(horizontal);
+    c.add(vertical);
+    if (i % 4 === 0) {
+      horizontal.set({ stroke: "#cccccc" });
+      vertical.set({ stroke: "#cccccc" });
+    }
+  }
+}
 
 
   var textbox = new fabric.Textbox('Drag above characters onto this canvas, double click me to type', {
@@ -53,6 +103,8 @@ $(window).bind("load",function() {
   });
 
   canvas.add(textbox).setActiveObject(textbox);
+
+
 
 
   var currentlyDragging;
@@ -190,6 +242,22 @@ $(window).bind("load",function() {
   //   canvas.renderAll();
   //
   // });
+
+
+
+
+
+
+
+
+var link = document.getElementById('download-link-href');
+    link.innerHTML = 'download image';
+    link.addEventListener('click', function(ev) {
+    link.href = canvas.toDataURL();
+    link.download = "mypainting.jpg";
+}, false);
+
+document.body.getElementById('download-link').appendChild(link);
 
 
 
