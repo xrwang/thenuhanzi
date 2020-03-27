@@ -25,7 +25,7 @@ a {
 
 .radical-svg {
   display: inline-block;
-  border: 1px solid red;
+  border: 0.5px solid black;
 }
 
 .svg-definition {
@@ -52,14 +52,23 @@ a {
 }
 
 .radical-menu {
+  order:1;
   width: 50%;
-  border: 1px solid green;
+  padding: 1em;
+  border: 1px solid black;
 }
 
 .canvas-container {
-
+  order:1;
+  border: 1px solid black;
 }
 
 .parent-container {
   display: flex;
+}
+
+#download-link {
+  border: 1px solid blue;
+  order:3;
+  width: 10%;
 }
