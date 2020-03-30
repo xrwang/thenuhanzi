@@ -5,7 +5,7 @@ body {
     "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
     "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
     "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
-  padding: 18vh 1rem;
+  padding: 10vh 1rem;
   text-align: center;
 }
 
@@ -71,4 +71,18 @@ a {
   border: 1px solid blue;
   order:3;
   width: 10%;
+}
+
+.background-context {
+  width: 80%;
+}
+
+.background-context-images {
+  display: flex;
+  width: 40%;
+  text-align: left;
+}
+
+figcaption {
+  padding: 1em;
 }

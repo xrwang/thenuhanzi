@@ -6,8 +6,47 @@ title: hanzimaker
   hanzimaker
 </h1>
 
+  <div class="background-context">
+  inspired by netizens and activists who were making new characters. Prior art, collected from "Li Wei & Zhu Hua (2019) Tranßcripting: playful subversion with
+Chinese characters, International Journal of Multilingualism, 16:2, 145-161, DOI:
+10.1080/14790718.2019.1575834"
 
-  <h1>Radicals</h1>
+  </div>
+  <div class="background-context-images">
+
+  <figure>
+    <%= image_tag "niubi.jpg", :width => '100px'%>
+  </figure>
+  <figcaption>
+    niubi, meaning awesome. uses "niu" 牛 character for cow, and B, english letter.
+  </figcaption>
+  <figure>
+  <%= image_tag "shiwai.jpg", :width => '100px'%>
+  </figure>
+  <figcaption>
+    shi wai, or "deadly person", referring to CY Leung during umbrella revolution.
+    尸shi and Y letter.
+  </figcaption>
+
+
+  <figure>
+    <%= image_tag "ta.jpg", :width => '100px'%>
+  </figure>
+  <figcaption>
+    Ta, 他 and 她 alternative, third person non-binary.
+  </figcaption>
+
+  <figure>
+    <%= image_tag "hk.jpg", :width => '100px'%>
+  </figure>
+  <figcaption>
+    (a) Oppose China, Destabilize Hong Kong, (b) Thief/Seller of Hong Kong, and (c) Hong Kong
+independence.
+  </figcaption>
+  </div>
+
+
+  <h3>Radicals</h3>
 
 <div class="parent-container">
     <div id="canvas-container">
@@ -242,7 +281,7 @@ var link = document.getElementById('download-link-href');
     link.innerHTML = 'download image';
     link.addEventListener('click', function(ev) {
     link.href = canvas.toDataURL();
-    link.download = "mypainting.jpg";
+    link.download = "my-new-hanzi.jpg";
 }, false);
 
 document.body.getElementById('download-link').appendChild(link);
