@@ -1,857 +1,856 @@
----
--
-    id: 1
-    radical: 一
-    definition: one
--
-    id: 2
-    radical: 丨
-    definition: line
--
-    id: 3
-    radical: 丶
-    definition: dot
--
-    id: 4
-    radical: 丿
-    definition: slash
--
-    id: 5
-    radical: 乙
-    definition: second
--
-    id: 6
-    radical: 亅
-    definition: hook
--
-    id: 7
-    radical: 二
-    definition: two
--
-    id: 8
-    radical: 亠
-    definition: lid
--
-    id: 9
-    radical: 人
-    definition: person
--
-    id: 10
-    radical: 儿
-    definition: legs
--
-    id: 11
-    radical: 入
-    definition: enter
--
-    id: 12
-    radical: 八
-    definition: eight
--
-    id: 13
-    radical: 冂
-    definition: down box
--
-    id: 14
-    radical: 冖
-    definition: cover
--
-    id: 15
-    radical: 冫
-    definition: ice
--
-    id: 16
-    radical: 几
-    definition: table
--
-    id: 17
-    radical: 凵
-    definition: open box
--
-    id: 18
-    radical: 刀
-    definition: knife
--
-    id: 19
-    radical: 力
-    definition: power
--
-    id: 20
-    radical: 勹
-    definition: wrap
--
-    id: 21
-    radical: 匕
-    definition: ladle
--
-    id: 22
-    radical: 匚
-    definition: right open box
--
-    id: 23
-    radical: 匸
-    definition: hiding enclosure
--
-    id: 24
-    radical: 十
-    definition: ten
--
-    id: 25
-    radical: 卜
-    definition: divination
--
-    id: 26
-    radical: 卩
-    definition: seal
--
-    id: 27
-    radical: 厂
-    definition: cliff
--
-    id: 28
-    radical: 厶
-    definition: private
--
-    id: 29
-    radical: 又
-    definition: again
--
-    id: 30
-    radical: 口
-    definition: mouth
--
-    id: 31
-    radical: 囗
-    definition: enclosure
--
-    id: 32
-    radical: 土
-    definition: earth
--
-    id: 33
-    radical: 士
-    definition: scholar
--
-    id: 34
-    radical: 夂
-    definition: go
--
-    id: 35
-    radical: 夊
-    definition: go slowly
--
-    id: 36
-    radical: 夕
-    definition: night
--
-    id: 37
-    radical: 大
-    definition: big
--
-    id: 38
-    radical: 女
-    definition: woman
--
-    id: 39
-    radical: 子
-    definition: child
--
-    id: 40
-    radical: 宀
-    definition: roof
--
-    id: 41
-    radical: 寸
-    definition: inch
--
-    id: 42
-    radical: 小
-    definition: small
--
-    id: 43
-    radical: 尢
-    definition: lame
--
-    id: 44
-    radical: 尸
-    definition: corpse
--
-    id: 45
-    radical: 屮
-    definition: sprout
--
-    id: 46
-    radical: 山
-    definition: mountain
--
-    id: 47
-    radical: 川
-    definition: river
--
-    id: 48
-    radical: 工
-    definition: work
--
-    id: 49
-    radical: 己
-    definition: oneself
--
-    id: 50
-    radical: 巾
-    definition: towel
--
-    id: 51
-    radical: 干
-    definition: dry
--
-    id: 52
-    radical: 幺
-    definition: thread
--
-    id: 53
-    radical: 广
-    definition: shelter
--
-    id: 54
-    radical: 廴
-    definition: stride
--
-    id: 55
-    radical: 廾
-    definition: hands joined
--
-    id: 56
-    radical: 弋
-    definition: shoot with a bow
--
-    id: 57
-    radical: 弓
-    definition: bow
--
-    id: 58
-    radical: 彐
-    definition: snout
--
-    id: 59
-    radical: 彡
-    definition: hair
--
-    id: 60
-    radical: 彳
-    definition: step
--
-    id: 61
-    radical: 心
-    definition: heart
--
-    id: 62
-    radical: 戈
-    definition: spear
--
-    id: 63
-    radical: 户
-    definition: door
--
-    id: 64
-    radical: 手
-    definition: hand
--
-    id: 65
-    radical: 支
-    definition: branch
--
-    id: 66
-    radical: 攴
-    definition: rap
--
-    id: 67
-    radical: 文
-    definition: script
--
-    id: 68
-    radical: 斗
-    definition: dipper
--
-    id: 69
-    radical: 斤
-    definition: axe
--
-    id: 70
-    radical: 方
-    definition: square
--
-    id: 71
-    radical: 无
-    definition: not
--
-    id: 72
-    radical: 日
-    definition: sun
--
-    id: 73
-    radical: 曰
-    definition: say
--
-    id: 74
-    radical: 月
-    definition: moon
--
-    id: 75
-    radical: 木
-    definition: tree
--
-    id: 76
-    radical: 欠
-    definition: lack
--
-    id: 77
-    radical: 止
-    definition: stop
--
-    id: 78
-    radical: 歹
-    definition: death
--
-    id: 79
-    radical: 殳
-    definition: weapon
--
-    id: 80
-    radical: 母
-    definition: mother
--
-    id: 81
-    radical: 比
-    definition: compare
--
-    id: 82
-    radical: 毛
-    definition: fur
--
-    id: 83
-    radical: 氏
-    definition: clan
--
-    id: 84
-    radical: 气
-    definition: steam
--
-    id: 85
-    radical: 水
-    definition: water
--
-    id: 86
-    radical: 火
-    definition: fire
--
-    id: 87
-    radical: 爪
-    definition: claw
--
-    id: 88
-    radical: 父
-    definition: father
--
-    id: 89
-    radical: 爻
-    definition: lines on a trigram
--
-    id: 90
-    radical: 爿
-    definition: half of a tree trunk
--
-    id: 91
-    radical: 片
-    definition: slice
--
-    id: 92
-    radical: 牙
-    definition: tooth
--
-    id: 93
-    radical: 牛
-    definition: cow
--
-    id: 94
-    radical: 犭
-    definition: dog
--
-    id: 95
-    radical: 玄
-    definition: profound
--
-    id: 96
-    radical: 玉
-    definition: jade
--
-    id: 97
-    radical: 瓜
-    definition: melon
--
-    id: 98
-    radical: 瓦
-    definition: tile
--
-    id: 99
-    radical: 甘
-    definition: sweet
--
-    id: 100
-    radical: 生
-    definition: life
--
-    id: 101
-    radical: 用
-    definition: use
--
-    id: 102
-    radical: 田
-    definition: field
--
-    id: 103
-    radical: 疋
-    definition: cloth
--
-    id: 104
-    radical: 疒
-    definition: ill
--
-    id: 105
-    radical: 癶
-    definition: foot steps
--
-    id: 106
-    radical: 白
-    definition: white
--
-    id: 107
-    radical: 皮
-    definition: skin
--
-    id: 108
-    radical: 皿
-    definition: dish
--
-    id: 109
-    radical: 目
-    definition: eye
--
-    id: 110
-    radical: 矛
-    definition: spear
--
-    id: 111
-    radical: 矢
-    definition: arrow
--
-    id: 112
-    radical: 石
-    definition: stone
--
-    id: 113
-    radical: 示
-    definition: spirit
--
-    id: 114
-    radical: 禸
-    definition: track
--
-    id: 115
-    radical: 禾
-    definition: grain
--
-    id: 116
-    radical: 穴
-    definition: cave
--
-    id: 117
-    radical: 立
-    definition: stand
--
-    id: 118
-    radical: 竹
-    definition: bamboo
--
-    id: 119
-    radical: 米
-    definition: rice
--
-    id: 120
-    radical: 纟
-    definition: silk
--
-    id: 121
-    radical: 缶
-    definition: jar
--
-    id: 122
-    radical: 网
-    definition: net
--
-    id: 123
-    radical: 羊
-    definition: sheep
--
-    id: 124
-    radical: 羽
-    definition: feather
--
-    id: 125
-    radical: 老
-    definition: old
--
-    id: 126
-    radical: 而
-    definition: and
--
-    id: 127
-    radical: 耒
-    definition: plow
--
-    id: 128
-    radical: 耳
-    definition: ear
--
-    id: 129
-    radical: 聿
-    definition: brush
--
-    id: 130
-    radical: 肉
-    definition: meat
--
-    id: 131
-    radical: 臣
-    definition: minister
--
-    id: 132
-    radical: 自
-    definition: oneself
--
-    id: 133
-    radical: 至
-    definition: arrive
--
-    id: 134
-    radical: 臼
-    definition: mortar
--
-    id: 135
-    radical: 舌
-    definition: tongue
--
-    id: 136
-    radical: 舛
-    definition: contrary
--
-    id: 137
-    radical: 舟
-    definition: boat
--
-    id: 138
-    radical: 艮
-    definition: mountain
--
-    id: 139
-    radical: 色
-    definition: color
--
-    id: 140
-    radical: 艹
-    definition: grass
--
-    id: 141
-    radical: 虍
-    definition: tiger
--
-    id: 142
-    radical: 虫
-    definition: insect
--
-    id: 143
-    radical: 血
-    definition: blood
--
-    id: 144
-    radical: 行
-    definition: walk
--
-    id: 145
-    radical: 衣
-    definition: clothes
--
-    id: 146
-    radical: 西
-    definition: west
--
-    id: 147
-    radical: 见
-    definition: see
--
-    id: 148
-    radical: 角
-    definition: horn
--
-    id: 149
-    radical: 讠
-    definition: speech
--
-    id: 150
-    radical: 谷
-    definition: valley
--
-    id: 151
-    radical: 豆
-    definition: bean
--
-    id: 152
-    radical: 豕
-    definition: pig
--
-    id: 153
-    radical: 豸
-    definition: badger
--
-    id: 154
-    radical: 贝
-    definition: shell
--
-    id: 155
-    radical: 赤
-    definition: red
--
-    id: 156
-    radical: 走
-    definition: walk
--
-    id: 157
-    radical: 足
-    definition: foot
--
-    id: 158
-    radical: 身
-    definition: body
--
-    id: 159
-    radical: 车
-    definition: cart
--
-    id: 160
-    radical: 辛
-    definition: bitter
--
-    id: 161
-    radical: 辰
-    definition: morning
--
-    id: 162
-    radical: 辶
-    definition: walk
--
-    id: 163
-    radical: 邑
-    definition: city
--
-    id: 164
-    radical: 酉
-    definition: wine
--
-    id: 165
-    radical: 釆
-    definition: distinguish
--
-    id: 166
-    radical: 里
-    definition: village
--
-    id: 167
-    radical: 钅
-    definition: metal
--
-    id: 168
-    radical: 长
-    definition: long
--
-    id: 169
-    radical: 门
-    definition: gate
--
-    id: 170
-    radical: 阜
-    definition: mound
--
-    id: 171
-    radical: 隶
-    definition: slave
--
-    id: 172
-    radical: 隹
-    definition: short-tailed bird
--
-    id: 173
-    radical: 雨
-    definition: rain
--
-    id: 174
-    radical: 青
-    definition: blue
--
-    id: 175
-    radical: 非
-    definition: wrong
--
-    id: 176
-    radical: 面
-    definition: face
--
-    id: 177
-    radical: 革
-    definition: leather
--
-    id: 178
-    radical: 韦
-    definition: soft leather
--
-    id: 179
-    radical: 韭
-    definition: leek
--
-    id: 180
-    radical: 音
-    definition: sound
--
-    id: 181
-    radical: 页
-    definition: page
--
-    id: 182
-    radical: 风
-    definition: wind
--
-    id: 183
-    radical: 飞
-    definition: fly
--
-    id: 184
-    radical: 饣
-    definition: eat
--
-    id: 185
-    radical: 首
-    definition: head
--
-    id: 186
-    radical: 香
-    definition: fragrant
--
-    id: 187
-    radical: 马
-    definition: horse
--
-    id: 188
-    radical: 骨
-    definition: bone
--
-    id: 189
-    radical: 高
-    definition: high
--
-    id: 190
-    radical: 髟
-    definition: long hair
--
-    id: 191
-    radical: 鬥
-    definition: fight
--
-    id: 192
-    radical: 鬯
-    definition: sacrificial wine
--
-    id: 193
-    radical: 鬲
-    definition: cauldron
--
-    id: 194
-    radical: 鬼
-    definition: ghost
--
-    id: 195
-    radical: 鱼
-    definition: fish
--
-    id: 196
-    radical: 鸟
-    definition: bird
--
-    id: 197
-    radical: 卤
-    definition: salty
--
-    id: 198
-    radical: 鹿
-    definition: deer
--
-    id: 199
-    radical: 麦
-    definition: wheat
--
-    id: 200
-    radical: 麻
-    definition: hemp
--
-    id: 201
-    radical: 黄
-    definition: yellow
--
-    id: 202
-    radical: 黍
-    definition: millet
--
-    id: 203
-    radical: 黑
-    definition: black
--
-    id: 204
-    radical: 黹
-    definition: embroidery
--
-    id: 205
-    radical: 黾
-    definition: frog
--
-    id: 206
-    radical: 鼎
-    definition: tripod
--
-    id: 207
-    radical: 鼓
-    definition: drum
--
-    id: 208
-    radical: 鼠
-    definition: rat
--
-    id: 209
-    radical: 鼻
-    definition: nose
--
-    id: 210
-    radical: 齐
-    definition: even
--
-    id: 211
-    radical: 齿
-    definition: tooth
--
-    id: 212
-    radical: 龙
-    definition: dragon
--
-    id: 213
-    radical: 龟
-    definition: turtle
--
-    id: 214
-    radical: 龠
-    definition: flute
+﻿- id: '1'
+  radical: 一
+  definition: one
+  Category: 数字 Number
+- id: '2'
+  radical: 丨
+  definition: line
+  Category: 其他 Other
+- id: '3'
+  radical: 丶
+  definition: dot
+  Category: 其他 Other
+- id: '4'
+  radical: 丿
+  definition: slash
+  Category: 其他 Other
+- id: '5'
+  radical: 乙
+  definition: second
+  Category: 数字 Number
+- id: '6'
+  radical: 亅
+  definition: hook
+  Category: 器物 Object
+- id: '7'
+  radical: 二
+  definition: two
+  Category: 数字 Number
+- id: '8'
+  radical: 亠
+  definition: lid
+  Category: 器物 Object
+- id: '9'
+  radical: 人
+  definition: person
+  Category: 人 Human
+- id: '10'
+  radical: 儿
+  definition: legs
+  Category: 人 Human
+- id: '11'
+  radical: 入
+  definition: enter
+  Category: 其他 Other
+- id: '12'
+  radical: 八
+  definition: eight
+  Category: 数字 Number
+- id: '13'
+  radical: 冂
+  definition: down box
+  Category: 器物 Object
+- id: '14'
+  radical: 冖
+  definition: cover
+  Category: 器物 Object
+- id: '15'
+  radical: 冫
+  definition: ice
+  Category: 天文地理 Astronomy & Geography
+- id: '16'
+  radical: 几
+  definition: table
+  Category: 器物 Object
+- id: '17'
+  radical: 凵
+  definition: open box
+  Category: 其他 Other
+- id: '18'
+  radical: 刀
+  definition: knife
+  Category: 器物 Object
+- id: '19'
+  radical: 力
+  definition: power
+  Category: 抽象 Abstract
+- id: '20'
+  radical: 勹
+  definition: wrap
+  Category: 其他 Other
+- id: '21'
+  radical: 匕
+  definition: ladle
+  Category: 器物 Object
+- id: '22'
+  radical: 匚
+  definition: right open box
+  Category: 其他 Other
+- id: '23'
+  radical: 匸
+  definition: hiding enclosure
+  Category: 其他 Other
+- id: '24'
+  radical: 十
+  definition: ten
+  Category: 数字 Number
+- id: '25'
+  radical: 卜
+  definition: divination
+  Category: 鬼神 Ghost & Spirit
+- id: '26'
+  radical: 卩
+  definition: seal
+  Category: 其他 Other
+- id: '27'
+  radical: 厂
+  definition: cliff
+  Category: 天文地理 Astronomy & Geography
+- id: '28'
+  radical: 厶
+  definition: private
+  Category: 抽象 Abstract
+- id: '29'
+  radical: 又
+  definition: again
+  Category: 四肢五官 Limbs & Facial Features
+- id: '30'
+  radical: 口
+  definition: mouth
+  Category: 四肢五官 Limbs & Facial Features
+- id: '31'
+  radical: 囗
+  definition: enclosure
+  Category: 邑居宫室  Home & Domestic
+- id: '32'
+  radical: 土
+  definition: earth
+  Category: 天文地理 Astronomy & Geography
+- id: '33'
+  radical: 士
+  definition: scholar
+  Category: 人 Human
+- id: '34'
+  radical: 夂
+  definition: go
+  Category: 交通 Transportation
+- id: '35'
+  radical: 夊
+  definition: go slowly
+  Category: 交通 Transportation
+- id: '36'
+  radical: 夕
+  definition: night
+  Category: 天文地理 Astronomy & Geography
+- id: '37'
+  radical: 大
+  definition: big
+  Category: 人 Human
+- id: '38'
+  radical: 女
+  definition: woman
+  Category: 人 Human
+- id: '39'
+  radical: 子
+  definition: child
+  Category: 人 Human
+- id: '40'
+  radical: 宀
+  definition: roof
+  Category: 邑居宫室  Home & Domestic
+- id: '41'
+  radical: 寸
+  definition: inch
+  Category: 抽象 Abstract
+- id: '42'
+  radical: 小
+  definition: small
+  Category: 抽象 Abstract
+- id: '43'
+  radical: 尢
+  definition: lame
+  Category: 抽象 Abstract
+- id: '44'
+  radical: 尸
+  definition: corpse
+  Category: 四肢五官 Limbs & Facial Features
+- id: '45'
+  radical: 屮
+  definition: sprout
+  Category: 植物 Plant
+- id: '46'
+  radical: 山
+  definition: mountain
+  Category: 天文地理 Astronomy & Geography
+- id: '47'
+  radical: 川
+  definition: river
+  Category: 天文地理 Astronomy & Geography
+- id: '48'
+  radical: 工
+  definition: work
+  Category: 其他 Other
+- id: '49'
+  radical: 己
+  definition: oneself
+  Category: 人 Human
+- id: '50'
+  radical: 巾
+  definition: towel
+  Category: 器物 Object
+- id: '51'
+  radical: 干
+  definition: dry
+  Category: 其他 Other
+- id: '52'
+  radical: 幺
+  definition: thread
+  Category: 器物 Object
+- id: '53'
+  radical: 广
+  definition: shelter
+  Category: 邑居宫室  Home & Domestic
+- id: '54'
+  radical: 廴
+  definition: stride
+  Category: 交通 Transportation
+- id: '55'
+  radical: 廾
+  definition: hands joined
+  Category: 四肢五官 Limbs & Facial Features
+- id: '56'
+  radical: 弋
+  definition: shoot with a bow
+  Category: 其他 Other
+- id: '57'
+  radical: 弓
+  definition: bow
+  Category: 器物 Object
+- id: '58'
+  radical: 彐
+  definition: snout
+  Category: 四肢五官 Limbs & Facial Features
+- id: '59'
+  radical: 彡
+  definition: hair
+  Category: 四肢五官 Limbs & Facial Features
+- id: '60'
+  radical: 彳
+  definition: step
+  Category: 四肢五官 Limbs & Facial Features
+- id: '61'
+  radical: 心
+  definition: heart
+  Category: 四肢五官 Limbs & Facial Features
+- id: '62'
+  radical: 戈
+  definition: spear
+  Category: 器物 Object
+- id: '63'
+  radical: 户
+  definition: door
+  Category: 邑居宫室  Home & Domestic
+- id: '64'
+  radical: 手
+  definition: hand
+  Category: 四肢五官 Limbs & Facial Features
+- id: '65'
+  radical: 支
+  definition: branch
+  Category: 其他 Other
+- id: '66'
+  radical: 攴
+  definition: rap
+  Category: 四肢五官 Limbs & Facial Features
+- id: '67'
+  radical: 文
+  definition: script
+  Category: 其他 Other
+- id: '68'
+  radical: 斗
+  definition: dipper
+  Category: 器物 Object
+- id: '69'
+  radical: 斤
+  definition: axe
+  Category: 器物 Object
+- id: '70'
+  radical: 方
+  definition: square
+  Category: 器物 Object
+- id: '71'
+  radical: 无
+  definition: not
+  Category: 抽象 Abstract
+- id: '72'
+  radical: 日
+  definition: sun
+  Category: 天文地理 Astronomy & Geography
+- id: '73'
+  radical: 曰
+  definition: say
+  Category: 其他 Other
+- id: '74'
+  radical: 月
+  definition: moon
+  Category: 天文地理 Astronomy & Geography
+- id: '75'
+  radical: 木
+  definition: tree
+  Category: 植物 Plant
+- id: '76'
+  radical: 欠
+  definition: lack
+  Category: 四肢五官 Limbs & Facial Features
+- id: '77'
+  radical: 止
+  definition: stop
+  Category: 四肢五官 Limbs & Facial Features
+- id: '78'
+  radical: 歹
+  definition: death
+  Category: 抽象 Abstract
+- id: '79'
+  radical: 殳
+  definition: weapon
+  Category: 器物 Object
+- id: '80'
+  radical: 母
+  definition: mother
+  Category: 人 Human
+- id: '81'
+  radical: 比
+  definition: compare
+  Category: 抽象 Abstract
+- id: '82'
+  radical: 毛
+  definition: fur
+  Category: 四肢五官 Limbs & Facial Features
+- id: '83'
+  radical: 氏
+  definition: clan
+  Category: 抽象 Abstract
+- id: '84'
+  radical: 气
+  definition: steam
+  Category: 天文地理 Astronomy & Geography
+- id: '85'
+  radical: 水
+  definition: water
+  Category: 天文地理 Astronomy & Geography
+- id: '86'
+  radical: 火
+  definition: fire
+  Category: 天文地理 Astronomy & Geography
+- id: '87'
+  radical: 爪
+  definition: claw
+  Category: 动物 Animal
+- id: '88'
+  radical: 父
+  definition: father
+  Category: 人 Human
+- id: '89'
+  radical: 爻
+  definition: lines on a trigram
+  Category: 其他 Other
+- id: '90'
+  radical: 爿
+  definition: half of a tree trunk
+  Category: 植物 Plant
+- id: '91'
+  radical: 片
+  definition: slice
+  Category: 其他 Other
+- id: '92'
+  radical: 牙
+  definition: tooth
+  Category: 四肢五官 Limbs & Facial Features
+- id: '93'
+  radical: 牛
+  definition: cow
+  Category: 动物 Animal
+- id: '94'
+  radical: 犭
+  definition: dog
+  Category: 动物 Animal
+- id: '95'
+  radical: 玄
+  definition: profound
+  Category: 鬼神 Ghost & Spirit
+- id: '96'
+  radical: 玉
+  definition: jade
+  Category: 器物 Object
+- id: '97'
+  radical: 瓜
+  definition: melon
+  Category: 植物 Plant
+- id: '98'
+  radical: 瓦
+  definition: tile
+  Category: 器物 Object
+- id: '99'
+  radical: 甘
+  definition: sweet
+  Category: 四肢五官 Limbs & Facial Features
+- id: '100'
+  radical: 生
+  definition: life
+  Category: 抽象 Abstract
+- id: '101'
+  radical: 用
+  definition: use
+  Category: 抽象 Abstract
+- id: '102'
+  radical: 田
+  definition: field
+  Category: 植物 Plant
+- id: '103'
+  radical: 疋
+  definition: cloth
+  Category: 器物 Object
+- id: '104'
+  radical: 疒
+  definition: ill
+  Category: 抽象 Abstract
+- id: '105'
+  radical: 癶
+  definition: foot steps
+  Category: 交通 Transportation
+- id: '106'
+  radical: 白
+  definition: white
+  Category: 颜色 Color
+- id: '107'
+  radical: 皮
+  definition: skin
+  Category: 四肢五官 Limbs & Facial Features
+- id: '108'
+  radical: 皿
+  definition: dish
+  Category: 器物 Object
+- id: '109'
+  radical: 目
+  definition: eye
+  Category: 四肢五官 Limbs & Facial Features
+- id: '110'
+  radical: 矛
+  definition: spear
+  Category: 器物 Object
+- id: '111'
+  radical: 矢
+  definition: arrow
+  Category: 器物 Object
+- id: '112'
+  radical: 石
+  definition: stone
+  Category: 天文地理 Astronomy & Geography
+- id: '113'
+  radical: 示
+  definition: spirit
+  Category: 鬼神 Ghost & Spirit
+- id: '114'
+  radical: 禸
+  definition: track
+  Category: 其他 Other
+- id: '115'
+  radical: 禾
+  definition: grain
+  Category: 植物 Plant
+- id: '116'
+  radical: 穴
+  definition: cave
+  Category: 天文地理 Astronomy & Geography
+- id: '117'
+  radical: 立
+  definition: stand
+  Category: 人 Human
+- id: '118'
+  radical: 竹
+  definition: bamboo
+  Category: 植物 Plant
+- id: '119'
+  radical: 米
+  definition: rice
+  Category: 植物 Plant
+- id: '120'
+  radical: 纟
+  definition: silk
+  Category: 器物 Object
+- id: '121'
+  radical: 缶
+  definition: jar
+  Category: 器物 Object
+- id: '122'
+  radical: 网
+  definition: net
+  Category: 器物 Object
+- id: '123'
+  radical: 羊
+  definition: sheep
+  Category: 动物 Animal
+- id: '124'
+  radical: 羽
+  definition: feather
+  Category: 器物 Object
+- id: '125'
+  radical: 老
+  definition: old
+  Category: 抽象 Abstract
+- id: '126'
+  radical: 而
+  definition: and
+  Category: 抽象 Abstract
+- id: '127'
+  radical: 耒
+  definition: plow
+  Category: 器物 Object
+- id: '128'
+  radical: 耳
+  definition: ear
+  Category: 四肢五官 Limbs & Facial Features
+- id: '129'
+  radical: 聿
+  definition: brush
+  Category: 器物 Object
+- id: '130'
+  radical: 肉
+  definition: meat
+  Category: 四肢五官 Limbs & Facial Features
+- id: '131'
+  radical: 臣
+  definition: minister
+  Category: 人 Human
+- id: '132'
+  radical: 自
+  definition: oneself
+  Category: 人 Human
+- id: '133'
+  radical: 至
+  definition: arrive
+  Category: 交通 Transportation
+- id: '134'
+  radical: 臼
+  definition: mortar
+  Category: 器物 Object
+- id: '135'
+  radical: 舌
+  definition: tongue
+  Category: 四肢五官 Limbs & Facial Features
+- id: '136'
+  radical: 舛
+  definition: contrary
+  Category: 抽象 Abstract
+- id: '137'
+  radical: 舟
+  definition: boat
+  Category: 交通 Transportation
+- id: '138'
+  radical: 艮
+  definition: mountain
+  Category: 天文地理 Astronomy & Geography
+- id: '139'
+  radical: 色
+  definition: color
+  Category: 颜色 Color
+- id: '140'
+  radical: 艹
+  definition: grass
+  Category: 植物 Plant
+- id: '141'
+  radical: 虍
+  definition: tiger
+  Category: 动物 Animal
+- id: '142'
+  radical: 虫
+  definition: insect
+  Category: 动物 Animal
+- id: '143'
+  radical: 血
+  definition: blood
+  Category: 四肢五官 Limbs & Facial Features
+- id: '144'
+  radical: 行
+  definition: walk
+  Category: 交通 Transportation
+- id: '145'
+  radical: 衣
+  definition: clothes
+  Category: 器物 Object
+- id: '146'
+  radical: 西
+  definition: west
+  Category: 抽象 Abstract
+- id: '147'
+  radical: 见
+  definition: see
+  Category: 四肢五官 Limbs & Facial Features
+- id: '148'
+  radical: 角
+  definition: horn
+  Category: 器物 Object
+- id: '149'
+  radical: 讠
+  definition: speech
+  Category: 四肢五官 Limbs & Facial Features
+- id: '150'
+  radical: 谷
+  definition: valley
+  Category: 天文地理 Astronomy & Geography
+- id: '151'
+  radical: 豆
+  definition: bean
+  Category: 植物 Plant
+- id: '152'
+  radical: 豕
+  definition: pig
+  Category: 动物 Animal
+- id: '153'
+  radical: 豸
+  definition: badger
+  Category: 动物 Animal
+- id: '154'
+  radical: 贝
+  definition: shell
+  Category: 器物 Object
+- id: '155'
+  radical: 赤
+  definition: red
+  Category: 颜色 Color
+- id: '156'
+  radical: 走
+  definition: walk
+  Category: 交通 Transportation
+- id: '157'
+  radical: 足
+  definition: foot
+  Category: 四肢五官 Limbs & Facial Features
+- id: '158'
+  radical: 身
+  definition: body
+  Category: 四肢五官 Limbs & Facial Features
+- id: '159'
+  radical: 车
+  definition: cart
+  Category: 交通 Transportation
+- id: '160'
+  radical: 辛
+  definition: bitter
+  Category: 四肢五官 Limbs & Facial Features
+- id: '161'
+  radical: 辰
+  definition: morning
+  Category: 天文地理 Astronomy & Geography
+- id: '162'
+  radical: 辶
+  definition: walk
+  Category: 交通 Transportation
+- id: '163'
+  radical: 邑
+  definition: city
+  Category: 邑居宫室  Home & Domestic
+- id: '164'
+  radical: 酉
+  definition: wine
+  Category: 器物 Object
+- id: '165'
+  radical: 釆
+  definition: distinguish
+  Category: 抽象 Abstract
+- id: '166'
+  radical: 里
+  definition: village
+  Category: 邑居宫室  Home & Domestic
+- id: '167'
+  radical: 钅
+  definition: metal
+  Category: 器物 Object
+- id: '168'
+  radical: 长
+  definition: long
+  Category: 抽象 Abstract
+- id: '169'
+  radical: 门
+  definition: gate
+  Category: 邑居宫室  Home & Domestic
+- id: '170'
+  radical: 阜
+  definition: mound
+  Category: 天文地理 Astronomy & Geography
+- id: '171'
+  radical: 隶
+  definition: slave
+  Category: 人 Human
+- id: '172'
+  radical: 隹
+  definition: short-tailed bird
+  Category: 动物 Animal
+- id: '173'
+  radical: 雨
+  definition: rain
+  Category: 天文地理 Astronomy & Geography
+- id: '174'
+  radical: 青
+  definition: blue
+  Category: 颜色 Color
+- id: '175'
+  radical: 非
+  definition: wrong
+  Category: 抽象 Abstract
+- id: '176'
+  radical: 面
+  definition: face
+  Category: 四肢五官 Limbs & Facial Features
+- id: '177'
+  radical: 革
+  definition: leather
+  Category: 器物 Object
+- id: '178'
+  radical: 韦
+  definition: soft leather
+  Category: 器物 Object
+- id: '179'
+  radical: 韭
+  definition: leek
+  Category: 植物 Plant
+- id: '180'
+  radical: 音
+  definition: sound
+  Category: 抽象 Abstract
+- id: '181'
+  radical: 页
+  definition: page
+  Category: 四肢五官 Limbs & Facial Features
+- id: '182'
+  radical: 风
+  definition: wind
+  Category: 天文地理 Astronomy & Geography
+- id: '183'
+  radical: 飞
+  definition: fly
+  Category: 其他 Other
+- id: '184'
+  radical: 饣
+  definition: eat
+  Category: 其他 Other
+- id: '185'
+  radical: 首
+  definition: head
+  Category: 四肢五官 Limbs & Facial Features
+- id: '186'
+  radical: 香
+  definition: fragrant
+  Category: 抽象 Abstract
+- id: '187'
+  radical: 马
+  definition: horse
+  Category: 动物 Animal
+- id: '188'
+  radical: 骨
+  definition: bone
+  Category: 四肢五官 Limbs & Facial Features
+- id: '189'
+  radical: 高
+  definition: high
+  Category: 抽象 Abstract
+- id: '190'
+  radical: 髟
+  definition: long hair
+  Category: 四肢五官 Limbs & Facial Features
+- id: '191'
+  radical: 鬥
+  definition: fight
+  Category: 其他 Other
+- id: '192'
+  radical: 鬯
+  definition: sacrificial wine
+  Category: 器物 Object
+- id: '193'
+  radical: 鬲
+  definition: cauldron
+  Category: 器物 Object
+- id: '194'
+  radical: 鬼
+  definition: ghost
+  Category: 鬼神 Ghost & Spirit
+- id: '195'
+  radical: 鱼
+  definition: fish
+  Category: 动物 Animal
+- id: '196'
+  radical: 鸟
+  definition: bird
+  Category: 动物 Animal
+- id: '197'
+  radical: 卤
+  definition: salty
+  Category: 抽象 Abstract
+- id: '198'
+  radical: 鹿
+  definition: deer
+  Category: 动物 Animal
+- id: '199'
+  radical: 麦
+  definition: wheat
+  Category: 植物 Plant
+- id: '200'
+  radical: 麻
+  definition: hemp
+  Category: 植物 Plant
+- id: '201'
+  radical: 黄
+  definition: yellow
+  Category: 颜色 Color
+- id: '202'
+  radical: 黍
+  definition: millet
+  Category: 植物 Plant
+- id: '203'
+  radical: 黑
+  definition: black
+  Category: 颜色 Color
+- id: '204'
+  radical: 黹
+  definition: embroidery
+  Category: 器物 Object
+- id: '205'
+  radical: 黾
+  definition: frog
+  Category: 动物 Animal
+- id: '206'
+  radical: 鼎
+  definition: tripod
+  Category: 器物 Object
+- id: '207'
+  radical: 鼓
+  definition: drum
+  Category: 器物 Object
+- id: '208'
+  radical: 鼠
+  definition: rat
+  Category: 动物 Animal
+- id: '209'
+  radical: 鼻
+  definition: nose
+  Category: 四肢五官 Limbs & Facial Features
+- id: '210'
+  radical: 齐
+  definition: even
+  Category: 抽象 Abstract
+- id: '211'
+  radical: 齿
+  definition: tooth
+  Category: 四肢五官 Limbs & Facial Features
+- id: '212'
+  radical: 龙
+  definition: dragon
+  Category: 动物 Animal
+- id: '213'
+  radical: 龟
+  definition: turtle
+  Category: 动物 Animal
+- id: '214'
+  radical: 龠
+  definition: flute
+  Category: ''
