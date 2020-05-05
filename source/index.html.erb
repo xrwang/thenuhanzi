@@ -134,13 +134,16 @@ $(window).bind("load",function() {
 
   var currentlyDragging;
 
-var distance = canvas.width/4;
-  canvas.on('object:moving', function(options) {
-    options.target.set({
-      left: Math.round(options.target.left / distance) * distance,
-      top: Math.round(options.target.top / distance) * distance
+  var distance = canvas.width/8;
+    canvas.on('object:moving', function(options) {
+      w = options.target.width * options.target.scaleX,
+      h = options.target.height * options.target.scaleY,
+      options.target.set({
+        right: Math.round((options.target.left + w) / distance) * distance,
+        left: Math.round(options.target.left / distance) * distance,
+        top: Math.round(options.target.top / distance) * distance
+      });
     });
-  });
 
   function handleDragStart(e) {
       [].forEach.call(images, function (img) {
