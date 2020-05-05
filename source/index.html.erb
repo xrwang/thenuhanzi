@@ -85,12 +85,11 @@ $(window).bind("load",function() {
     });
 
 
-    drawGrid(canvas);
 
 
     function drawGrid(c) {
       const options = {
-          distance: c.width/2,
+          distance: c.width/4,
           width: c.width,
           height: c.height,
           param: {
@@ -121,6 +120,9 @@ $(window).bind("load",function() {
   }
 
 
+  drawGrid(canvas);
+
+
   var textbox = new fabric.Textbox('Drag radicals on the right onto this canvas, double click me to type', {
     left:100,
     top: 100,
@@ -131,6 +133,14 @@ $(window).bind("load",function() {
   canvas.add(textbox).setActiveObject(textbox);
 
   var currentlyDragging;
+
+var distance = canvas.width/4;
+  canvas.on('object:moving', function(options) {
+    options.target.set({
+      left: Math.round(options.target.left / distance) * distance,
+      top: Math.round(options.target.top / distance) * distance
+    });
+  });
 
   function handleDragStart(e) {
       [].forEach.call(images, function (img) {
@@ -227,6 +237,8 @@ $(window).bind("load",function() {
     }
 
 });
+
+
 
 
 var link = document.getElementById('download-link-href');
