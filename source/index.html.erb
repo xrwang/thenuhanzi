@@ -73,15 +73,10 @@ independence.
 
 
 
-/*
-==============
-section below deals with draggin onto the canvas
-==============
-*/
-
-
 $(window).bind("load",function() {
 
+  var canvasHeight=600;
+  var canvasWidth=600;
 
   var canvas = new fabric.Canvas('canvas', {
     selection: false,
@@ -181,6 +176,8 @@ $(window).bind("load",function() {
           var svg = fabric.util.groupSVGElements(objects, options);
           svg.left = e.layerX;
           svg.top = e.layerY;
+          svg.scaleToWidth(canvasWidth/2);
+          svg.scaleToHeight(canvasHeight/2);
           canvas.add(svg);
         });
       } else {
@@ -229,52 +226,7 @@ $(window).bind("load",function() {
         alert("This browser doesn't support the HTML5 Drag and Drop API.");
     }
 
-    // $('img').mouseover(function(){
-    //   $(".svg-definition").hide();
-    //   $(".svg-definition").show();
-    //   console.log('hi')
-    // });
-
-
-
 });
-
-
-  /*
-  ==============
-  Below is commented out, it loads *all of the characters* as svg and each of them become draggable
-  ==============
-  */
-  // var canvas = new fabric.Canvas('canvas');
-  //
-  // var rect = new fabric.Rect({
-  //   left: 100,
-  //   top: 50,
-  //   width: 100,
-  //   height: 100,
-  //   fill: 'green',
-  //   angle: 20,
-  //   padding: 10
-  // });
-  // canvas.add(rect);
-  //
-  //
-  // fabric.loadSVGFromURL('../assets/test-2-radicals.svg', function(objects, options) {
-  //   // var loadedObject = fabric.util.groupSVGElements(objects, options);
-  //   console.log(objects)
-  //   objects.forEach((item, i) => {
-  //     canvas.add(item);
-  //   });
-  //
-  //   canvas.renderAll();
-  //
-  // });
-
-
-
-
-
-
 
 
 var link = document.getElementById('download-link-href');
