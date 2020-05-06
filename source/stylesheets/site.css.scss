@@ -18,9 +18,18 @@ a {
   }
 }
 
-.middleman-logo {
-  margin-bottom: 1rem;
-  width: 10rem;
+
+.radical-menu {
+  order:1;
+  width: 50%;
+  padding: 1em;
+  border: 1px solid black;
+  text-align: left;
+}
+
+
+.radical-group-category {
+  display: inline-block;
 }
 
 .radical-svg {
@@ -49,13 +58,6 @@ a {
 
 .svg-definition:hover {
   display: inline-block;
-}
-
-.radical-menu {
-  order:1;
-  width: 50%;
-  padding: 1em;
-  border: 1px solid black;
 }
 
 .canvas-container {

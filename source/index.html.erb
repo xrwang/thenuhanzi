@@ -53,14 +53,23 @@ independence.
       <canvas id="canvas"></canvas>
     </div>
     <div class="radicals radical-menu">
-      <% data.radicals.each do |f| %>
-      <div class="radical-svg">
-        <pre><%= image_tag "svg/radical-#{f.id}.svg", :draggable => 'true'%></pre>
-      </div>
-        <div class="svg-definition">
-          <%=h f.id %>, <%=h f.definition %>
+
+      <% data.radicals.group_by(&:category).each do |category, radicals| %>
+        <div id="radical-group-heading">
+          <%=category%>
         </div>
+        <%radicals.each do |f|%>
+        <div class="radical-group-category">
+            <div class="radical-svg">
+              <pre><%= image_tag "svg/radical-#{f.id}.svg", :draggable => 'true'%></pre>
+            </div>
+            <div class="svg-definition">
+              <%=h f.id %>, <%=h f.definition %>, <%=f.category%>
+            </div>
+        </div>
+        <% end %>
       <% end %>
+
     </div>
     <div id="images">
     </div>
