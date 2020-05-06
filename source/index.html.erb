@@ -60,11 +60,13 @@ independence.
         </div>
         <%radicals.each do |f|%>
         <div class="radical-group-category">
-            <div class="radical-svg">
-              <pre><%= image_tag "svg/radical-#{f.id}.svg", :draggable => 'true'%></pre>
-            </div>
-            <div class="svg-definition">
-              <%=h f.id %>, <%=h f.definition %>, <%=f.category%>
+            <div class="radical-button">
+              <div class="radical-svg">
+                <pre><%= image_tag "svg/radical-#{f.id}.svg", :draggable => 'true'%></pre>
+              </div>
+              <div class="svg-definition">
+                <%=h f.id %>, <%=h f.definition %>, <%=f.category%>
+              </div>
             </div>
         </div>
         <% end %>

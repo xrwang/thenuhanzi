@@ -38,7 +38,7 @@ a {
 }
 
 .svg-definition {
-  display: none;
+  // display: none;
   width: 100px;
 }
 
@@ -52,13 +52,13 @@ a {
   width: 30px;
 }
 
-.radical-svg:hover+.svg-definition {
-  display:inline-block;
-}
-
-.svg-definition:hover {
-  display: inline-block;
-}
+// .radical-svg:hover+.svg-definition {
+//   display:inline-block;
+// }
+//
+// .svg-definition:hover {
+//   display: inline-block;
+// }
 
 .canvas-container {
   order:1;
