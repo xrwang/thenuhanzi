@@ -62,7 +62,8 @@ independence.
         <div class="radical-group-category">
             <div class="radical-button">
               <div class="radical-svg">
-                <pre><%= image_tag "svg/radical-#{f.id}.svg", :draggable => 'true'%></pre>
+                  <%=link_to "a","javascript:void(0);",:relative => true, :data=>"assets/images/svg/radical-#{f.id}.svg", :class => 'radical-svg-link'%>
+                  <%= image_tag "svg/radical-#{f.id}.svg", :draggable => 'true'%>
               </div>
               <div class="svg-definition">
                 <%=h f.id %>, <%=h f.definition %>, <%=f.category%>
@@ -76,6 +77,7 @@ independence.
     <div id="images">
     </div>
 </div>
+
 <div id="download-link">
   <a href="" id="download-link-href"></a>
 </div>
@@ -145,6 +147,8 @@ $(window).bind("load",function() {
 
   var currentlyDragging;
 
+
+  //snapping
   var distance = canvas.width/8;
     canvas.on('object:moving', function(options) {
       w = options.target.width * options.target.scaleX,
@@ -156,99 +160,130 @@ $(window).bind("load",function() {
       });
     });
 
-  function handleDragStart(e) {
-      [].forEach.call(images, function (img) {
-          img.classList.remove('img_dragging');
-      });
-      console.log(e)
+//Add to canvas
 
-      this.classList.add('img_dragging');
-      currentlyDragging = e.target;
-  }
+function add(e) {
+  console.log(e)
+  console.log(e.data)
+  console.log(e.path)
+  console.log(e.target.getAttribute('data'))
+  var svgURL = e.target.getAttribute('data');
+  fabric.loadSVGFromURL(svgURL, function(objects, options) {
+      var svg = fabric.util.groupSVGElements(objects, options);
+      // svg.left = e.layerX;
+      // svg.top = e.layerY;
+      svg.scaleToWidth(canvasWidth/2);
+      svg.scaleToHeight(canvasHeight/2);
+    canvas.add(svg);
+  });
+}
 
-  function handleDragOver(e) {
-      if (e.preventDefault) {
-          e.preventDefault(); // Necessary. Allows us to drop.
-      }
-      e.dataTransfer.dropEffect = 'copy'; // See https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/dropEffect
-      return false;
-  }
 
-  function handleDragEnter(e) {
-    console.log(e)
-      // this / e.target is the current hover target.
-      this.classList.add('over');
-  }
+var elements = document.getElementsByClassName("radical-svg-link");
 
-  function handleDragLeave(e) {
-      this.classList.remove('over'); // this / e.target is previous target element.
-  }
+// var myFunction = function() {
+//     var attribute = this.getAttribute("data-myattribute");
+//     alert(attribute);
+// };
 
-  function handleDrop(e) {
-      if (e.preventDefault) {
-        e.preventDefault();
-      }
+for (var i = 0; i < elements.length; i++) {
+    elements[i].addEventListener('click', add, false);
+}
 
-      if (e.stopPropagation) {
-          e.stopPropagation(); // stops the browser from redirecting.
-      }
-
-      console.log('event: ', e);
-      var ext = currentlyDragging.src.substr(-3);
-      if (ext === 'svg') {
-        fabric.loadSVGFromURL(currentlyDragging.src, function(objects, options) {
-          var svg = fabric.util.groupSVGElements(objects, options);
-          svg.left = e.layerX;
-          svg.top = e.layerY;
-          svg.scaleToWidth(canvasWidth/2);
-          svg.scaleToHeight(canvasHeight/2);
-          canvas.add(svg);
-        });
-      } else {
-         var newImage = new fabric.Image(currentlyDragging, {
-            width: currentlyDragging.width,
-            height: currentlyDragging.height,
-            // Set the center of the new object based on the event coordinates relative
-            // to the canvas container.
-            left: e.layerX,
-            top: e.layerY
-        });
-        canvas.add(newImage);
-      }
-      return false;
-  }
-
-  function handleDragEnd(e) {
-      // this/e.target is the source node.
-      [].forEach.call(images, function (img) {
-          img.classList.remove('img_dragging');
-      });
-  }
-
-  if (Modernizr.draganddrop) {
-      // Browser supports HTML5 DnD.
-
-      // Bind the event listeners for the image elements
-      var images = document.querySelectorAll('img');
-      var objects = document.querySelectorAll('#images object');
-      [].forEach.call(images, function (img) {
-          img.addEventListener('dragstart', handleDragStart, false);
-          img.addEventListener('dragend', handleDragEnd, false);
-      });
-      [].forEach.call(objects, function (obj) {
-          obj.addEventListener('dragstart', handleDragStart, false);
-          obj.addEventListener('dragend', handleDragEnd, false);
-      });
-      // Bind the event listeners for the canvas
-      var canvasContainer = document.getElementById('canvas-container');
-      canvasContainer.addEventListener('dragenter', handleDragEnter, false);
-      canvasContainer.addEventListener('dragover', handleDragOver, false);
-      canvasContainer.addEventListener('dragleave', handleDragLeave, false);
-      canvasContainer.addEventListener('drop', handleDrop, false);
-    } else {
-        // Replace with a fallback to a library solution.
-        alert("This browser doesn't support the HTML5 Drag and Drop API.");
-    }
+//dragging
+  // function handleDragStart(e) {
+  //     [].forEach.call(images, function (img) {
+  //         img.classList.remove('img_dragging');
+  //     });
+  //     console.log(e)
+  //
+  //     this.classList.add('img_dragging');
+  //     currentlyDragging = e.target;
+  // }
+  //
+  // function handleDragOver(e) {
+  //     if (e.preventDefault) {
+  //         e.preventDefault(); // Necessary. Allows us to drop.
+  //     }
+  //     e.dataTransfer.dropEffect = 'copy'; // See https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/dropEffect
+  //     return false;
+  // }
+  //
+  // function handleDragEnter(e) {
+  //   console.log(e)
+  //     // this / e.target is the current hover target.
+  //     this.classList.add('over');
+  // }
+  //
+  // function handleDragLeave(e) {
+  //     this.classList.remove('over'); // this / e.target is previous target element.
+  // }
+  //
+  // function handleDrop(e) {
+  //     if (e.preventDefault) {
+  //       e.preventDefault();
+  //     }
+  //
+  //     if (e.stopPropagation) {
+  //         e.stopPropagation(); // stops the browser from redirecting.
+  //     }
+  //
+  //     console.log('event: ', e);
+  //     var ext = currentlyDragging.src.substr(-3);
+  //     if (ext === 'svg') {
+  //       fabric.loadSVGFromURL(currentlyDragging.src, function(objects, options) {
+  //         var svg = fabric.util.groupSVGElements(objects, options);
+  //         svg.left = e.layerX;
+  //         svg.top = e.layerY;
+  //         svg.scaleToWidth(canvasWidth/2);
+  //         svg.scaleToHeight(canvasHeight/2);
+  //         canvas.add(svg);
+  //       });
+  //     } else {
+  //        var newImage = new fabric.Image(currentlyDragging, {
+  //           width: currentlyDragging.width,
+  //           height: currentlyDragging.height,
+  //           // Set the center of the new object based on the event coordinates relative
+  //           // to the canvas container.
+  //           left: e.layerX,
+  //           top: e.layerY
+  //       });
+  //       canvas.add(newImage);
+  //     }
+  //     return false;
+  // }
+  //
+  // function handleDragEnd(e) {
+  //     // this/e.target is the source node.
+  //     [].forEach.call(images, function (img) {
+  //         img.classList.remove('img_dragging');
+  //     });
+  // }
+  //
+  // if (Modernizr.draganddrop) {
+  //     // Browser supports HTML5 DnD.
+  //
+  //     // Bind the event listeners for the image elements
+  //     var images = document.querySelectorAll('img');
+  //     var objects = document.querySelectorAll('#images object');
+  //     [].forEach.call(images, function (img) {
+  //         img.addEventListener('dragstart', handleDragStart, false);
+  //         img.addEventListener('dragend', handleDragEnd, false);
+  //     });
+  //     [].forEach.call(objects, function (obj) {
+  //         obj.addEventListener('dragstart', handleDragStart, false);
+  //         obj.addEventListener('dragend', handleDragEnd, false);
+  //     });
+  //     // Bind the event listeners for the canvas
+  //     var canvasContainer = document.getElementById('canvas-container');
+  //     canvasContainer.addEventListener('dragenter', handleDragEnter, false);
+  //     canvasContainer.addEventListener('dragover', handleDragOver, false);
+  //     canvasContainer.addEventListener('dragleave', handleDragLeave, false);
+  //     canvasContainer.addEventListener('drop', handleDrop, false);
+  //   } else {
+  //       // Replace with a fallback to a library solution.
+  //       alert("This browser doesn't support the HTML5 Drag and Drop API.");
+  //   }
 
 });
 
