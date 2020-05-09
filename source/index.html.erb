@@ -62,8 +62,7 @@ independence.
         <div class="radical-group-category">
             <div class="radical-button">
               <div class="radical-svg">
-                  <%=link_to "a","javascript:void(0);",:relative => true, :data=>"assets/images/svg/radical-#{f.id}.svg", :class => 'radical-svg-link'%>
-                  <%= image_tag "svg/radical-#{f.id}.svg", :draggable => 'true'%>
+                  <%= image_tag "svg/radical-#{f.id}.svg", :data=>"assets/images/svg/radical-#{f.id}.svg", :class => 'radical-svg-link', :draggable => 'true'%>
               </div>
               <div class="svg-definition">
                 <%=h f.id %>, <%=h f.definition %>, <%=f.category%>
@@ -163,9 +162,6 @@ $(window).bind("load",function() {
 //Add to canvas
 
 function add(e) {
-  console.log(e)
-  console.log(e.data)
-  console.log(e.path)
   console.log(e.target.getAttribute('data'))
   var svgURL = e.target.getAttribute('data');
   fabric.loadSVGFromURL(svgURL, function(objects, options) {
