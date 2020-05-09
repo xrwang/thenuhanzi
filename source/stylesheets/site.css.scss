@@ -32,19 +32,28 @@ a {
   display: inline-block;
 }
 
+.radical-button {
+  display: flex;
+  border: 1px solid black;
+  width: 100%;
+  border-radius: 20px;
+  padding: 0.1em 0.1em;
+  text-align: center;
+  margin: 2px;
+}
 .radical-svg {
   display: inline-block;
-  border: 0.5px solid black;
+  border-right: 0.5px solid black;
 }
 
 .svg-definition {
-  display: none;
+  // display: none;
   width: 100px;
 }
 
 .svg-definition {
-  position:absolute;
-  background:white;
+  // position:absolute;
+  // background:white;
   z-index: 100;
 }
 
