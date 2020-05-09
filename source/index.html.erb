@@ -53,7 +53,6 @@ independence.
       <canvas id="canvas"></canvas>
     </div>
     <div class="radicals radical-menu">
-
       <% data.radicals.group_by(&:category).each do |category, radicals| %>
         <div id="radical-group-heading">
           <%=category%>
@@ -71,8 +70,12 @@ independence.
         </div>
         <% end %>
       <% end %>
-
     </div>
+
+    <form>
+      <input type="text" id="addText"  value="" />
+      <button onclick="submitTextToCanvas()" id="testButton"> Add to Canvas </button>
+    </form>
     <div id="images">
     </div>
 </div>
@@ -83,9 +86,21 @@ independence.
 
 <script type="text/javascript">
 
+function submitTextToCanvas(id) {
+  var value = document.getElementById('addText').value;
+  var textbox = new fabric.Textbox(value, {
+    left:100,
+    top: 100,
+    width: 200,
+    fontSize: 40
+  });
+  canvas.add(textbox).setActiveObject(textbox);
+}
+
+// $(window).bind("load",function() {
 
 
-$(window).bind("load",function() {
+
 
   var canvasHeight=600;
   var canvasWidth=600;
@@ -298,7 +313,7 @@ $("body").on("keydown", function(e) {
   //       alert("This browser doesn't support the HTML5 Drag and Drop API.");
   //   }
 
-});
+// });
 
 
 
