@@ -1,3 +1,25 @@
+html {
+  --scrollbarBG: blue;
+  --thumbBG: white;
+}
+body::-webkit-scrollbar {
+  width: 11px;
+}
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
 body {
   background-color: white;
   color: #333;
@@ -18,14 +40,26 @@ a {
   }
 }
 
+.parent-container {
+  display: flex;
+}
+
+.radicals.right {
+  // display: flex;
+  margin-left: 2em;
+}
+
+.radical-menu-container {
+  border-radius: 15pt;
+  overflow: hidden;
+  border: 1px solid black;
+}
 
 .radical-menu {
   order:1;
-  width: 50%;
   padding: 1em;
   height: 400px;
-  overflow-y: scroll;
-  border: 1px solid black;
+  overflow-y: auto;
   text-align: left;
 }
 
@@ -76,14 +110,16 @@ a {
   border: 1px solid black;
 }
 
-.parent-container {
-  display: flex;
+.freeText{
+  width:50%;
+  padding:1em;
 }
 
 #download-link {
   border: 1px solid blue;
   order:3;
   width: 10%;
+  height:2em;
 }
 
 .background-context {

@@ -46,43 +46,55 @@ independence.
   </div>
 
 
-  <h3>Radicals</h3>
 
+  <div id="download-link">
+    <a href="" id="download-link-href"></a>
+  </div>
 <div class="parent-container">
+
     <div id="canvas-container">
       <canvas id="canvas"></canvas>
     </div>
-    <div class="radicals radical-menu">
-      <% data.radicals.group_by(&:category).each do |category, radicals| %>
-        <div id="radical-group-heading">
-          <%=category%>
-        </div>
-        <%radicals.each do |f|%>
-        <div class="radical-group-category">
-            <div class="radical-button">
-              <div class="radical-svg">
-                  <%= image_tag "svg/radical-#{f.id}.svg", :data=>"assets/images/svg/radical-#{f.id}.svg", :class => 'radical-svg-link', :draggable => 'true'%>
-              </div>
-              <div class="svg-definition">
-                <%=h f.id %>, <%=h f.definition %>
-              </div>
+
+
+    <div class="radicals right">
+      <h3>Radicals</h3>
+
+      <div class="radical-menu-container">
+        <div class="radicals radical-menu">
+          <% data.radicals.group_by(&:category).each do |category, radicals| %>
+            <div id="radical-group-heading">
+              <%=category%>
             </div>
+            <%radicals.each do |f|%>
+            <div class="radical-group-category">
+                <div class="radical-button">
+                  <div class="radical-svg">
+                      <%= image_tag "svg/radical-#{f.id}.svg", :data=>"assets/images/svg/radical-#{f.id}.svg", :class => 'radical-svg-link', :draggable => 'true'%>
+                  </div>
+                  <div class="svg-definition">
+                    <%=link_to "#{f.id}, #{f.definition}","#", :relative => true, :data =>"assets/images/svg/radical-#{f.id}.svg", :class => "radical-svg-link"%>
+                  </div>
+                </div>
+            </div>
+            <% end %>
+          <% end %>
         </div>
-        <% end %>
-      <% end %>
+      </div>
+
+      <div class="freeText">
+      <form>
+        <label for="addText">Freetype</label>
+        <input type="text" name="addText" id="addText"  value="" />
+        <button onclick="submitTextToCanvas()" id="testButton"> Add to Canvas </button>
+      </form>
+      </div>
+
     </div>
 
-    <form>
-      <input type="text" id="addText"  value="" />
-      <button onclick="submitTextToCanvas()" id="testButton"> Add to Canvas </button>
-    </form>
-    <div id="images">
-    </div>
 </div>
 
-<div id="download-link">
-  <a href="" id="download-link-href"></a>
-</div>
+
 
 <script type="text/javascript">
 
@@ -100,7 +112,9 @@ function submitTextToCanvas(id) {
 // $(window).bind("load",function() {
 
 
-
+$('.radical-svg-link').click(function (event) {
+     event.preventDefault();
+});
 
   var canvasHeight=600;
   var canvasWidth=600;
