@@ -1,24 +1,4 @@
-html {
-  --scrollbarBG: blue;
-  --thumbBG: white;
-}
-body::-webkit-scrollbar {
-  width: 11px;
-}
 
-body {
-  scrollbar-width: thin;
-  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
-}
-
-body::-webkit-scrollbar-track {
-  background: var(--scrollbarBG);
-}
-body::-webkit-scrollbar-thumb {
-  background-color: var(--thumbBG) ;
-  border-radius: 6px;
-  border: 3px solid var(--scrollbarBG);
-}
 
 body {
   background-color: white;
@@ -55,12 +35,31 @@ a {
   border: 1px solid black;
 }
 
-.radical-menu {
+.radical-menu, .word-menu {
   order:1;
   padding: 1em;
   height: 400px;
-  overflow-y: auto;
+  overflow: scroll;
   text-align: left;
+}
+
+
+.radical-menu::-webkit-scrollbar {
+  width: 11px;
+}
+
+.radical-menu {
+  scrollbar-width: thin;
+  scrollbar-color: var(#90A4AE) var(#CFD8DC);
+}
+
+.radical-menu::-webkit-scrollbar-track {
+  background: var(#CFD8DC);
+}
+.radical-menu::-webkit-scrollbar-thumb {
+  background-color: var(#90A4AE) ;
+  border-radius: 6px;
+  border: 3px solid var(#CFD8DC);
 }
 
 
@@ -93,7 +92,7 @@ a {
   z-index: 100;
 }
 
-.radical-svg {
+.radical-svg, .word-svg {
   width: 30px;
 }
 
