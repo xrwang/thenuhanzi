@@ -66,8 +66,9 @@ independence.
             <div id="radical-group-heading">
               <%=category%>
             </div>
-            <%radicals.each do |f|%>
             <div class="radical-group-category">
+            <%radicals.each do |f|%>
+
                 <div class="radical-button">
                   <div class="radical-svg">
                       <%= image_tag "radicals/radical-#{f.id}.svg", :data=>"assets/images/radicals/radical-#{f.id}.svg", :class => 'radical-svg-link', :draggable => 'true'%>
@@ -76,9 +77,10 @@ independence.
                     <%=link_to "#{f.id}, #{f.definition}","#", :relative => true, :data =>"assets/images/radicals/radical-#{f.id}.svg", :class => "radical-svg-link"%>
                   </div>
                 </div>
+                <%end%>
             </div>
-            <% end %>
-          <% end %>
+            <%end%>
+
         </div>
       </div>
 
@@ -89,7 +91,7 @@ independence.
                   <div class="word-svg">
                     <%= image_tag "words/#{word.id}.svg", :data=>"assets/images/words/#{word.id}.svg", :class => 'word-svg', :draggable => 'true'%>
                   </div>
-                  <div class="svg-definition">
+                  <div class="svg-definition-word">
                     <%=link_to "#{word.en}","#", :relative => true, :data =>"assets/images/words/#{word.id}.svg", :class => "radical-svg-link"%>
                   </div>
               </div>

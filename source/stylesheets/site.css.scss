@@ -39,10 +39,16 @@ a {
   order:1;
   padding: 1em;
   height: 400px;
-  overflow: scroll;
   text-align: left;
 }
 
+.radical-menu {
+  overflow: scroll;
+
+}
+
+.word-menu {
+}
 
 .radical-menu::-webkit-scrollbar {
   width: 11px;
@@ -64,36 +70,49 @@ a {
 
 
 .radical-group-category {
-  display: inline-block;
+    display: inline;
+    width: 200px;
 }
 
-.radical-button {
-  display: flex;
+.radical-button, .word-button {
+  display: inline-flex;
   border: 1px solid black;
-  width: 100%;
   border-radius: 20px;
   padding: 0.1em 0.1em;
   text-align: center;
   margin: 2px;
 }
-.radical-svg {
-  display: inline-block;
+.radical-svg, .word-svg {
   border-right: 0.5px solid black;
+  margin-left: 10px;
+
 }
 
 .svg-definition {
   // display: none;
   width: 100px;
-}
-
-.svg-definition {
-  // position:absolute;
-  // background:white;
   z-index: 100;
+
 }
 
-.radical-svg, .word-svg {
+svg-definition-word {
+  width: 150px;
+  margin-left: 5px;
+}
+
+.radical-svg {
   width: 30px;
+}
+
+.word-button {
+  width: 45%;
+  padding: 0.5em;
+  display: inline-flex;
+  border-radius: 40px;
+}
+
+.word-svg {
+  height: 20px;
 }
 
 // .radical-svg:hover+.svg-definition {
