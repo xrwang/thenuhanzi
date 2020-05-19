@@ -7,7 +7,7 @@ body {
     "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
     "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
     "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
-  padding: 10vh 1rem;
+  padding: 3vh 1rem;
   text-align: center;
 }
 
@@ -48,6 +48,7 @@ a {
 }
 
 .word-menu {
+  height: fit-content;
 }
 
 .radical-menu::-webkit-scrollbar {
@@ -105,14 +106,14 @@ svg-definition-word {
 }
 
 .word-button {
-  width: 45%;
   padding: 0.5em;
   display: inline-flex;
   border-radius: 40px;
 }
 
 .word-svg {
-  height: 20px;
+  height: 15px;
+  margin-left: 2px !important;
 }
 
 // .radical-svg:hover+.svg-definition {
