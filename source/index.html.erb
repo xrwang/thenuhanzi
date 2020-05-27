@@ -74,7 +74,7 @@ title: hanzimaker
       </div>
       <div class="configuration-options">
           <div class="arrange">
-            <button class="config-2-horizontal" onclick="alert('config2horizontal')">
+            <button class="config-2-horizontal" onclick="horizontalTwo()">
                <img src="assets/images/icons/1.svg" class="arrange-svg">
             </button>
             <button class="config-2-horizontal" onclick="alert('config2horizontal')">
@@ -311,6 +311,37 @@ var link = document.getElementById('download-link-href');
 }, false);
 
 document.body.getElementById('download-link').appendChild(link);
+
+
+
+//Autoconfig buttons
+var specialRadicals = {
+  'radical-1': 'left',
+  'radical-2': 'whole'
+}
+
+function horizontalTwo () {
+  var allObjects = canvas.getObjects();
+  var objectsOnly = allObjects.slice(8, allObjects.length);
+  if (objectsOnly.length < 3) {
+    var radicalLeft = objectsOnly[0];
+    var radicalRight = objectsOnly[1];
+
+    //Scale to
+    radicalLeft.scale((canvas.height/2.5)/radicalLeft.height);
+    radicalRight.scale((canvas.height/2.5)/radicalRight.height);
+    radicalLeft.left=(canvas.height/3)-(radicalLeft.width*4);
+    radicalLeft.top=(canvas.height/3)-radicalLeft.height;
+    radicalRight.left=(canvas.height/3)+(radicalRight.width*3);
+    radicalRight.top=(canvas.height/3)-radicalRight.height;
+    radicalLeft.setCoords();
+    radicalRight.setCoords();
+
+    canvas.renderAll();
+  } else {
+    alert('this configuration is for two radicals');
+  }
+}
 
 
 
