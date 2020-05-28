@@ -83,19 +83,19 @@ title: hanzimaker
             <button class="config-2-horizontal" onclick="subDivideRight()">
               <img src="assets/images/icons/3.svg" class="arrange-svg">
             </button>
-            <button class="config-2-horizontal" onclick="alert('config2horizontal')">
+            <button class="config-2-horizontal" onclick="subDivideLeft()">
               <img src="assets/images/icons/4.svg" class="arrange-svg">
             </button>
-            <button class="config-2-horizontal" onclick="alert('config2horizontal')">
+            <button class="config-2-horizontal" onclick="verticalTwo()">
               <img src="assets/images/icons/5.svg" class="arrange-svg">
             </button>
-            <button class="config-2-horizontal" onclick="alert('config2horizontal')">
+            <button class="config-2-horizontal" onclick="verticalThree()">
               <img src="assets/images/icons/6.svg" class="arrange-svg">
             </button>
-            <button class="config-2-horizontal" onclick="alert('config2horizontal')">
+            <button class="config-2-horizontal" onclick="subDivideTop()">
               <img src="assets/images/icons/7.svg" class="arrange-svg">
             </button>
-            <button class="config-2-horizontal" onclick="alert('config2horizontal')">
+            <button class="config-2-horizontal" onclick="subDivideBottom()">
               <img src="assets/images/icons/8.svg" class="arrange-svg">
             </button>
           </div>
@@ -394,7 +394,7 @@ function subDivideRight(){
     radicalRightBottom.scale((canvas.height/4)/radicalRightTop.height);
 
 
-    radicalLeft.left=(canvas.height/3)-(radicalLeft.width*4);
+    radicalLeft.left=(canvas.width/4)-(radicalLeft.width*3);
     radicalLeft.top=(canvas.height/3)-radicalLeft.height;
     radicalLeft.setCoords();
 
@@ -408,6 +408,162 @@ function subDivideRight(){
 
     canvas.renderAll();
 
+  } else {
+    alert('this configuration is for two radicals');
+  }
+}
+
+function subDivideLeft () {
+  var allObjects = canvas.getObjects();
+  var objectsOnly = allObjects.slice(8, allObjects.length);
+  if (objectsOnly.length < 4) {
+    var radicalRight = objectsOnly[0];
+    var radicalLeftTop = objectsOnly[1];
+    var radicalLeftBottom = objectsOnly[2];
+
+    var radicalRightScaleFactor = (canvas.height/2)/radicalRight.height;
+    //Scale to
+    radicalRight.scale(radicalRightScaleFactor);
+
+    radicalLeftTop.scale((canvas.height/4)/radicalLeftTop.height);
+    radicalLeftBottom.scale((canvas.height/4)/radicalLeftTop.height);
+
+    var radicalLeftTopWidth = radicalLeftTop.width;
+
+    radicalRight.left=(canvas.width/2)-(radicalRight.width*3);
+    radicalRight.top=(canvas.height/3)-radicalRight.height;
+    radicalRight.setCoords();
+
+    radicalLeftTop.left=radicalRight.oCoords.tl.x-(radicalLeftTopWidth*4);
+    radicalLeftTop.top=radicalRight.oCoords.tl.y;
+    radicalLeftTop.setCoords();
+
+    radicalLeftBottom.left=radicalLeftTop.oCoords.bl.x;
+    radicalLeftBottom.top=radicalLeftTop.oCoords.bl.y;
+    radicalLeftBottom.setCoords();
+
+    canvas.renderAll();
+
+  } else {
+    alert('this configuration is for two radicals');
+  }
+
+}
+
+
+function verticalTwo() {
+  var allObjects = canvas.getObjects();
+  var objectsOnly = allObjects.slice(8, allObjects.length);
+  if (objectsOnly.length < 3) {
+    var radicalTop = objectsOnly[0];
+    var radicalBottom = objectsOnly[1];
+
+    //Scale to
+    radicalTop.scale((canvas.height/2.5)/radicalTop.height);
+    radicalBottom.scale((canvas.height/2.5)/radicalBottom.height);
+
+    radicalTop.left=(canvas.width/2)-(radicalTop.width*4);
+    radicalTop.top=canvas.height-(canvas.height-(radicalTop.height+radicalBottom.height));
+    radicalTop.setCoords();
+
+    radicalBottom.left=radicalTop.oCoords.bl.x + 3;
+    radicalBottom.top=radicalTop.oCoords.bl.y;
+    radicalBottom.setCoords();
+
+    canvas.renderAll();
+  } else {
+    alert('this configuration is for two radicals');
+  }
+}
+
+function verticalThree() {
+  var allObjects = canvas.getObjects();
+  var objectsOnly = allObjects.slice(8, allObjects.length);
+  if (objectsOnly.length < 4) {
+    var radicalTop = objectsOnly[0];
+    var radicalMiddle = objectsOnly[1];
+    var radicalBottom = objectsOnly[2];
+
+    //Scale to
+    radicalTop.scale((canvas.height/5)/radicalTop.height);
+    radicalMiddle.scale((canvas.height/5)/radicalTop.height);
+    radicalBottom.scale((canvas.height/5)/radicalBottom.height);
+
+    radicalTop.left=(canvas.width/2)-(radicalTop.width*4);
+    radicalTop.top=canvas.height-(canvas.height-(radicalTop.height+radicalBottom.height));
+    radicalTop.setCoords();
+
+    radicalMiddle.left=radicalTop.oCoords.bl.x + 3;
+    radicalMiddle.top=radicalTop.oCoords.bl.y;
+    radicalMiddle.setCoords();
+
+    radicalBottom.left=radicalMiddle.oCoords.bl.x + 3;
+    radicalBottom.top=radicalMiddle.oCoords.bl.y;
+    radicalBottom.setCoords();
+
+    canvas.renderAll();
+  } else {
+    alert('this configuration is for two radicals');
+  }
+}
+
+function subDivideTop() {
+  var allObjects = canvas.getObjects();
+  var objectsOnly = allObjects.slice(8, allObjects.length);
+  if (objectsOnly.length < 4) {
+    var radicalTopLeft = objectsOnly[0];
+    var radicalTopRight = objectsOnly[1];
+    var radicalBottom = objectsOnly[2];
+
+    //Scale to
+    radicalTopLeft.scale((canvas.height/5)/radicalTopLeft.height);
+    radicalTopRight.scale((canvas.height/5)/radicalTopRight.height);
+    radicalBottom.scale((canvas.height/2)/radicalBottom.height);
+
+    radicalTopLeft.left=(canvas.width/2)-(radicalTopLeft.width*4);
+    radicalTopLeft.top=canvas.height-(canvas.height-(radicalTopLeft.height+radicalBottom.height));
+    radicalTopLeft.setCoords();
+
+    radicalTopRight.left=radicalTopLeft.oCoords.tr.x + 3;
+    radicalTopRight.top=radicalTopLeft.oCoords.tr.y;
+    radicalTopRight.setCoords();
+
+    radicalBottom.left=radicalTopLeft.oCoords.bl.x + 3;
+    radicalBottom.top=radicalTopLeft.oCoords.bl.y;
+    radicalBottom.setCoords();
+
+    canvas.renderAll();
+  } else {
+    alert('this configuration is for two radicals');
+  }
+}
+
+function subDivideBottom() {
+  var allObjects = canvas.getObjects();
+  var objectsOnly = allObjects.slice(8, allObjects.length);
+  if (objectsOnly.length < 4) {
+    var radicalTopLeft = objectsOnly[0];
+    var radicalBottomRight = objectsOnly[1];
+    var radicalBottomLeft = objectsOnly[2];
+
+    //Scale to
+    radicalTopLeft.scale((canvas.height/2)/radicalTopLeft.height);
+    radicalBottomLeft.scale((canvas.height/5)/radicalBottomLeft.height);
+    radicalBottomRight.scale((canvas.height/5)/radicalBottomRight.height);
+
+    radicalTopLeft.left=(canvas.width/2)-(radicalTopLeft.width*4);
+    radicalTopLeft.top=canvas.height-(canvas.height-(radicalTopLeft.height+radicalBottom.height));
+    radicalTopLeft.setCoords();
+
+    radicalBottomLeft.left=radicalTopLeft.oCoords.bl.x + 3;
+    radicalBottomLeft.top=radicalTopLeft.oCoords.bl.y;
+    radicalBottomLeft.setCoords();
+
+    radicalBottomRight.left=radicalBottomLeft.oCoords.tr.x + 3;
+    radicalBottomRight.top=radicalBottomLeft.oCoords.tr.y;
+    radicalBottomRight.setCoords();
+
+    canvas.renderAll();
   } else {
     alert('this configuration is for two radicals');
   }
