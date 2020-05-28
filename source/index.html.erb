@@ -77,7 +77,7 @@ title: hanzimaker
             <button class="config-2-horizontal" onclick="horizontalTwo()">
                <img src="assets/images/icons/1.svg" class="arrange-svg">
             </button>
-            <button class="config-2-horizontal" onclick="alert('config2horizontal')">
+            <button class="config-2-horizontal" onclick="horizontalThree()">
               <img src="assets/images/icons/2.svg" class="arrange-svg">
             </button>
             <button class="config-2-horizontal" onclick="alert('config2horizontal')">
@@ -238,17 +238,17 @@ function submitTextToCanvas(id) {
   var currentlyDragging;
 
 
-  //snapping
-  var distance = canvas.width/8;
-    canvas.on('object:moving', function(options) {
-      w = options.target.width * options.target.scaleX,
-      h = options.target.height * options.target.scaleY,
-      options.target.set({
-        right: Math.round((options.target.left + w) / distance) * distance,
-        left: Math.round(options.target.left / distance) * distance,
-        top: Math.round(options.target.top / distance) * distance
-      });
-    });
+  //Snap to Grid
+  // var distance = canvas.width/8;
+  //   canvas.on('object:moving', function(options) {
+  //     w = options.target.width * options.target.scaleX,
+  //     h = options.target.height * options.target.scaleY,
+  //     options.target.set({
+  //       right: Math.round((options.target.left + w) / distance) * distance,
+  //       left: Math.round(options.target.left / distance) * distance,
+  //       top: Math.round(options.target.top / distance) * distance
+  //     });
+  //   });
 
 //Add to canvas
 
@@ -330,19 +330,53 @@ function horizontalTwo () {
     //Scale to
     radicalLeft.scale((canvas.height/2.5)/radicalLeft.height);
     radicalRight.scale((canvas.height/2.5)/radicalRight.height);
+
     radicalLeft.left=(canvas.height/3)-(radicalLeft.width*4);
     radicalLeft.top=(canvas.height/3)-radicalLeft.height;
-    radicalRight.left=(canvas.height/3)+(radicalRight.width*3);
-    radicalRight.top=(canvas.height/3)-radicalRight.height;
     radicalLeft.setCoords();
-    radicalRight.setCoords();
 
+    radicalRight.left=radicalLeft.oCoords.tr.x + 3;
+    radicalRight.top=radicalLeft.oCoords.tr.y;
+    radicalRight.setCoords();
+    
     canvas.renderAll();
   } else {
     alert('this configuration is for two radicals');
   }
 }
 
+function horizontalThree () {
+  var allObjects = canvas.getObjects();
+  var objectsOnly = allObjects.slice(8, allObjects.length);
+  if (objectsOnly.length < 4) {
+    var radicalLeft = objectsOnly[0];
+    var radicalMiddle = objectsOnly[1];
+    var radicalRight = objectsOnly[2];
+
+    //Scale to smaller sizes
+    radicalLeft.scale((canvas.height/4)/radicalLeft.height);
+    radicalMiddle.scale((canvas.height/4)/radicalMiddle.height);
+    radicalRight.scale((canvas.height/4)/radicalRight.height);
+
+    radicalLeft.left=(canvas.height/3)-(radicalLeft.width*4);
+    radicalLeft.top=(canvas.height/2.5)-radicalLeft.height;
+    radicalLeft.setCoords();
+
+
+    radicalMiddle.left = radicalLeft.oCoords.tr.x + 5;
+    radicalMiddle.top=radicalLeft.oCoords.tr.y;
+    radicalMiddle.setCoords();
+
+
+    radicalRight.left=radicalMiddle.oCoords.tr.x + 5;
+    radicalRight.top=radicalMiddle.oCoords.tr.y;
+    radicalRight.setCoords();
+
+    canvas.renderAll();
+  } else {
+    alert('this configuration is for three radicals');
+  }
+}
 
 
 
