@@ -135,10 +135,17 @@ svg-definition-word {
 }
 
 #download-link {
-  border: 1px solid blue;
+  // border: 1px solid blue;
   order:3;
-  width: 10%;
+  // width: 10%;
   height:2em;
+  float:left;
+}
+
+button#clearAll {
+    float: right;
+    display: inline-block;
+    // margin-bottom: 1em;
 }
 
 .background-context {
@@ -169,4 +176,16 @@ img.arrange-svg {
 button.config-2-horizontal {
     border: none;
     padding-top: 1em;
+}
+
+h3 {
+  display:inline-block;
+}
+
+button.info-tooltip {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
 }

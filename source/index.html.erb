@@ -3,7 +3,7 @@ title: hanzimaker
 ---
 
 
-<div class = "tittle">
+<div class = "title">
   <h1>
   hanzimaker
   </h1>
@@ -24,6 +24,11 @@ title: hanzimaker
 
     <div id="examples left">
       <h3>Examples</h3>
+      <button class="info-tooltip" aria-label="Existing Examples,inspired by netizens and activists who were making new characters. Prior art, collected from Li Wei & Zhu Hua (2019) Tranßcripting: playful subversion with
+  Chinese characters, International Journal of Multilingualism, 16:2, 145-161, DOI:
+  10.1080/14790718.2019.1575834"" data-balloon-pos="up"">
+         <img src="assets/images/icons/info.svg" class="config-info">
+      </button>
       <figure>
         <%= image_tag "niubi.jpg", :width => '50px'%>
       </figure>
@@ -54,11 +59,6 @@ title: hanzimaker
     independence.
       </figcaption>
 
-      <figcaption>
-          inspired by netizens and activists who were making new characters. Prior art, collected from "Li Wei & Zhu Hua (2019) Tranßcripting: playful subversion with
-      Chinese characters, International Journal of Multilingualism, 16:2, 145-161, DOI:
-      10.1080/14790718.2019.1575834"
-      </figcaption>
 
     </div>
 
@@ -73,6 +73,10 @@ title: hanzimaker
         <canvas id="canvas"></canvas>
       </div>
       <div class="configuration-options">
+          <h3>Configuration</h3>
+          <button class="info-tooltip" aria-label="Auto-arrange radicals on canvas" data-balloon-pos="up"">
+             <img src="assets/images/icons/info.svg" class="config-info">
+          </button>
           <div class="arrange">
             <button class="config-2-horizontal" onclick="horizontalTwo()">
                <img src="assets/images/icons/1.svg" class="arrange-svg">
@@ -104,6 +108,9 @@ title: hanzimaker
 
     <div class="radicals right">
       <h3>Radicals</h3>
+      <button class="info-tooltip" aria-label="Building blocks of Chinese characters" data-balloon-pos="up"">
+         <img src="assets/images/icons/info.svg" class="config-info">
+      </button>
 
       <div class="radical-menu-container">
         <div class="radicals radical-menu">
@@ -131,6 +138,10 @@ title: hanzimaker
       </div>
 
         <h3>Sensitive Words</h3>
+        <button class="info-tooltip" aria-label="Sourced from China Digital Times" data-balloon-pos="up"">
+           <img src="assets/images/icons/info.svg" class="config-info">
+        </button>
+
           <div class="radicals word-menu">
             <% data.words.each do |word| %>
               <div class="word-button">
@@ -149,6 +160,9 @@ title: hanzimaker
 
         <div class="freeText">
           <label for="addText">Freetype</label>
+          <button class="info-tooltip" aria-label="Add anything to canvas" data-balloon-pos="up"">
+             <img src="assets/images/icons/info.svg" class="config-info">
+          </button>
           <input type="text" id="addText"  value="" />
           <button onclick="submitTextToCanvas()" id="testButton"> Add to Canvas </button>
         </div>
