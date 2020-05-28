@@ -80,7 +80,7 @@ title: hanzimaker
             <button class="config-2-horizontal" onclick="horizontalThree()">
               <img src="assets/images/icons/2.svg" class="arrange-svg">
             </button>
-            <button class="config-2-horizontal" onclick="alert('config2horizontal')">
+            <button class="config-2-horizontal" onclick="subDivideRight()">
               <img src="assets/images/icons/3.svg" class="arrange-svg">
             </button>
             <button class="config-2-horizontal" onclick="alert('config2horizontal')">
@@ -320,7 +320,7 @@ var specialRadicals = {
   'radical-2': 'whole'
 }
 
-function horizontalTwo () {
+function horizontalTwo(){
   var allObjects = canvas.getObjects();
   var objectsOnly = allObjects.slice(8, allObjects.length);
   if (objectsOnly.length < 3) {
@@ -338,14 +338,14 @@ function horizontalTwo () {
     radicalRight.left=radicalLeft.oCoords.tr.x + 3;
     radicalRight.top=radicalLeft.oCoords.tr.y;
     radicalRight.setCoords();
-    
+
     canvas.renderAll();
   } else {
     alert('this configuration is for two radicals');
   }
 }
 
-function horizontalThree () {
+function horizontalThree(){
   var allObjects = canvas.getObjects();
   var objectsOnly = allObjects.slice(8, allObjects.length);
   if (objectsOnly.length < 4) {
@@ -378,6 +378,40 @@ function horizontalThree () {
   }
 }
 
+function subDivideRight(){
+  var allObjects = canvas.getObjects();
+  var objectsOnly = allObjects.slice(8, allObjects.length);
+  if (objectsOnly.length < 4) {
+    var radicalLeft = objectsOnly[0];
+    var radicalRightTop = objectsOnly[1];
+    var radicalRightBottom = objectsOnly[2];
+
+    var radicalLeftScaleFactor = (canvas.height/2)/radicalLeft.height;
+    //Scale to
+    radicalLeft.scale(radicalLeftScaleFactor);
+
+    radicalRightTop.scale((canvas.height/4)/radicalRightTop.height);
+    radicalRightBottom.scale((canvas.height/4)/radicalRightTop.height);
+
+
+    radicalLeft.left=(canvas.height/3)-(radicalLeft.width*4);
+    radicalLeft.top=(canvas.height/3)-radicalLeft.height;
+    radicalLeft.setCoords();
+
+    radicalRightTop.left=radicalLeft.oCoords.tr.x + 3;
+    radicalRightTop.top=radicalLeft.oCoords.tr.y;
+    radicalRightTop.setCoords();
+
+    radicalRightBottom.left=radicalRightTop.oCoords.bl.x + 3;
+    radicalRightBottom.top=radicalRightTop.oCoords.bl.y;
+    radicalRightBottom.setCoords();
+
+    canvas.renderAll();
+
+  } else {
+    alert('this configuration is for two radicals');
+  }
+}
 
 
 
