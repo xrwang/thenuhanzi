@@ -24,9 +24,7 @@ title: hanzimaker
 
     <div id="examples left">
       <h3>Examples</h3>
-      <button class="info-tooltip" aria-label="Existing Examples,inspired by netizens and activists who were making new characters. Prior art, collected from Li Wei & Zhu Hua (2019) Tranßcripting: playful subversion with
-  Chinese characters, International Journal of Multilingualism, 16:2, 145-161, DOI:
-  10.1080/14790718.2019.1575834"" data-balloon-pos="up"">
+      <button class="info-tooltip" aria-label="Existing examples of made up Chinese words" data-balloon-pos="up"">
          <img src="assets/images/icons/info.svg" class="config-info">
       </button>
       <figure>
@@ -58,20 +56,24 @@ title: hanzimaker
         (a) Oppose China, Destabilize Hong Kong, (b) Thief/Seller of Hong Kong, and (c) Hong Kong
     independence.
       </figcaption>
-
-
     </div>
 
-    <div id="center canvas">
+
+    <div id="center-div-canvas">
       <div id="download-link">
         <a href="" id="download-link-href"></a>
       </div>
-      <div id="clear canvas">
+
+      <div id="clear-the-canvas">
         <button onclick="clearAll()" id="clearAll"> Clear Canvas </button>
       </div>
+
+
       <div id="canvas-container">
         <canvas id="canvas"></canvas>
       </div>
+
+
       <div class="configuration-options">
           <h3>Configuration</h3>
           <button class="info-tooltip" aria-label="Auto-arrange radicals on canvas" data-balloon-pos="up"">
@@ -126,7 +128,7 @@ title: hanzimaker
                       <%= image_tag "radicals/radical-#{f.id}.svg", :data=>"assets/images/radicals/radical-#{f.id}.svg", :class => 'radical-svg-link', :draggable => 'true'%>
                   </div>
                   <div class="svg-definition">
-                    <%=link_to "#{f.id}, #{f.definition}","#", :relative => true, :data =>"assets/images/radicals/radical-#{f.id}.svg", :class => "radical-svg-link"%>
+                    <%=link_to "#{f.definition}","#", :relative => true, :data =>"assets/images/radicals/radical-#{f.id}.svg", :class => "radical-svg-link"%>
                   </div>
                 </div>
 
@@ -297,7 +299,7 @@ for (var i = 0; i < elements.length; i++) {
 
 
 //Deleting all objects on canvas
-function clearAll () {
+function clearAll() {
   canvas.clear();
   drawGrid(canvas);
 }
