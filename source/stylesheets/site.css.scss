@@ -125,6 +125,7 @@ svg-definition-word {
 // }
 
 
+
 .canvas-container {
   order:1;
   margin: 2em;
@@ -190,4 +191,13 @@ button.info-tooltip {
     margin: 0;
     background: none;
     border: none;
+}
+
+div#radical-group-heading {
+  padding: 1em 0em;
+}
+
+.title {
+  padding-bottom: 2em;
+  text-align: left;
 }
