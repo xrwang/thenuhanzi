@@ -61,6 +61,11 @@ title: hanzimaker
 
 
     <div id="center-div-canvas">
+
+      <div class="alert alert-warn-two" style="display:none">This auto-config requires two radicals</div>
+      <div class="alert alert-warn-three" style="display:none">This auto-config requires three radicals</div>
+
+
       <div id="download-link">
         <a href="" id="download-link-href"></a>
       </div>
@@ -174,9 +179,13 @@ title: hanzimaker
 
   </div>
 
-
-
 <script type="text/javascript">
+
+
+$('.alert').click(function() {
+  $(this).fadeOut();
+});
+
 
 function submitTextToCanvas(id) {
   var value = document.getElementById('addText').value;
@@ -332,6 +341,10 @@ document.body.getElementById('download-link').appendChild(link);
 
 
 //Autoconfig buttons
+
+// The main class
+
+
 var specialRadicals = {
   'radical-1': 'left',
   'radical-2': 'whole'
@@ -358,7 +371,12 @@ function horizontalTwo(){
 
     canvas.renderAll();
   } else {
-    alert('this configuration is for two radicals');
+    var x = document.getElementsByClassName("alert-warn-two")[0];
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
   }
 }
 
@@ -391,7 +409,12 @@ function horizontalThree(){
 
     canvas.renderAll();
   } else {
-    alert('this configuration is for three radicals');
+    var x = document.getElementsByClassName("alert-warn-three")[0];
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
   }
 }
 
@@ -426,7 +449,12 @@ function subDivideRight(){
     canvas.renderAll();
 
   } else {
-    alert('this configuration is for two radicals');
+    var x = document.getElementsByClassName("alert-warn-three")[0];
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
   }
 }
 
@@ -462,7 +490,12 @@ function subDivideLeft () {
     canvas.renderAll();
 
   } else {
-    alert('this configuration is for two radicals');
+    var x = document.getElementsByClassName("alert-warn-three")[0];
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
   }
 
 }
@@ -489,7 +522,13 @@ function verticalTwo() {
 
     canvas.renderAll();
   } else {
-    alert('this configuration is for two radicals');
+    var x = document.getElementsByClassName("alert-warn-two")[0];
+    console.log(x)
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
   }
 }
 
@@ -520,7 +559,13 @@ function verticalThree() {
 
     canvas.renderAll();
   } else {
-    alert('this configuration is for two radicals');
+    var x = document.getElementsByClassName("alert-warn-three")[0];
+    console.log(x)
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
   }
 }
 
@@ -551,7 +596,13 @@ function subDivideTop() {
 
     canvas.renderAll();
   } else {
-    alert('this configuration is for two radicals');
+    var x = document.getElementsByClassName("alert-warn-three")[0];
+    console.log(x)
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
   }
 }
 
@@ -582,7 +633,13 @@ function subDivideBottom() {
 
     canvas.renderAll();
   } else {
-    alert('this configuration is for two radicals');
+    var x = document.getElementsByClassName("alert-warn-three")[0];
+    console.log(x)
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
   }
 }
 
