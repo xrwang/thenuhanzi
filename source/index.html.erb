@@ -2,54 +2,212 @@
 title: hanzimaker
 ---
 
-<h1>
-  hanzimaker
-</h1>
+
+<div class = "title">
+  <h1>
+  hanzimaker ｜ 汉子 maker
+  </h1>
+  <h4>Make new Chinese characters to bypass automated censorship</h4>
+</div>
+
+<%= partial "onboarding" %>
+
+  <div class="background-context">
+
+  </div>
+  <div class="background-context-images">
 
 
-  <h1>Radicals</h1>
+  </div>
+
+
 
 <div class="parent-container">
-<div id="canvas-container">
-  <canvas id="canvas" style="border:3px solid red"></canvas>
 
-</div>
+    <div id="examples left">
+      <h3>Examples</h3>
+      <button class="info-tooltip" aria-label="Existing examples of made up Chinese words" data-balloon-pos="up"">
+         <img src="assets/images/icons/info.svg" class="config-info">
+      </button>
+      <figure>
+        <%= image_tag "niubi.jpg", :width => '50px'%>
+      </figure>
+      <figcaption>
+        niubi, meaning awesome. uses "niu" 牛 character for cow, and B, english letter.
+      </figcaption>
+      <figure>
+      <%= image_tag "shiwai.jpg", :width => '50px'%>
+      </figure>
+      <figcaption>
+        shi wai, or "deadly person", referring to CY Leung during umbrella revolution.
+        尸shi and Y letter.
+      </figcaption>
 
 
-<div class="radicals radical-menu">
-  <% data.radicals.each do |f| %>
-  <div class="radical-svg">
-    <pre><%= image_tag "svg/radical-#{f.id}.svg", :draggable => 'true'%></pre>
-  </div>
-    <div class="svg-definition">
-      <pre><%=h f.id %>, <%=h f.definition %></pre>
+      <figure>
+        <%= image_tag "ta.jpg", :width => '50px'%>
+      </figure>
+      <figcaption>
+        Ta, 他 and 她 alternative, third person non-binary.
+      </figcaption>
+
+      <figure>
+        <%= image_tag "hk.jpg", :width => '50px'%>
+      </figure>
+      <figcaption>
+        (a) Oppose China, Destabilize Hong Kong, (b) Thief/Seller of Hong Kong, and (c) Hong Kong
+    independence.
+      </figcaption>
     </div>
-  <% end %>
-</div>
-<div id="images">
-</div>
-<div id="download-link">
-  <a href="" id="download-link-href"></a>
-</div>
 
-</div>
+
+    <div id="center-div-canvas">
+
+      <div class="alert alert-warn-two" style="display:none">This auto-config requires two radicals</div>
+      <div class="alert alert-warn-three" style="display:none">This auto-config requires three radicals</div>
+
+
+      <div id="download-link">
+        <a href="" id="download-link-href"></a>
+      </div>
+
+      <div id="clear-the-canvas">
+        <button onclick="clearAll()" id="clearAll"> Clear Canvas </button>
+      </div>
+
+
+      <div id="canvas-container">
+        <canvas id="canvas"></canvas>
+      </div>
+
+
+      <div class="configuration-options">
+          <h3>Configuration</h3>
+          <button class="info-tooltip" aria-label="Auto-arrange radicals on canvas" data-balloon-pos="up"">
+             <img src="assets/images/icons/info.svg" class="config-info">
+          </button>
+          <div class="arrange">
+            <button class="config-2-horizontal" onclick="horizontalTwo()">
+               <img src="assets/images/icons/1.svg" class="arrange-svg">
+            </button>
+            <button class="config-2-horizontal" onclick="horizontalThree()">
+              <img src="assets/images/icons/2.svg" class="arrange-svg">
+            </button>
+            <button class="config-2-horizontal" onclick="subDivideRight()">
+              <img src="assets/images/icons/3.svg" class="arrange-svg">
+            </button>
+            <button class="config-2-horizontal" onclick="subDivideLeft()">
+              <img src="assets/images/icons/4.svg" class="arrange-svg">
+            </button>
+            <button class="config-2-horizontal" onclick="verticalTwo()">
+              <img src="assets/images/icons/5.svg" class="arrange-svg">
+            </button>
+            <button class="config-2-horizontal" onclick="verticalThree()">
+              <img src="assets/images/icons/6.svg" class="arrange-svg">
+            </button>
+            <button class="config-2-horizontal" onclick="subDivideTop()">
+              <img src="assets/images/icons/7.svg" class="arrange-svg">
+            </button>
+            <button class="config-2-horizontal" onclick="subDivideBottom()">
+              <img src="assets/images/icons/8.svg" class="arrange-svg">
+            </button>
+          </div>
+      </div>
+    </div>
+
+    <div class="radicals right">
+      <h3>Radicals</h3>
+      <button class="info-tooltip" aria-label="Building blocks of Chinese characters" data-balloon-pos="up"">
+         <img src="assets/images/icons/info.svg" class="config-info">
+      </button>
+
+      <div class="radical-menu-container">
+        <div class="radicals radical-menu">
+          <% data.radicals.group_by(&:category).each do |category, radicals| %>
+            <div id="radical-group-heading">
+              <%=category%>
+            </div>
+            <div class="radical-group-category">
+            <%radicals.each do |f|%>
+
+                <div class="radical-button">
+                  <div class="radical-svg">
+                      <%= image_tag "radicals/radical-#{f.id}.svg", :data=>"assets/images/radicals/radical-#{f.id}.svg", :class => 'radical-svg-link', :draggable => 'true'%>
+                  </div>
+                  <div class="svg-definition">
+                    <%=link_to "#{f.definition}","#", :relative => true, :data =>"assets/images/radicals/radical-#{f.id}.svg", :class => "radical-svg-link"%>
+                  </div>
+                </div>
+
+                <%end%>
+            </div>
+            <%end%>
+
+        </div>
+      </div>
+
+        <h3>Sensitive Words</h3>
+        <button class="info-tooltip" aria-label="Sourced from China Digital Times" data-balloon-pos="up"">
+           <img src="assets/images/icons/info.svg" class="config-info">
+        </button>
+
+          <div class="radicals word-menu">
+            <% data.words.each do |word| %>
+              <div class="word-button">
+                  <div class="word-svg">
+                    <%= image_tag "words/#{word.id}.svg", :data=>"assets/images/words/#{word.id}.svg", :class => 'word-svg', :draggable => 'true'%>
+                  </div>
+                  <div class="svg-definition-word">
+                    <%=link_to "#{word.en}","#", :relative => true, :data =>"assets/images/words/#{word.id}.svg", :class => "radical-svg-link"%>
+                  </div>
+              </div>
+              <% end %>
+
+            </div>
+
+
+
+        <div class="freeText">
+          <label for="addText">Freetype</label>
+          <button class="info-tooltip" aria-label="Add anything to canvas" data-balloon-pos="up"">
+             <img src="assets/images/icons/info.svg" class="config-info">
+          </button>
+          <input type="text" id="addText"  value="" />
+          <button onclick="submitTextToCanvas()" id="testButton"> Add to Canvas </button>
+        </div>
+
+      </div>
+
+  </div>
 
 <script type="text/javascript">
 
 
-
-/*
-==============
-section below deals with draggin onto the canvas
-==============
-*/
+$('.alert').click(function() {
+  $(this).fadeOut();
+});
 
 
-$(window).bind("load",function() {
+function submitTextToCanvas(id) {
+  var value = document.getElementById('addText').value;
+  var textbox = new fabric.Textbox(value, {
+    left:100,
+    top: 100,
+    width: 200,
+    fontSize: 40
+  });
+  canvas.add(textbox).setActiveObject(textbox);
+}
 
+// $(window).bind("load",function() {
 
+//prevent the page from scrolling up when clicking one of the buttons to add to canvas
+  $('.radical-svg-link').click(function (event) {
+       event.preventDefault();
+  });
 
-
+  var canvasHeight=600;
+  var canvasWidth=600;
 
   var canvas = new fabric.Canvas('canvas', {
     selection: false,
@@ -58,207 +216,433 @@ $(window).bind("load",function() {
     });
 
 
-drawGrid(canvas);
+//Adding the tianzige
+    function drawGrid(c) {
+      const options = {
+          distance: c.width/4,
+          width: c.width,
+          height: c.height,
+          param: {
+            stroke: "#ebebeb",
+            strokeWidth: 2.5,
+            selectable: false
+          }
+        },
+        gridLen = options.width / options.distance;
 
-
-  function drawGrid(c) {
-  const options = {
-      distance: c.width/2,
-      width: c.width,
-      height: c.height,
-      param: {
-        stroke: "#ebebeb",
-        strokeWidth: 2.5,
-        selectable: false
+      for (var i = 0; i < gridLen; i++) {
+        var distance = i * options.distance,
+          horizontal = new fabric.Line(
+            [distance, 0, distance, options.width],
+            options.param
+          ),
+          vertical = new fabric.Line(
+            [0, distance, options.width, distance],
+            options.param
+          );
+        c.add(horizontal);
+        c.add(vertical);
+        if (i % 4 === 0) {
+          horizontal.set({ stroke: "#cccccc" });
+          vertical.set({ stroke: "#cccccc" });
+        }
       }
-    },
-    gridLen = options.width / options.distance;
-
-console.log(gridLen)
-  for (var i = 0; i < gridLen; i++) {
-    var distance = i * options.distance,
-      horizontal = new fabric.Line(
-        [distance, 0, distance, options.width],
-        options.param
-      ),
-      vertical = new fabric.Line(
-        [0, distance, options.width, distance],
-        options.param
-      );
-    c.add(horizontal);
-    c.add(vertical);
-    if (i % 4 === 0) {
-      horizontal.set({ stroke: "#cccccc" });
-      vertical.set({ stroke: "#cccccc" });
-    }
   }
-}
 
 
-  var textbox = new fabric.Textbox('Drag above characters onto this canvas, double click me to type', {
+  drawGrid(canvas);
+
+
+  var textbox = new fabric.Textbox('Click radicals on the right onto this canvas, double click me to type', {
     left:100,
     top: 100,
-    width: 100,
-    fontSize: 20
+    width: 200,
+    fontSize: 40
   });
 
   canvas.add(textbox).setActiveObject(textbox);
 
-
-
-
   var currentlyDragging;
-  console.log('!!!!!!!!!!!!!')
-  console.log(currentlyDragging)
-  function handleDragStart(e) {
-      [].forEach.call(images, function (img) {
-          img.classList.remove('img_dragging');
-      });
-      console.log(e)
-
-      this.classList.add('img_dragging');
-      currentlyDragging = e.target;
-  }
-
-  function handleDragOver(e) {
-      if (e.preventDefault) {
-          e.preventDefault(); // Necessary. Allows us to drop.
-      }
-      e.dataTransfer.dropEffect = 'copy'; // See https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/dropEffect
-      return false;
-  }
-
-  function handleDragEnter(e) {
-    console.log(e)
-      // this / e.target is the current hover target.
-      this.classList.add('over');
-  }
-
-  function handleDragLeave(e) {
-      this.classList.remove('over'); // this / e.target is previous target element.
-  }
-
-  function handleDrop(e) {
-      if (e.preventDefault) {
-        e.preventDefault();
-      }
-
-      if (e.stopPropagation) {
-          e.stopPropagation(); // stops the browser from redirecting.
-      }
-
-      console.log('event: ', e);
-      var ext = currentlyDragging.src.substr(-3);
-      if (ext === 'svg') {
-        fabric.loadSVGFromURL(currentlyDragging.src, function(objects, options) {
-          var svg = fabric.util.groupSVGElements(objects, options);
-          svg.left = e.layerX;
-          svg.top = e.layerY;
-          canvas.add(svg);
-        });
-      } else {
-         var newImage = new fabric.Image(currentlyDragging, {
-            width: currentlyDragging.width,
-            height: currentlyDragging.height,
-            // Set the center of the new object based on the event coordinates relative
-            // to the canvas container.
-            left: e.layerX,
-            top: e.layerY
-        });
-        canvas.add(newImage);
-      }
-      return false;
-  }
-
-  function handleDragEnd(e) {
-      // this/e.target is the source node.
-      [].forEach.call(images, function (img) {
-          img.classList.remove('img_dragging');
-      });
-  }
-
-  if (Modernizr.draganddrop) {
-      // Browser supports HTML5 DnD.
-
-      // Bind the event listeners for the image elements
-      var images = document.querySelectorAll('img');
-      var objects = document.querySelectorAll('#images object');
-      [].forEach.call(images, function (img) {
-          img.addEventListener('dragstart', handleDragStart, false);
-          img.addEventListener('dragend', handleDragEnd, false);
-      });
-      [].forEach.call(objects, function (obj) {
-          obj.addEventListener('dragstart', handleDragStart, false);
-          obj.addEventListener('dragend', handleDragEnd, false);
-      });
-      // Bind the event listeners for the canvas
-      var canvasContainer = document.getElementById('canvas-container');
-      canvasContainer.addEventListener('dragenter', handleDragEnter, false);
-      canvasContainer.addEventListener('dragover', handleDragOver, false);
-      canvasContainer.addEventListener('dragleave', handleDragLeave, false);
-      canvasContainer.addEventListener('drop', handleDrop, false);
-    } else {
-        // Replace with a fallback to a library solution.
-        alert("This browser doesn't support the HTML5 Drag and Drop API.");
-    }
-
-    // $('img').mouseover(function(){
-    //   $(".svg-definition").hide();
-    //   $(".svg-definition").show();
-    //   console.log('hi')
-    // });
 
 
-
-});
-
-
-  /*
-  ==============
-  Below is commented out, it loads *all of the characters* as svg and each of them become draggable
-  ==============
-  */
-  // var canvas = new fabric.Canvas('canvas');
-  //
-  // var rect = new fabric.Rect({
-  //   left: 100,
-  //   top: 50,
-  //   width: 100,
-  //   height: 100,
-  //   fill: 'green',
-  //   angle: 20,
-  //   padding: 10
-  // });
-  // canvas.add(rect);
-  //
-  //
-  // fabric.loadSVGFromURL('../assets/test-2-radicals.svg', function(objects, options) {
-  //   // var loadedObject = fabric.util.groupSVGElements(objects, options);
-  //   console.log(objects)
-  //   objects.forEach((item, i) => {
-  //     canvas.add(item);
+  //Snap to Grid
+  // var distance = canvas.width/8;
+  //   canvas.on('object:moving', function(options) {
+  //     w = options.target.width * options.target.scaleX,
+  //     h = options.target.height * options.target.scaleY,
+  //     options.target.set({
+  //       right: Math.round((options.target.left + w) / distance) * distance,
+  //       left: Math.round(options.target.left / distance) * distance,
+  //       top: Math.round(options.target.top / distance) * distance
+  //     });
   //   });
-  //
-  //   canvas.renderAll();
-  //
+
+//Add to canvas
+
+function add(e) {
+  console.log(e.target.getAttribute('data'))
+  var svgURL = e.target.getAttribute('data');
+  fabric.loadSVGFromURL(svgURL, function(objects, options) {
+    for(var i=0; i < objects.length; i++) {
+        objects[i].scaleToWidth(canvasWidth/2);
+        objects[i].scaleToHeight(canvasHeight/2);
+       canvas.add(objects[i]);
+    }
+  });
+
+  //commented out below is grouping SVG
+  // fabric.loadSVGFromURL(svgURL, function(objects, options) {
+  //     var svg = fabric.util.groupSVGElements(objects, options);
+  //     // svg.left = e.layerX;
+  //     // svg.top = e.layerY;
+  //     svg.scaleToWidth(canvasWidth/2);
+  //     svg.scaleToHeight(canvasHeight/2);
+  //   canvas.add(svg);
   // });
+}
 
 
+var elements = document.getElementsByClassName("radical-svg-link");
+
+for (var i = 0; i < elements.length; i++) {
+    elements[i].addEventListener('click', add, false);
+}
 
 
+//Deleting all objects on canvas
+function clearAll() {
+  canvas.clear();
+  drawGrid(canvas);
+}
 
 
+//Deleting active object
 
+function deleteActiveObject() {
+  var activeObject = canvas.getActiveObject();
+  canvas.remove(activeObject);
+}
+
+$("#delete").click(deleteActiveObject);
+$("body").on("keydown", function(e) {
+  if (e.which == 8 || e.which == 46) {
+    deleteActiveObject();
+  }
+});
 
 var link = document.getElementById('download-link-href');
     link.innerHTML = 'download image';
     link.addEventListener('click', function(ev) {
     link.href = canvas.toDataURL();
-    link.download = "mypainting.jpg";
+    link.download = "my-new-hanzi.jpg";
 }, false);
 
 document.body.getElementById('download-link').appendChild(link);
 
+
+
+//Autoconfig buttons
+
+// The main class
+
+
+var specialRadicals = {
+  'radical-1': 'left',
+  'radical-2': 'whole'
+}
+
+function horizontalTwo(){
+  var allObjects = canvas.getObjects();
+  var objectsOnly = allObjects.slice(8, allObjects.length);
+  if (objectsOnly.length < 3) {
+    var radicalLeft = objectsOnly[0];
+    var radicalRight = objectsOnly[1];
+
+    //Scale to
+    radicalLeft.scale((canvas.height/2.5)/radicalLeft.height);
+    radicalRight.scale((canvas.height/2.5)/radicalRight.height);
+
+    radicalLeft.left=(canvas.height/3)-(radicalLeft.width*4);
+    radicalLeft.top=(canvas.height/3)-radicalLeft.height;
+    radicalLeft.setCoords();
+
+    radicalRight.left=radicalLeft.oCoords.tr.x + 3;
+    radicalRight.top=radicalLeft.oCoords.tr.y;
+    radicalRight.setCoords();
+
+    canvas.renderAll();
+  } else {
+    var x = document.getElementsByClassName("alert-warn-two")[0];
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+}
+
+function horizontalThree(){
+  var allObjects = canvas.getObjects();
+  var objectsOnly = allObjects.slice(8, allObjects.length);
+  if (objectsOnly.length < 4) {
+    var radicalLeft = objectsOnly[0];
+    var radicalMiddle = objectsOnly[1];
+    var radicalRight = objectsOnly[2];
+
+    //Scale to smaller sizes
+    radicalLeft.scale((canvas.height/4)/radicalLeft.height);
+    radicalMiddle.scale((canvas.height/4)/radicalMiddle.height);
+    radicalRight.scale((canvas.height/4)/radicalRight.height);
+
+    radicalLeft.left=(canvas.height/3)-(radicalLeft.width*4);
+    radicalLeft.top=(canvas.height/2.5)-radicalLeft.height;
+    radicalLeft.setCoords();
+
+
+    radicalMiddle.left = radicalLeft.oCoords.tr.x + 5;
+    radicalMiddle.top=radicalLeft.oCoords.tr.y;
+    radicalMiddle.setCoords();
+
+
+    radicalRight.left=radicalMiddle.oCoords.tr.x + 5;
+    radicalRight.top=radicalMiddle.oCoords.tr.y;
+    radicalRight.setCoords();
+
+    canvas.renderAll();
+  } else {
+    var x = document.getElementsByClassName("alert-warn-three")[0];
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+}
+
+function subDivideRight(){
+  var allObjects = canvas.getObjects();
+  var objectsOnly = allObjects.slice(8, allObjects.length);
+  if (objectsOnly.length < 4) {
+    var radicalLeft = objectsOnly[0];
+    var radicalRightTop = objectsOnly[1];
+    var radicalRightBottom = objectsOnly[2];
+
+    var radicalLeftScaleFactor = (canvas.height/2)/radicalLeft.height;
+    //Scale to
+    radicalLeft.scale(radicalLeftScaleFactor);
+
+    radicalRightTop.scale((canvas.height/4)/radicalRightTop.height);
+    radicalRightBottom.scale((canvas.height/4)/radicalRightTop.height);
+
+
+    radicalLeft.left=(canvas.width/4)-(radicalLeft.width*3);
+    radicalLeft.top=(canvas.height/3)-radicalLeft.height;
+    radicalLeft.setCoords();
+
+    radicalRightTop.left=radicalLeft.oCoords.tr.x + 3;
+    radicalRightTop.top=radicalLeft.oCoords.tr.y;
+    radicalRightTop.setCoords();
+
+    radicalRightBottom.left=radicalRightTop.oCoords.bl.x + 3;
+    radicalRightBottom.top=radicalRightTop.oCoords.bl.y;
+    radicalRightBottom.setCoords();
+
+    canvas.renderAll();
+
+  } else {
+    var x = document.getElementsByClassName("alert-warn-three")[0];
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+}
+
+function subDivideLeft () {
+  var allObjects = canvas.getObjects();
+  var objectsOnly = allObjects.slice(8, allObjects.length);
+  if (objectsOnly.length < 4) {
+    var radicalRight = objectsOnly[0];
+    var radicalLeftTop = objectsOnly[1];
+    var radicalLeftBottom = objectsOnly[2];
+
+    var radicalRightScaleFactor = (canvas.height/2)/radicalRight.height;
+    //Scale to
+    radicalRight.scale(radicalRightScaleFactor);
+
+    radicalLeftTop.scale((canvas.height/4)/radicalLeftTop.height);
+    radicalLeftBottom.scale((canvas.height/4)/radicalLeftTop.height);
+
+    var radicalLeftTopWidth = radicalLeftTop.width;
+
+    radicalRight.left=(canvas.width/2)-(radicalRight.width*3);
+    radicalRight.top=(canvas.height/3)-radicalRight.height;
+    radicalRight.setCoords();
+
+    radicalLeftTop.left=radicalRight.oCoords.tl.x-(radicalLeftTopWidth*4);
+    radicalLeftTop.top=radicalRight.oCoords.tl.y;
+    radicalLeftTop.setCoords();
+
+    radicalLeftBottom.left=radicalLeftTop.oCoords.bl.x;
+    radicalLeftBottom.top=radicalLeftTop.oCoords.bl.y;
+    radicalLeftBottom.setCoords();
+
+    canvas.renderAll();
+
+  } else {
+    var x = document.getElementsByClassName("alert-warn-three")[0];
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
+}
+
+
+function verticalTwo() {
+  var allObjects = canvas.getObjects();
+  var objectsOnly = allObjects.slice(8, allObjects.length);
+  if (objectsOnly.length < 3) {
+    var radicalTop = objectsOnly[0];
+    var radicalBottom = objectsOnly[1];
+
+    //Scale to
+    radicalTop.scale((canvas.height/2.5)/radicalTop.height);
+    radicalBottom.scale((canvas.height/2.5)/radicalBottom.height);
+
+    radicalTop.left=(canvas.width/2)-(radicalTop.width*4);
+    radicalTop.top=canvas.height-(canvas.height-(radicalTop.height+radicalBottom.height));
+    radicalTop.setCoords();
+
+    radicalBottom.left=radicalTop.oCoords.bl.x + 3;
+    radicalBottom.top=radicalTop.oCoords.bl.y;
+    radicalBottom.setCoords();
+
+    canvas.renderAll();
+  } else {
+    var x = document.getElementsByClassName("alert-warn-two")[0];
+    console.log(x)
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+}
+
+function verticalThree() {
+  var allObjects = canvas.getObjects();
+  var objectsOnly = allObjects.slice(8, allObjects.length);
+  if (objectsOnly.length < 4) {
+    var radicalTop = objectsOnly[0];
+    var radicalMiddle = objectsOnly[1];
+    var radicalBottom = objectsOnly[2];
+
+    //Scale to
+    radicalTop.scale((canvas.height/5)/radicalTop.height);
+    radicalMiddle.scale((canvas.height/5)/radicalTop.height);
+    radicalBottom.scale((canvas.height/5)/radicalBottom.height);
+
+    radicalTop.left=(canvas.width/2)-(radicalTop.width*4);
+    radicalTop.top=canvas.height-(canvas.height-(radicalTop.height+radicalBottom.height));
+    radicalTop.setCoords();
+
+    radicalMiddle.left=radicalTop.oCoords.bl.x + 3;
+    radicalMiddle.top=radicalTop.oCoords.bl.y;
+    radicalMiddle.setCoords();
+
+    radicalBottom.left=radicalMiddle.oCoords.bl.x + 3;
+    radicalBottom.top=radicalMiddle.oCoords.bl.y;
+    radicalBottom.setCoords();
+
+    canvas.renderAll();
+  } else {
+    var x = document.getElementsByClassName("alert-warn-three")[0];
+    console.log(x)
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+}
+
+function subDivideTop() {
+  var allObjects = canvas.getObjects();
+  var objectsOnly = allObjects.slice(8, allObjects.length);
+  if (objectsOnly.length < 4) {
+    var radicalTopLeft = objectsOnly[0];
+    var radicalTopRight = objectsOnly[1];
+    var radicalBottom = objectsOnly[2];
+
+    //Scale to
+    radicalTopLeft.scale((canvas.height/5)/radicalTopLeft.height);
+    radicalTopRight.scale((canvas.height/5)/radicalTopRight.height);
+    radicalBottom.scale((canvas.height/2)/radicalBottom.height);
+
+    radicalTopLeft.left=(canvas.width/2)-(radicalTopLeft.width*4);
+    radicalTopLeft.top=canvas.height-(canvas.height-(radicalTopLeft.height+radicalBottom.height));
+    radicalTopLeft.setCoords();
+
+    radicalTopRight.left=radicalTopLeft.oCoords.tr.x + 3;
+    radicalTopRight.top=radicalTopLeft.oCoords.tr.y;
+    radicalTopRight.setCoords();
+
+    radicalBottom.left=radicalTopLeft.oCoords.bl.x + 3;
+    radicalBottom.top=radicalTopLeft.oCoords.bl.y;
+    radicalBottom.setCoords();
+
+    canvas.renderAll();
+  } else {
+    var x = document.getElementsByClassName("alert-warn-three")[0];
+    console.log(x)
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+}
+
+function subDivideBottom() {
+  var allObjects = canvas.getObjects();
+  var objectsOnly = allObjects.slice(8, allObjects.length);
+  if (objectsOnly.length < 4) {
+    var radicalTopLeft = objectsOnly[0];
+    var radicalBottomRight = objectsOnly[1];
+    var radicalBottomLeft = objectsOnly[2];
+
+    //Scale to
+    radicalTopLeft.scale((canvas.height/2)/radicalTopLeft.height);
+    radicalBottomLeft.scale((canvas.height/5)/radicalBottomLeft.height);
+    radicalBottomRight.scale((canvas.height/5)/radicalBottomRight.height);
+
+    radicalTopLeft.left=(canvas.width/2)-(radicalTopLeft.width*4);
+    radicalTopLeft.top=canvas.height-(canvas.height-(radicalTopLeft.height+radicalBottom.height));
+    radicalTopLeft.setCoords();
+
+    radicalBottomLeft.left=radicalTopLeft.oCoords.bl.x + 3;
+    radicalBottomLeft.top=radicalTopLeft.oCoords.bl.y;
+    radicalBottomLeft.setCoords();
+
+    radicalBottomRight.left=radicalBottomLeft.oCoords.tr.x + 3;
+    radicalBottomRight.top=radicalBottomLeft.oCoords.tr.y;
+    radicalBottomRight.setCoords();
+
+    canvas.renderAll();
+  } else {
+    var x = document.getElementsByClassName("alert-warn-three")[0];
+    console.log(x)
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+}
 
 
 
