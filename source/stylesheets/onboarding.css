@@ -13,7 +13,7 @@
   border: 0;
   background: #1c1c1c;
   font-weight: bold;
-  color: white;
+  color: black;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-size: 12px;
@@ -53,19 +53,19 @@
   transform: translateY(0);
 }
 .walkthrough .walkthrough-body {
-  /*align-items: center;*/
-  justify-content: center;
+  align-items: center;
+  /*justify-content: center;*/
   display: flex;
   flex: 1;
   text-align: center;
 }
 .walkthrough .walkthrough-body .prev-screen,
 .walkthrough .walkthrough-body .next-screen {
-  /*align-self: stretch;*/
+  align-self: stretch;
   background: none;
   border: 0;
   margin-top: 40px;
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
   flex: 0 0 auto;
   font-size: 24px;
@@ -79,7 +79,7 @@
 .walkthrough .walkthrough-body .prev-screen:hover, .walkthrough .walkthrough-body .prev-screen:active,
 .walkthrough .walkthrough-body .next-screen:hover,
 .walkthrough .walkthrough-body .next-screen:active {
-  color: white;
+  color: black;
   transform-origin: center;
   transform: scale(1.25);
 }
@@ -95,7 +95,7 @@
 }
 .walkthrough .walkthrough-body .screens {
   flex: 1;
-  /*align-self: stretch;*/
+  align-self: stretch;
   position: relative;
   margin: 0 -16px;
   padding: 0;
@@ -110,7 +110,6 @@
   border-radius: 132px;
   height: 132px;
   width: 132px;*/
-
   margin: 32px auto;
 
 }
@@ -119,6 +118,7 @@
   display: flex;
   flex: 0 0 auto;
   font-size: 16px;
+  margin-top: 30px;
   line-height: 1.4em;
   letter-spacing: 0.15em;
   /*border: 1px solid red;*/
@@ -126,7 +126,7 @@
 .walkthrough .walkthrough-body p {
   line-height: 1.6em;
   font-size: 13px;
-  margin-top: 220px;
+  margin-top: 230px;
   padding-top: 0;
   /*width: 240px;*/
   /*border: 1px solid red;*/
