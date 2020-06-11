@@ -96,9 +96,9 @@ function submitTextToCanvas(id) {
 //Add to canvas
 
 function add(e) {
-  console.log(e.target.getAttribute('data'))
   var svgURL = e.target.getAttribute('data');
-  console.log(svgURL)
+  var definition = e.target.getAttribute('data-rad-type');
+  console.log(definition)
   fabric.loadSVGFromURL(svgURL, function(objects, options) {
     for(var i=0; i < objects.length; i++) {
         objects[i].scaleToWidth(canvasWidth/2);
@@ -106,6 +106,8 @@ function add(e) {
        canvas.add(objects[i]);
     }
   });
+
+  document.getElementById('definition-tracker').innerHTML += definition + ",";
 
   //commented out below is grouping SVG
   // fabric.loadSVGFromURL(svgURL, function(objects, options) {
@@ -129,6 +131,7 @@ for (var i = 0; i < elements.length; i++) {
 //Deleting all objects on canvas
 function clearAll() {
   canvas.clear();
+  document.getElementById('definition-tracker').innerHTML = "";
   drawGrid(canvas);
 }
 

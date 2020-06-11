@@ -80,6 +80,11 @@ title: hanzimaker
         <canvas id="canvas"></canvas>
       </div>
 
+      <div class="definition-box">
+        <h3> English definition </h3>
+        <div id="definition-tracker">
+        </div>
+      </div>
 
       <div class="configuration-options">
           <h3>Configuration</h3>
@@ -132,10 +137,10 @@ title: hanzimaker
 
                 <div class="radical-button">
                   <div class="radical-svg">
-                      <%= image_tag "radicals/radical-#{f.id}.svg", :data=>"assets/images/radicals/radical-#{f.id}.svg", :class => 'radical-svg-link'%>
+                    <%= image_tag "radicals/radical-#{f.id}.svg", :data=>"assets/images/radicals/radical-#{f.id}.svg", :"data-rad-type" => "#{f.definition}", :class => 'radical-svg-link'%>
                   </div>
                   <div class="svg-definition">
-                    <%=link_to "#{f.definition}","#", :relative => true, :data =>"assets/images/radicals/radical-#{f.id}.svg", :class => "radical-svg-link"%>
+                    <%=link_to "#{f.definition}","#", :relative => true, :data =>"assets/images/radicals/radical-#{f.id}.svg", :"data-rad-type" => "#{f.definition}", :class => "radical-svg-link"%>
                   </div>
                 </div>
 
@@ -155,10 +160,10 @@ title: hanzimaker
             <% data.words.each do |word| %>
               <div class="word-button">
                   <div class="word-svg">
-                    <%= image_tag "words/#{word.id}.svg", :data=>"assets/images/words/#{word.id}.svg", :class => 'word-svg'%>
+                    <%= image_tag "words/#{word.id}.svg", :data=>"assets/images/words/#{word.id}.svg", :"data-rad-type" => "#{word.en}", :class => 'word-svg'%>
                   </div>
                   <div class="svg-definition-word">
-                    <%=link_to "#{word.en}","#", :relative => true, :data =>"assets/images/words/#{word.id}.svg", :class => "radical-svg-link"%>
+                    <%=link_to "#{word.en}","#", :relative => true, :data =>"assets/images/words/#{word.id}.svg", :"data-rad-type" => "#{word.en}", :class => "radical-svg-link"%>
                   </div>
               </div>
               <% end %>
