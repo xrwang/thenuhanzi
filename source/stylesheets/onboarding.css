@@ -1,3 +1,13 @@
+.onboarding-background {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 2;
+  opacity: 30%;
+  justify-content: center;
+  position: absolute;
+}
+
 
 .open-walkthrough {
   border: 0;
@@ -30,6 +40,7 @@
   width: 480px;
   z-index: 1000;
   position: absolute;
+  margin: 0 30%;
 
 }
 .walkthrough.show {
