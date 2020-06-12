@@ -58,4 +58,4 @@ activate :deploy do |deploy|
   deploy.remote = 'git@github.com:xrwang/thenuhanzi.git'
   deploy.branch = 'gh-pages'
   deploy.build_before = true
-7end
+end
