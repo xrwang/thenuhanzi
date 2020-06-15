@@ -7,6 +7,36 @@
   position: absolute;
 }
 
+#info {
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    width: auto;
+    max-width: 420px;
+    height: auto;
+    background: #f8f8f8;
+    border-bottom-right-radius: 10px;
+    border:1px solid #ccc;
+}
+
+#close {
+    float: right;
+    margin: 10px;
+}
+
+/*#top {
+    background: #fff;
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-bottom: 1px solid #eee;
+}*/
+a {
+    font-family: sans-serif;
+    color: #444;
+    text-decoration: none;
+    font-size: 20px;
+}
 
 .open-walkthrough {
   border: 0;

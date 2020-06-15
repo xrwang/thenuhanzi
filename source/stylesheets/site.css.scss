@@ -189,9 +189,25 @@ button.config-2-horizontal {
     padding-top: 1em;
 }
 
-h3 {
-  display:inline-block;
+h1 {
+  text-transform: uppercase;
+
 }
+
+h2 {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+h3 {
+ 
+  font-size: 14px;
+  text-align: left;
+  // padding: 20px;
+  // margin-top: 30px;
+  // margin-left: 10px;
+}
+
 
 button.info-tooltip {
     display: inline-block;
