@@ -191,12 +191,29 @@ button.config-2-horizontal {
 
 h1 {
   text-transform: uppercase;
+  font-size: 36px;
+  font-weight: 800;
+  margin-top: 30px;
+  margin-bottom: 0px
+  // padding: 0;
+
+
 
 }
 
 h2 {
-  text-align: justify;
-  text-justify: inter-word;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 48px;
+  margin-bottom: 10px
+  // text-align: justify;
+  // text-justify: inter-word;
+
+}
+
+h4 {
+  font-size: 12px;
+  font-weight: 300;
 }
 
 h3 {

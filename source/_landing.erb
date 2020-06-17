@@ -1,31 +1,36 @@
-<div class="info landing window">
-  <div id="top">
-    <a id="close" href="">&times;</a>
+<!-- <div id ="info" class="info landing window"> -->
+<div id="landing-background">
+
+  <div id ="landing">
+   
+    <div id="top">
+      <a id="close" href="" onmousedown="closeinfo()">&times;</a>
+      
+    </div>
+
+    <div class = "main">
+      <greeting>你好 ni hao!</greeting> <br><br>
+      <description>
+        Hanzi Maker is part of Counter Algorithmic Censorship Toolkit.<br><br>
+
+        Censorship in China is speading beyond its border. It is affecting everyone, including you. (insert sentences about why people will find this tool useful) We invite you to create your own Hanzi (Chinese charachter) to bypass automated censorship. <br><br>
+
+        If you have no prior knowledge about Hanzi, we recommend you to go through the Hanzi 101 session.<br><br>
+
+        Note: The data generated during your participation will not be stored. <br> 
+      </description>
+    </div>
+
+    <div class='info-footer'>
+        <a href="http://www.qianqian-ye.com/Everyday/Day47/index.html"><button>Hanzi 101</button></a>
+        <!-- <button class ='inactive'>Skip</button> -->
+
+        <button class ='inactive' onmousedown="closeinfo()">Skip</button>
+
+        
+    </div>
+
   </div>
-
-  <greeting>你好 ni hao!</greeting>
-
-  <description>
-    Hanzi Maker is part of Counter Algorithmic Censorship Toolkit.<br><br>
-
-    Censorship in China is speading beyond its border. It is affecting everyone, including you. (insert sentences about why people will find this tool useful) We invite you to create your own Hanzi (Chinese charachter) to bypass automated censorship. <br><br>
-
-    If you have no prior knowledge about Hanzi, we recommend you to go through the Hanzi 101 session.<br><br>
-
-    Note: The data generated during your participation will not be stored. <br>
-    <br>
-    <br>
-    <br>
-
-    <br>
-  </description>
-
-  <div class='info-footer'>
-      <a href="http://www.qianqian-ye.com/Everyday/Day47/index.html"><button>Hanzi 101</button></a>
-      <button class ='inactive'>Skip</button>
-  </div>
-
+  
 </div>
-<%= javascript_include_tag 'landing' %>
-
-
+<%= javascript_include_tag 'close-modal' %>
