@@ -2,7 +2,7 @@
 title: Hanzi Maker
 ---
 
-<%= partial "landing" %>
+<!-- insert landing partial -->
 
 <div class = "title">
   <h1>
@@ -14,52 +14,20 @@ title: Hanzi Maker
   </h2>
 
   <h4>New Hanzi to bypass automated censorship</h4>
+
+    <div class="top-bar">
+      <%= partial "responsive-modal" %>
+  </div>
+
 </div>  
 
   <div class="background-context">
-
   </div>
   <div class="background-context-images">
-
   </div>
-
 
 
 <div class="parent-container">
-
-    <div id="examples left">
-      <h3>Examples</h3>
-      <button class="info-tooltip" aria-label="Existing examples of made up Chinese words" data-balloon-pos="up"">
-         <img src="assets/images/icons/info.svg" class="config-info">
-      </button>
-      <figure>
-        <%= image_tag "niubi.jpg", :width => '50px'%>
-      </figure>
-      <figcaption>
-        niubi, meaning awesome. uses "niu" 牛 character for cow, and B, english letter.
-      </figcaption>
-      <figure>
-      <%= image_tag "shiwai.jpg", :width => '50px'%>
-      </figure>
-      <figcaption>
-        shi wai, or "deadly person", referring to CY Leung during umbrella revolution.
-        尸shi and Y letter.
-      </figcaption>
-      <figure>
-        <%= image_tag "ta.jpg", :width => '50px'%>
-      </figure>
-      <figcaption>
-        Ta, 他 and 她 alternative, third person non-binary.
-      </figcaption>
-
-      <figure>
-        <%= image_tag "hk.jpg", :width => '50px'%>
-      </figure>
-      <figcaption>
-        (a) Oppose China, Destabilize Hong Kong, (b) Thief/Seller of Hong Kong, and (c) Hong Kong independence.
-      </figcaption>
-    </div>
-
 
     <div id="center-div-canvas">
 
@@ -75,8 +43,8 @@ title: Hanzi Maker
         <button onclick="clearAll()" id="clearAll"> Clear Canvas </button>
       </div>
 
-
       <div id="canvas-container">
+
         <canvas id="canvas"></canvas>
       </div>
 
@@ -88,7 +56,7 @@ title: Hanzi Maker
 
       <div class="configuration-options">
           <h3>Configuration</h3>
-          <button class="info-tooltip" aria-label="Auto-arrange radicals on canvas" data-balloon-pos="up"">
+          <button class="tooltip" aria-label="Auto-arrange radicals on canvas" data-balloon-pos="up"">
              <img src="assets/images/icons/info.svg" class="config-info">
           </button>
           <div class="arrange">
@@ -121,10 +89,19 @@ title: Hanzi Maker
     </div>
 
     <div class="radicals right">
-      <h3>Radicals</h3>
-      <button class="info-tooltip" aria-label="Building blocks of Chinese characters" data-balloon-pos="up"">
+      <h3>Radical List</h3>
+<!--       <span class="tooltip">before</span>
+      <img src="assets/images/icons/info.svg"> -->
+
+        <div class="tooltip" aria-label="Building blocks of Chinese characters" data-balloon-pos="up">
+         <img src="assets/images/icons/info.svg">
+        </div>
+      
+
+
+<!--       <button class="tooltip" aria-label="Building blocks of Chinese characters" data-balloon-pos="up"">
          <img src="assets/images/icons/info.svg" class="config-info">
-      </button>
+      </button> -->
 
       <div class="radical-menu-container">
         <div class="radicals radical-menu">
@@ -152,9 +129,9 @@ title: Hanzi Maker
       </div>
 
         <h3>Censored Words in China</h3>
-        <button class="info-tooltip" aria-label="Sourced from China Digital Times" data-balloon-pos="up"">
+<!--         <button class="tooltip" aria-label="Sourced from China Digital Times" data-balloon-pos="up"">
            <img src="assets/images/icons/info.svg" class="config-info">
-        </button>
+        </button> -->
 
           <div class="radicals word-menu">
             <% data.words.each do |word| %>
@@ -175,15 +152,15 @@ title: Hanzi Maker
         <div class="freeText">
           <h3>Freetype</h3>
           <!-- <label for="addText">Freetype</label> -->
-          <button class="info-tooltip" aria-label="Add anything to canvas" data-balloon-pos="up"">
+<!--           <button class="tooltip" aria-label="Add anything to canvas" data-balloon-pos="up"">
              <img src="assets/images/icons/info.svg" class="config-info">
-          </button>
+          </button> -->
           <input type="text" id="addText"  value="" />
           <button onclick="submitTextToCanvas()" id="testButton"> Add to Canvas </button>
         </div>
 
       </div>
 
-  </div>
+</div>
 
   <%= javascript_include_tag 'site' %>

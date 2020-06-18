@@ -1,0 +1,105 @@
+<!-- partial:index.partial.html -->
+<div class="demo-btns">
+<!-- 		<header>
+			<h1>Material Design Modals</h1>
+		</header> -->
+
+		<div class="nav">
+			<div class="buttons">
+				
+					<a href="" data-modal="#modal" class="modal__trigger">About</a>
+					<a href="" data-modal="#modal2" class="modal__trigger">Hanzi 101</a>
+					<a href="" data-modal="#modal3" class="modal__trigger">Example</a>
+				
+			</div>
+			
+		</div>
+	</div>
+
+	<!-- Modal -->
+
+
+	<div id="modal" class="modal modal__bg" role="dialog" aria-hidden="true">
+		<div class="modal__dialog">
+			<div class="modal__content">
+				<!-- <h1>你好 ni hao!</h1> <br><br> -->
+			     <p>
+			        Hanzi Maker is part of Counter Algorithmic Censorship Toolkit.<br><br>
+
+			        Censorship in China is speading beyond its border. It is affecting everyone, including you. (insert sentences about why people will find this tool useful) We invite you to create your own Hanzi (Chinese charachter) to bypass automated censorship. <br><br>
+
+			        If you have no prior knowledge about Hanzi, we recommend you to go through the Hanzi 101 session.<br><br>
+
+			        Note: The data generated during your participation will not be stored. <br> 
+			     </p>
+				<!-- modal close button -->
+				<a href="" class="modal__close demo-close">
+					<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+				</a>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="modal2" class="modal modal__bg" role="dialog" aria-hidden="true">
+		<div class="modal__dialog">
+			<div class="modal__content">
+				<div>
+					<%= partial "onboarding" %>
+				</div>
+
+			<!-- modal close button -->
+				<a href="" class="modal__close demo-close">
+					<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+				</a>
+				
+			</div>
+		</div>
+	</div>
+	
+	<div id="modal3" class="modal modal__bg" role="dialog" aria-hidden="true">
+		<div class="modal__dialog">
+			<div class="modal__content">
+				    <div id="examples left">
+				      <h3>Examples</h3>
+				      <p>Existing examples of made up Chinese words</p>
+				      <figure>
+				        <%= image_tag "niubi.jpg", :width => '50px'%>
+				      </figure>
+				      <figcaption>
+				        niubi, meaning awesome. uses "niu" 牛 character for cow, and B, english letter.
+				      </figcaption>
+				      <figure>
+				      <%= image_tag "shiwai.jpg", :width => '50px'%>
+				      </figure>
+				      <figcaption>
+				        shi wai, or "deadly person", referring to CY Leung during umbrella revolution.
+				        尸shi and Y letter.
+				      </figcaption>
+				      <figure>
+				        <%= image_tag "ta.jpg", :width => '50px'%>
+				      </figure>
+				      <figcaption>
+				        Ta, 他 and 她 alternative, third person non-binary.
+				      </figcaption>
+
+				      <figure>
+				        <%= image_tag "hk.jpg", :width => '50px'%>
+				      </figure>
+				      <figcaption>
+				        (a) Oppose China, Destabilize Hong Kong, (b) Thief/Seller of Hong Kong, and (c) Hong Kong independence.
+				      </figcaption>
+				    </div>
+
+
+				<!-- modal close button -->
+				<a href="" class="modal__close demo-close">
+					<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+				</a>
+			</div>
+		</div>
+	</div>
+
+
+<%= javascript_include_tag 'onboarding' %>
+<%= javascript_include_tag 'responsive-modal' %>

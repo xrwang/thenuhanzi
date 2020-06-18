@@ -8,15 +8,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(0, 0, 0,.8)
+   /*background: rgb(0, 0, 0)*/
+  background: rgba(0, 0, 0,.85)
 }
 
 #landing {
     display: inline-block;
-    height: 460px;
-    width: 460px;
+    height: 500px;
+    width: 500px;
     background: #000;
-    border:1px solid #ccc;
+    /*border:1px solid #ccc;*/
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5), 0 10px 40px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
@@ -30,7 +31,7 @@ a {
     font-family: sans-serif;
     color: #7d7d7d;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 10px;
 }
 
 #close {
@@ -58,9 +59,10 @@ description {
 }
 
 
- button {
-  outline: 0;
-  background: #3D41FF;
+ .button-landing {
+  outline: 1px solid #ccc;
+  /*border:1px solid #ccc;*/
+  background: #000;
   width: 170px;
   border: 0;
   margin-left: 30px;
@@ -71,14 +73,18 @@ description {
   transition: all 0.3 ease;
   cursor: pointer;
 }
- button:hover, button:active, button:focus {
-  background: #1B1E8E;
+
+
+ .button-landing:hover, .button-landing:active, .button-landing:focus {
+  background: #ccc;
+  color: #000;
 }
- button.inactive {
+ .button-landing.inactive {
   background: #000;
+  outline: 0;
   color: #7d7d7d;
 }
 
- button.inactive:hover{
+ .button-landing.inactive:hover{
   color: #fff;
 }

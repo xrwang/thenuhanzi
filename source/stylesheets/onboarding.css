@@ -1,14 +1,14 @@
-.onboarding-background {
+/*.onboarding-background {
   width: 100vw;
   height: 100vh;
   z-index: 2;
   opacity: 30%;
   justify-content: center;
   position: absolute;
-}
+}*/
 
 #info {
-    position: absolute;
+    /*position: absolute;*/
     left: -1px;
     top: -1px;
     width: auto;
@@ -48,15 +48,15 @@ a {
   font-size: 12px;
   height: 40px;
   width: 120px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  /*position: absolute;*/
+/*  top: 50%;
+  left: 50%;*/
   margin-top: -20px;
   margin-left: -60px;
 }
 
 .walkthrough {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
+  /*box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);*/
   background: #ffffff;
   border-radius: 0;
   display: none;
@@ -68,8 +68,8 @@ a {
   transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   width: 480px;
   z-index: 1000;
-  position: absolute;
-  margin: 0 30%;
+  /*position: absolute;*/
+  /*margin: 0 30%;*/
 
 }
 .walkthrough.show {

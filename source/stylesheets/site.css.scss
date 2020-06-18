@@ -28,6 +28,13 @@ a {
   }
 }
 
+.top-bar{
+  margin-top: -60px;
+  margin-left: 50%;
+  position: absolute;
+  display: flex;
+}
+
 .parent-container {
   display: flex;
 }
@@ -136,7 +143,7 @@ svg-definition-word {
 
 .canvas-container {
   order:1;
-  margin: 2em;
+  // margin: 2em;
   border: 1px solid #EBEBEB;
 }
 
@@ -149,14 +156,16 @@ svg-definition-word {
   // border: 1px solid blue;
   order:3;
   // width: 10%;
-  height:2em;
+  // height:2em;
   float:left;
 }
 
 button#clearAll {
-    float: right;
+  z-index: 300;
+    // float: right;
+    text-align: right;
     display: inline-block;
-    // margin-bottom: 1em;
+    margin-bottom: 10px;
 }
 
 .background-context {
@@ -174,8 +183,15 @@ figcaption {
   font-size: 0.7em;
 }
 
+img {
+  // float:left;
+}
+
+
 //Configuration svgs
 img.arrange-svg {
+  // float:left;
+  // display: inline-block;
     padding: 0.5em 0.5em;
     width: 44px;
 }
@@ -225,14 +241,22 @@ h3 {
   // margin-left: 10px;
 }
 
-
-button.info-tooltip {
+.tooltip {
+  float:left;
     display: inline-block;
     padding: 0;
     margin: 0;
     background: none;
     border: none;
 }
+
+// button.tooltip {
+//     display: inline-block;
+//     padding: 0;
+//     margin: 0;
+//     background: none;
+//     border: none;
+// }
 
 div#radical-group-heading {
   padding: 1em 0em;
@@ -242,7 +266,6 @@ div#radical-group-heading {
   padding-bottom: 2em;
   text-align: left;
 }
-
 
 .alert {
 	margin: 10px 0px;
