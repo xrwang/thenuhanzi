@@ -1,4 +1,6 @@
+
 (function() {
+
   $(document).ready(function() {
     var walkthrough;
     walkthrough = {

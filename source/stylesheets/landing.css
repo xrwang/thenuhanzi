@@ -1,0 +1,90 @@
+#landing-background {
+  position: absolute;
+  top:0;
+  left:0;
+  width : 100%;
+  height : 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   /*background: rgb(0, 0, 0)*/
+  background: rgba(0, 0, 0,.85)
+}
+
+#landing {
+    display: inline-block;
+    height: 500px;
+    width: 500px;
+    background: #000;
+    /*border:1px solid #ccc;*/
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5), 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.main {
+    margin: 40px;
+    text-align: left;
+}
+
+a {
+    font-family: sans-serif;
+    color: #7d7d7d;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+#close {
+    float: right;
+    margin: 10px;
+    z-index: 1000;
+}
+
+greeting {
+  line-height: 1.3em;
+  font-size: 18px;
+  font-weight: bold;
+  /*margin-left: 30px;*/
+  padding-top: 0;
+  color: #FFFFFF;
+
+}
+
+
+description {
+  line-height: 1.3em;
+  font-size: 13px;
+  /*margin-left: 30px;*/
+  color: #FFFFFF;
+}
+
+
+ .button-landing {
+  outline: 1px solid #ccc;
+  /*border:1px solid #ccc;*/
+  background: #000;
+  width: 170px;
+  border: 0;
+  margin-left: 30px;
+  padding: 12px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+
+ .button-landing:hover, .button-landing:active, .button-landing:focus {
+  background: #ccc;
+  color: #000;
+}
+ .button-landing.inactive {
+  background: #000;
+  outline: 0;
+  color: #7d7d7d;
+}
+
+ .button-landing.inactive:hover{
+  color: #fff;
+}
