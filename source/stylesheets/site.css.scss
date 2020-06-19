@@ -44,11 +44,29 @@ a {
   margin-left: 2em;
 }
 
+
+.definition-box{
+  margin-bottom: 25px;
+  border-radius: 15pt;
+  height: 40px;
+  // overflow: hidden;
+  border: 1px solid #EBEBEB;
+}
+
 .radical-menu-container {
+  margin-bottom: 25px;
   border-radius: 15pt;
   overflow: hidden;
   border: 1px solid #EBEBEB;
 }
+
+.word-container{
+  margin-bottom: 25px;
+  border-radius: 15pt;
+  overflow: hidden;
+  border: 1px solid #EBEBEB;
+}
+
 
 .radical-menu, .word-menu {
   order:1;
@@ -145,11 +163,13 @@ svg-definition-word {
   order:1;
   // margin: 2em;
   border: 1px solid #EBEBEB;
+  margin-bottom: 25px;
+  display: flex;
 }
 
 .freeText{
-  width:50%;
-  padding:1em;
+  // width:50%;
+  // padding:1em;
 }
 
 #download-link {
@@ -163,9 +183,7 @@ svg-definition-word {
 button#clearAll {
   z-index: 300;
     // float: right;
-    text-align: right;
     display: inline-block;
-    margin-bottom: 10px;
 }
 
 .background-context {
@@ -192,8 +210,8 @@ img {
 img.arrange-svg {
   // float:left;
   // display: inline-block;
-    padding: 0.5em 0.5em;
-    width: 44px;
+    padding: 0.1em 0.5em;
+    width: 65px;
 }
 
 .config-2-horizontal {
@@ -201,8 +219,58 @@ img.arrange-svg {
 }
 
 button.config-2-horizontal {
+  // width: 50px;
     border: none;
-    padding-top: 1em;
+    // padding-top: 1em;
+}
+
+.question-label{
+  margin-left: 6px;
+
+}
+
+#addText{
+  // padding: 0.6rem 1.2rem;
+  height: 40px;
+  width: 300px;
+  border-radius: 10pt;
+  border: 1px solid #EBEBEB;
+  // margin-right: 15px;
+}
+
+.input-container{
+  margin-bottom: 25px;
+  display: flex;
+  width: 600px;
+}
+
+.right-corner{
+
+  display: flex;
+  float:right;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.cornerButton{
+  padding: 0.2rem 0.4rem;
+  font-size: 10px;
+  background: #fff;
+  height: 20px;
+  // margin-bottom: 15px;
+  border-radius: 10pt;
+  border: 1px solid #EBEBEB;
+  margin-left: 10px;
+}
+
+.testButton{
+  padding: 0.6rem 1.2rem;
+  background: #fff;
+  height: 40px;
+  // margin-bottom: 15px;
+  border-radius: 10pt;
+  border: 1px solid #EBEBEB;
+  margin-left: 10px;
 }
 
 h1 {
@@ -242,12 +310,15 @@ h3 {
 }
 
 .tooltip {
-  float:left;
-    display: inline-block;
+  // text-align: left;
+  // float:left;
+  // clear: right;
+    // display: inline-block;
     padding: 0;
-    margin: 0;
+    margin-bottom: 10px;
     background: none;
     border: none;
+    display: flex;
 }
 
 // button.tooltip {

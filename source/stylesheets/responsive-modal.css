@@ -9,7 +9,6 @@ body {
 }
 h1,
 h2,
-h3,
 p {
   font-weight: 300;
   margin: 0 0 2.4rem 0;
@@ -143,6 +142,7 @@ img {
   -webkit-box-align: center;
           align-items: center;
 }
+
 .demo-btns header h1 {
   margin: 0;
   color: rgba(0,0,0,0.54);

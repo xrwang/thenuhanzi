@@ -31,34 +31,53 @@ title: Hanzi Maker
 
     <div id="center-div-canvas">
 
+      <div class="tooltip"> 
+          <h3>Hanzi Canvas</h3>
+
+          <div class="right-corner">
+              <div id="download-link">
+                <button class="cornerButton"> <a href="" id="download-link-href"></a> </button>   
+              </div>
+              
+              <div id="clear-the-canvas">
+                    <button onclick="clearAll()" id="clearAll" class="cornerButton"> Clear Canvas </button>
+              </div>
+          </div>
+
+      </div>
+
+
       <div class="alert alert-warn-two" style="display:none">This auto-config requires two radicals</div>
       <div class="alert alert-warn-three" style="display:none">This auto-config requires three radicals</div>
 
-
-      <div id="download-link">
-        <a href="" id="download-link-href"></a>
-      </div>
-
-      <div id="clear-the-canvas">
-        <button onclick="clearAll()" id="clearAll"> Clear Canvas </button>
-      </div>
-
+      
       <div id="canvas-container">
 
         <canvas id="canvas"></canvas>
       </div>
 
+      <div class="tooltip">       
+            <div><h3>English definition</h3> 
+          </div>
+      </div>
+
+        <!-- <h3> English definition </h3> -->
+
       <div class="definition-box">
-        <h3> English definition </h3>
+        
         <div id="definition-tracker">
         </div>
       </div>
 
       <div class="configuration-options">
-          <h3>Configuration</h3>
-          <button class="tooltip" aria-label="Auto-arrange radicals on canvas" data-balloon-pos="up"">
-             <img src="assets/images/icons/info.svg" class="config-info">
-          </button>
+
+        <div class="tooltip">       
+            <h3>Configuration</h3> 
+            <div aria-label="Auto-arrange radicals on canvas" data-balloon-pos="up" class="question-label">
+                <img src="assets/images/icons/info.svg" class="config-info">
+            </div>
+        </div>
+
           <div class="arrange">
             <button class="config-2-horizontal" onclick="horizontalTwo()">
                <img src="assets/images/icons/1.svg" class="arrange-svg">
@@ -89,20 +108,19 @@ title: Hanzi Maker
     </div>
 
     <div class="radicals right">
-      <h3>Radical List</h3>
-<!--       <span class="tooltip">before</span>
-      <img src="assets/images/icons/info.svg"> -->
+      
+      <!-- <h3 class="tooltip"><span>Radical List</span> -->
 
-        <div class="tooltip" aria-label="Building blocks of Chinese characters" data-balloon-pos="up">
-         <img src="assets/images/icons/info.svg">
+        <!-- <h3>Radical List</h3> -->
+        <!-- <h3 class="tooltip">Radical List</h3> -->
+
+        <div class="tooltip">       
+            <h3>Radical List</h3> 
+            <div aria-label="Building blocks of Chinese characters" data-balloon-pos="up" class="question-label">
+              <img src="assets/images/icons/info.svg" class="config-info">
+            </div>
         </div>
       
-
-
-<!--       <button class="tooltip" aria-label="Building blocks of Chinese characters" data-balloon-pos="up"">
-         <img src="assets/images/icons/info.svg" class="config-info">
-      </button> -->
-
       <div class="radical-menu-container">
         <div class="radicals radical-menu">
           <% data.radicals.group_by(&:category).each do |category, radicals| %>
@@ -128,35 +146,54 @@ title: Hanzi Maker
         </div>
       </div>
 
-        <h3>Censored Words in China</h3>
-<!--         <button class="tooltip" aria-label="Sourced from China Digital Times" data-balloon-pos="up"">
-           <img src="assets/images/icons/info.svg" class="config-info">
-        </button> -->
-
-          <div class="radicals word-menu">
-            <% data.words.each do |word| %>
-              <div class="word-button">
-                  <div class="word-svg">
-                    <%= image_tag "words/#{word.id}.svg", :data=>"assets/images/words/#{word.id}.svg", :"data-rad-type" => "#{word.en}", :class => 'word-svg'%>
-                  </div>
-                  <div class="svg-definition-word">
-                    <%=link_to "#{word.en}","#", :relative => true, :data =>"assets/images/words/#{word.id}.svg", :"data-rad-type" => "#{word.en}", :class => "radical-svg-link"%>
-                  </div>
-              </div>
-              <% end %>
-
+      <div class="tooltip">       
+            <h3>Freetype</h3> 
+            <div aria-label="Add anything to canvas" data-balloon-pos="up" class="question-label">
+                <img src="assets/images/icons/info.svg" class="config-info">
             </div>
+      </div>
 
+       <div class="freeText">
+        
 
-
-        <div class="freeText">
-          <h3>Freetype</h3>
-          <!-- <label for="addText">Freetype</label> -->
-<!--           <button class="tooltip" aria-label="Add anything to canvas" data-balloon-pos="up"">
+<!--           <h3>Freetype</h3>
+          <button class="tooltip" aria-label="Add anything to canvas" data-balloon-pos="up">
              <img src="assets/images/icons/info.svg" class="config-info">
           </button> -->
-          <input type="text" id="addText"  value="" />
-          <button onclick="submitTextToCanvas()" id="testButton"> Add to Canvas </button>
+
+
+          <div class="input-container">
+            <input type="text" id="addText"  value="" />
+           <!--  <button onclick="submitTextToCanvas()" id="testButton"> Add to Canvas </button> -->
+
+             <button onclick="submitTextToCanvas()" class="testButton"> Add to Canvas </button>
+
+        </div>
+        </div>
+
+
+      <div class="tooltip">       
+            <h3>Censored Words in China</h3> 
+            <div aria-label="Sourced from China Digital Times" data-balloon-pos="up" class="question-label">
+                <img src="assets/images/icons/info.svg" class="config-info">
+            </div>
+      </div>
+
+
+        
+      <div class="word-container">
+        <div class="radicals word-menu">
+              <% data.words.each do |word| %>
+                <div class="word-button">
+                    <div class="word-svg">
+                      <%= image_tag "words/#{word.id}.svg", :data=>"assets/images/words/#{word.id}.svg", :"data-rad-type" => "#{word.en}", :class => 'word-svg'%>
+                    </div>
+                    <div class="svg-definition-word">
+                      <%=link_to "#{word.en}","#", :relative => true, :data =>"assets/images/words/#{word.id}.svg", :"data-rad-type" => "#{word.en}", :class => "radical-svg-link"%>
+                    </div>
+                </div>
+                <% end %>
+
         </div>
 
       </div>
