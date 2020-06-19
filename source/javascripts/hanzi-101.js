@@ -1,6 +1,4 @@
-
 (function() {
-
   $(document).ready(function() {
     var walkthrough;
     walkthrough = {
@@ -80,7 +78,7 @@
       return walkthrough.openModal();
     });
     walkthrough.openModal();
-
+    
     // Optionally use arrow keys to navigate walkthrough
     return $(document).keydown(function(e) {
       switch (e.which) {

@@ -90,10 +90,9 @@ a {
 }
 .walkthrough .walkthrough-body .prev-screen,
 .walkthrough .walkthrough-body .next-screen {
-  align-self: stretch;
   background: none;
   border: 0;
-  margin-top: 40px;
+  /*margin-top: 40px;*/
   color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
   flex: 0 0 auto;
@@ -130,6 +129,7 @@ a {
   padding: 0;
   order: 2;
 }
+
 .walkthrough .walkthrough-body .screens .screen {
   position: absolute;
   list-style-type: none;
