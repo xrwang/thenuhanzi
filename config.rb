@@ -50,6 +50,7 @@ set :relative_links, true
 #   activate :minify_javascript
 # end
 
+activate :livereload
 
 
 # Middleman-deploy configuration

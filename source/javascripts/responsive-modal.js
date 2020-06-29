@@ -7,7 +7,7 @@ var Modal = (function() {
   var closers = $qsa('.modal__close'); // an element used to close the modal
   var w = window;
   var isOpen = false;
-  var contentDelay = 400; // duration after you click the button and wait for the content to show
+  var contentDelay = 200; // duration after you click the button and wait for the content to show
   var len = trigger.length;
 
   // make it easier for yourself by not having to type as much to select an element
@@ -146,7 +146,7 @@ var Modal = (function() {
       * remove the inline css from the trigger to move it back into its original position.
       */
 
-  
+
       for (var i = 0; i < len; i++) {
         modals[i].classList.remove('modal--active');
          content[i].classList.remove('modal__content--active');
