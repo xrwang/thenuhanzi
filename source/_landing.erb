@@ -2,10 +2,9 @@
 <div id="landing-background">
 
   <div id ="landing">
-    
+
     <div id="top">
-      <!-- <a id="close" href="" onmousedown="closeinfo()">&times;</a> -->
-      <!-- <a href="" class="modal__close demo-close close" onmousedown="closeinfo()">&times;</a>      -->
+
     </div>
 
     <div class = "main">
@@ -17,33 +16,23 @@
 
         If you have no prior knowledge about Hanzi, we recommend you to go through the Hanzi 101 session.<br><br>
 
-        Note: The data generated during your participation will not be stored. <br> 
+        Note: The data generated during your participation will not be stored. <br>
       </description>
     </div>
 
-     <div class="buttons info-footer">           
-          <a href="" data-modal="#modal4" class="modal__trigger">Hanzi 101</a>
-          <button class ='button-landing inactive' onmousedown="closeinfo()">Skip</button>          
-      </div>  
+     <div class="buttons info-footer">
 
-      <!-- Hanzi 101 onboarding -->
-      <div id="modal4" class="modal modal__bg" role="dialog" aria-hidden="true"> 
-          <div class="modal__dialog">
-            <div class="modal__content">
-             <%= partial "onboarding" %>
-            
-            </div>
+          <div class="walkthrough'">
+              <div>
+
+              </div>
+
           </div>
-      </div>
 
-<!--     <div class='info-footer'>
-        <a href="http://www.qianqian-ye.com/Everyday/Day47/index.html"><button class ='button-landing'>Hanzi 101</button></a>
-        <button class ='button-landing inactive' onmousedown="closeinfo()">Skip</button>       
-    </div> -->
+          <button class ='button-landing inactive' onmousedown="closeinfo()">Skip</button>
+    </div>
+
 
   </div>
-  
+
 </div>
-<%= javascript_include_tag 'close-modal' %>
-<%= javascript_include_tag 'responsive-modal' %>
-<%= javascript_include_tag 'onboarding' %>
