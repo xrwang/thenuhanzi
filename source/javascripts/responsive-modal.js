@@ -10,6 +10,7 @@ var Modal = (function() {
   var contentDelay = 200; // duration after you click the button and wait for the content to show
   var len = trigger.length;
 
+console.log(modals)
   // make it easier for yourself by not having to type as much to select an element
   function $qsa(el) {
     return document.querySelectorAll(el);
@@ -21,6 +22,7 @@ var Modal = (function() {
     var self = this;
     // get the value of the data-modal attribute from the button
     var modalId = self.dataset.modal;
+    console.log(modalId)
     var len = modalId.length;
     // remove the '#' from the string
     var modalIdTrimmed = modalId.substring(1, len);
