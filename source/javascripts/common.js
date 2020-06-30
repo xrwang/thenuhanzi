@@ -23,19 +23,15 @@ function skip () {
 
 var open = function(event) {
   event.preventDefault();
-  console.log('here!!!! opened!!!!')
   var self = this;
-  console.log(self)
   var modalId = self.dataset.modal;
-  console.log(modalId)
-  console.log('^^^ the modal id')
+
    var len = modalId.length;
    // remove the '#' from the string
    var modalIdTrimmed = modalId.substring(1, len);
    // select the modal we want to activate
    var modal = document.getElementById(modalIdTrimmed);
-   console.log(modal.querySelector('.modal__content'));
-   console.log(isOpen)
+
    if (!isOpen) {
       // select the content inside the modal
       var content = modal.querySelector('.modal__content');
@@ -51,7 +47,6 @@ var open = function(event) {
       modal.classList.add('modal--active');
       // reveal the modal content
       content.classList.add('modal__content--active');
-      console.log('modalId is hanzi and its nav buttons')
     }
 
     isOpen = true;
@@ -63,13 +58,10 @@ var open = function(event) {
 var closeWholeModal = function (event) {
   event.preventDefault();
   event.stopImmediatePropagation();
-  console.log('closeWholeModal Function')
   var target = event.target;
   var self = this;
 
-  console.log(target)
   var modalId = self.dataset.modal;
-  console.log(modalId)
 
 
   var div = document.getElementById('about-modal');
@@ -99,8 +91,7 @@ var closeWholeModal = function (event) {
  }
 
 
- if (isOpen && target.classList.contains('closeOnboardingModal')) {
-   console.log('last page of the onboarding modal')
+ if (isOpen && (target.classList.contains('closeOnboardingModal') || target.classList.contains('hanzi-modal-close')) ) {
    walkthrough.closeOnboardingModal();
    div.style.opacity = '1';
    div.removeAttribute('style');
@@ -145,16 +136,12 @@ var bindActions = function() {
     walkthrough = {
       index: 0,
       nextScreen: function() {
-        console.log('next screen!!!!!!!!!!!')
         if (this.index < this.indexMax()) {
-          console.log('next screen')
-          console.log(this.index)
           this.index++;
           return this.updateScreen();
         }
       },
       prevScreen: function() {
-        console.log('prevScreen!!!!!!!!!!!!!!')
         if (this.index > 0) {
           this.index--;
           return this.updateScreen();
@@ -192,17 +179,13 @@ var bindActions = function() {
         return $('.screen, .dot').removeClass('active');
       },
       indexMax: function() {
-        console.log('indexMax')
-        console.log($('.screen').length - 1)
-        return 4;
-        // return $('.screen').length - 1;
+
+        return $('.screen').length - 1;
       },
       closeOnboardingModal: function() {
-        console.log('onboarding close modal')
         // $('.walkthrough, .shade').removeClass('reveal');
         return setTimeout((() => {
           // $('.walkthrough, .shade').removeClass('show');
-          console.log(this.index);
           this.index = 0;
           return this.updateScreen();
         }), 200);
