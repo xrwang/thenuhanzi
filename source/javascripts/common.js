@@ -15,6 +15,8 @@ function $qsa(el) {
 function skip () {
   document.getElementById('landing').style.display="none";
   document.getElementById('landing-background').style.display="none";
+  bindActions();
+
 }
 
 
@@ -25,13 +27,15 @@ var open = function(event) {
   var self = this;
   console.log(self)
   var modalId = self.dataset.modal;
+  console.log(modalId)
+  console.log('^^^ the modal id')
    var len = modalId.length;
    // remove the '#' from the string
    var modalIdTrimmed = modalId.substring(1, len);
    // select the modal we want to activate
    var modal = document.getElementById(modalIdTrimmed);
    console.log(modal.querySelector('.modal__content'));
-
+   console.log(isOpen)
    if (!isOpen) {
       // select the content inside the modal
       var content = modal.querySelector('.modal__content');
@@ -39,6 +43,15 @@ var open = function(event) {
       modal.classList.add('modal--active');
       // reveal the modal content
       content.classList.add('modal__content--active');
+    }
+
+    if (!isOpen && modalId=="#hanzi") {
+      var content = modal.querySelector('.modal__content');
+      // reveal the modal
+      modal.classList.add('modal--active');
+      // reveal the modal content
+      content.classList.add('modal__content--active');
+      console.log('modalId is hanzi and its nav buttons')
     }
 
     isOpen = true;
@@ -105,6 +118,7 @@ var closeWholeModal = function (event) {
     trigger[i].style.webkitTransform = 'none';
     trigger[i].classList.remove('modal__trigger--active');
    }
+
    isOpen = false;
 
  }
@@ -133,6 +147,8 @@ var bindActions = function() {
       nextScreen: function() {
         console.log('next screen!!!!!!!!!!!')
         if (this.index < this.indexMax()) {
+          console.log('next screen')
+          console.log(this.index)
           this.index++;
           return this.updateScreen();
         }
@@ -176,7 +192,10 @@ var bindActions = function() {
         return $('.screen, .dot').removeClass('active');
       },
       indexMax: function() {
-        return $('.screen').length - 1;
+        console.log('indexMax')
+        console.log($('.screen').length - 1)
+        return 4;
+        // return $('.screen').length - 1;
       },
       closeOnboardingModal: function() {
         console.log('onboarding close modal')
@@ -189,6 +208,7 @@ var bindActions = function() {
         }), 200);
       },
       openModal: function() {
+
         $('.walkthrough, .shade').addClass('show');
         setTimeout((() => {
           return $('.walkthrough, .shade').addClass('reveal');
@@ -238,7 +258,4 @@ var bindActions = function() {
   // });
 
 // }).call(this);
-
-
-
-bindActions()
+bindActions();
