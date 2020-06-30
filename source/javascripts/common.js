@@ -84,6 +84,32 @@ var closeWholeModal = function (event) {
    // when the temporary div is opacity:1 again, we want to remove it from the dom
    isOpen = false;
  }
+
+
+ if (isOpen && target.classList.contains('closeOnboardingModal')) {
+   console.log('last page of the onboarding modal')
+   walkthrough.closeOnboardingModal();
+   div.style.opacity = '1';
+   div.removeAttribute('style');
+
+   /**
+   * iterate through the modals and modal contents and triggers to remove their active classes.
+   * remove the inline css from the trigger to move it back into its original position.
+   */
+
+
+   for (var i = 0; i < len; i++) {
+    modals[i].classList.remove('modal--active');
+    content[i].classList.remove('modal__content--active');
+    trigger[i].style.transform = 'none';
+    trigger[i].style.webkitTransform = 'none';
+    trigger[i].classList.remove('modal__trigger--active');
+   }
+   isOpen = false;
+
+ }
+
+
 }
 
 
@@ -97,9 +123,9 @@ var bindActions = function() {
 };
 
 
-(function() {
-
-  $(document).ready(function() {
+// (function() {
+//
+//   $(document).ready(function() {
 
     var walkthrough;
     walkthrough = {
@@ -157,12 +183,9 @@ var bindActions = function() {
         // $('.walkthrough, .shade').removeClass('reveal');
         return setTimeout((() => {
           // $('.walkthrough, .shade').removeClass('show');
-          console.log(index);
+          console.log(this.index);
           this.index = 0;
           return this.updateScreen();
-
-          closeWholeModal();
-
         }), 200);
       },
       openModal: function() {
@@ -188,33 +211,33 @@ var bindActions = function() {
     walkthrough.openModal();
 
     // Optionally use arrow keys to navigate walkthrough
-    return $(document).keydown(function(e) {
-      switch (e.which) {
-        case 37:
-          // left
-          walkthrough.prevScreen();
-          break;
-        case 38:
-          // up
-          walkthrough.openModal();
-          break;
-        case 39:
-          // right
-          walkthrough.nextScreen();
-          break;
-        case 40:
-          // down
-          walkthrough.closeOnboardingModal();
-          break;
-        default:
-          return;
-      }
-      e.preventDefault();
-    });
+    // return $(document).keydown(function(e) {
+    //   switch (e.which) {
+    //     case 37:
+    //       // left
+    //       walkthrough.prevScreen();
+    //       break;
+    //     case 38:
+    //       // up
+    //       walkthrough.openModal();
+    //       break;
+    //     case 39:
+    //       // right
+    //       walkthrough.nextScreen();
+    //       break;
+    //     case 40:
+    //       // down
+    //       walkthrough.closeOnboardingModal();
+    //       break;
+    //     default:
+    //       return;
+    //   }
+    //   e.preventDefault();
+    // });
 
-  });
+  // });
 
-}).call(this);
+// }).call(this);
 
 
 
