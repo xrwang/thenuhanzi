@@ -3,6 +3,7 @@ title: Hanzi Maker
 ---
 
 <!-- insert landing partial -->
+<%=partial 'landing'%>
 
 <div class = "title">
   <h1>
@@ -17,14 +18,15 @@ title: Hanzi Maker
 
     <div class="top-bar">
       <%= partial "responsive-modal" %>
-  </div>
+    </div>
 
 </div>
 
-  <div class="background-context">
-  </div>
-  <div class="background-context-images">
-  </div>
+<div class="background-context">
+</div>
+
+<div class="background-context-images">
+</div>
 
 
 <div class="parent-container">
@@ -56,12 +58,10 @@ title: Hanzi Maker
         <canvas id="canvas"></canvas>
       </div>
 
-      <div class="tooltip">
-            <div><h3>English definition</h3>
-          </div>
-      </div>
+        <div>
+            <h3>English definition</h3>
+        </div>
 
-        <!-- <h3> English definition </h3> -->
 
       <div class="definition-box">
 
@@ -71,10 +71,12 @@ title: Hanzi Maker
 
       <div class="configuration-options">
 
-        <div class="tooltip">
+        <div class="menu-heading">
             <h3>Configuration</h3>
+            <div class="tooltip">
             <div aria-label="Auto-arrange radicals on canvas" data-balloon-pos="up" class="question-label">
                 <img src="assets/images/icons/info.svg" class="config-info">
+            </div>
             </div>
         </div>
 
@@ -107,6 +109,8 @@ title: Hanzi Maker
       </div>
     </div>
 
+
+<!-- Everything on the right of the page -->
 <div class="radicals right">
 
         <div class="menu-heading">
@@ -197,6 +201,5 @@ title: Hanzi Maker
 </div>
 
 <%= javascript_include_tag 'canvas' %>
-<%= javascript_include_tag 'responsive-modal' %>
+<%= javascript_include_tag 'common' %>
 <%= javascript_include_tag 'onboarding' %>
-<%= javascript_include_tag 'site' %>
