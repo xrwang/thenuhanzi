@@ -11,6 +11,8 @@ var Modal = (function() {
   var len = trigger.length;
 
 console.log(modals)
+
+
   // make it easier for yourself by not having to type as much to select an element
   function $qsa(el) {
     return document.querySelectorAll(el);
@@ -124,7 +126,7 @@ console.log(modals)
 
   var close = function(event) {
 
-    // console.log('should close it now')
+    console.log('should close it now')
 
     event.preventDefault();
     event.stopImmediatePropagation();
