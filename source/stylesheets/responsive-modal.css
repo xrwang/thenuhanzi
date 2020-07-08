@@ -170,7 +170,7 @@ img {
   font-size: 20px;
 }
 .demo-btns .modal__trigger {
-  margin-right: 3px;
+  margin-right: 6px;
 }
 @media (max-width: 640px) {
   .demo-btns .modal__trigger {
