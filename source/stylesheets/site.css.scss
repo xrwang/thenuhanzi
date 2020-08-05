@@ -2,7 +2,8 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
 body {
-  background-color: white;
+  background-color: #FDF4F1;
+  // background-color: white;
   color: #333;
   font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
     "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
@@ -29,10 +30,11 @@ a {
 }
 
 .top-bar{
-  margin-top: -60px;
-  margin-left: 50%;
-  position: absolute;
-  display: flex;
+  margin-top: 20px;
+  // margin-left: 50%;
+
+  // position: absolute;
+  // display: flex;
 }
 
 .parent-container {
@@ -49,7 +51,7 @@ a {
   margin-bottom: 25px;
   border-radius: 15pt;
   height: 40px;
-  // overflow: hidden;
+  background: white;
   border: 1px solid #EBEBEB;
 }
 
@@ -57,13 +59,47 @@ a {
   margin-bottom: 25px;
   border-radius: 15pt;
   overflow: hidden;
+  background: white;
   border: 1px solid #EBEBEB;
 }
+
+// .scrollbar{
+//   margin-left: 30px;
+//   float: left;
+//   height: 300px;
+//   width: 65px;
+//   background: #F5F5F5;
+//   overflow-y: scroll;
+//   margin-bottom: 25px;
+// }
+
+.force-overflow{
+  min-height: 450px;
+}
+
+::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar{
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
+}
+
 
 .word-container{
   margin-bottom: 25px;
   border-radius: 15pt;
   overflow: hidden;
+  background: white;
   border: 1px solid #EBEBEB;
 }
 
@@ -162,7 +198,8 @@ svg-definition-word {
 .canvas-container {
   order:1;
   // margin: 2em;
-  border: 1px solid #EBEBEB;
+  border: 1px solid #000;
+  background: white;
   margin-bottom: 25px;
   display: flex;
 }
@@ -289,7 +326,8 @@ h2 {
   font-size: 25px;
   font-weight: 900;
   letter-spacing: 48px;
-  margin-bottom: 10px
+  margin-left: 48px;
+  margin-bottom: 10px;
   // text-align: justify;
   // text-justify: inter-word;
 
@@ -345,7 +383,7 @@ div#radical-group-heading {
 
 .title {
   padding-bottom: 4em;
-  text-align: left;
+  text-align: center;
 }
 
 .alert {
