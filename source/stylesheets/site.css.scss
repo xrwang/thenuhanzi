@@ -11,6 +11,8 @@ body {
     "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
   padding: 5vh 2rem;
   text-align: center;
+  // overflow: scroll;
+  // overflow-y: hidden;
 }
 
 *, *:before, *:after {
@@ -58,44 +60,45 @@ a {
 .radical-menu-container {
   margin-bottom: 25px;
   border-radius: 15pt;
-  overflow: hidden;
+  overflow-x: hidden;
+  // overflow: hidden;
   background: white;
   border: 1px solid #EBEBEB;
 }
 
-// .scrollbar{
-//   margin-left: 30px;
-//   float: left;
-//   height: 300px;
-//   width: 65px;
-//   background: #F5F5F5;
-//   overflow-y: scroll;
-//   margin-bottom: 25px;
-// }
-
-.force-overflow{
-  min-height: 450px;
+.scrollbar{
+  // margin-left: 30px;
+  // float: left;
+  // height: 300px;
+  // width: 65px;
+  // background: #F5F5F5;
+  // overflow-y: scroll;
+  // margin-bottom: 25px;
 }
 
+// .force-overflow{
+//   min-height: 450px;
+
+// }
+
 ::-webkit-scrollbar-track{
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  border-radius: 10px;
+  // border-radius: 2px;
   background-color: #F5F5F5;
 }
 
 ::-webkit-scrollbar{
-  width: 12px;
+  width: 0px;
   background-color: #F5F5F5;
 }
 
 ::-webkit-scrollbar-thumb{
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-  background-color: #555;
+  // border-radius: 2px;
+  background-color: #bababa;
 }
 
 
 .word-container{
+  height: 160px;
   margin-bottom: 25px;
   border-radius: 15pt;
   overflow: hidden;
@@ -107,12 +110,13 @@ a {
 .radical-menu, .word-menu {
   order:1;
   padding: 1em;
-  height: 400px;
+  height: 500px;
   text-align: left;
 }
 
 .radical-menu {
   overflow: scroll;
+  overflow-x: hidden;
 
 }
 
@@ -121,7 +125,7 @@ a {
 }
 
 .radical-menu::-webkit-scrollbar {
-  width: 11px;
+  width: 8px;
 }
 
 .radical-menu {
@@ -175,7 +179,7 @@ svg-definition-word {
 }
 
 .word-button {
-  padding: 0.5em;
+  padding: 0.6em;
   display: inline-flex;
   border-radius: 40px;
 }
