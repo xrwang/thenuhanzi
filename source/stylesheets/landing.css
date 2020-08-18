@@ -58,6 +58,10 @@ description {
   color: #FFFFFF;
 }
 
+description p {
+  margin-bottom: 1.5em;
+}
+
 
  .button-landing {
   outline: 1px solid #ccc;
