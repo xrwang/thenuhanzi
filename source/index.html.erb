@@ -5,7 +5,9 @@ title: Hanzi Maker
 <!-- insert landing partial -->
 <%=partial 'landing'%>
 
-<div class ="main-page">
+<marquee behavior="scroll" direction="left">In recent years, automated moderation of politically sensitive content and censorship online has been increasing. In response, users have been creatively bypassing such automation by using homophones, memes and images, as well as occasionally creating their own new characters.</marquee>
+
+<div class ="main-page">  
 
   <div class = "title">
     <h1>
@@ -40,11 +42,12 @@ title: Hanzi Maker
 
             <div class="right-corner">
                 <div id="download-link">
-                  <button class="cornerButton"> <a href="" id="download-link-href"></a> </button>
+                  <!-- <button class="cornerButton"> <a href="" id="download-link-href"></a> </button> -->
+                  <div class="cornerAction"> <a href="" id="download-link-href"><img src="assets/images/icons/download.svg" ></a> </div>
                 </div>
 
                 <div id="clear-the-canvas">
-                      <button onclick="clearAll()" id="clearAll" class="cornerButton"> Clear Canvas </button>
+                  <button onclick="clearAll()" id="clearAll" class="cornerButton cornerAction"> Clear Canvas </button>
                 </div>
             </div>
 

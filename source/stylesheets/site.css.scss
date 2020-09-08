@@ -2,17 +2,21 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
 body {
-  background-color: #FDF4F1;
-  // background-color: white;
+  // background-color: #FDF4F1;
+  background-color: white;
   color: #333;
   font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
     "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
     "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
     "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
-  padding: 5vh 2rem;
+  padding: 5vh 2vw;
   text-align: center;
   // overflow: scroll;
   // overflow-y: hidden;
+}
+
+.main-page{
+  // padding: 5vh 2rem;
 }
 
 *, *:before, *:after {
@@ -21,6 +25,17 @@ body {
   box-sizing: border-box;
 }
 
+marquee{
+  margin-top: -20px;
+  margin-left: -2vw;
+  margin-right: -2vw;
+  margin-bottom: 24px;
+  background-color: #000;
+  padding-top: 4px;
+  height: 36px;
+  color: #fff;
+
+}
 
 a {
   color: rgba(#000, 0.7);
@@ -54,7 +69,7 @@ a {
   border-radius: 15pt;
   height: 40px;
   background: white;
-  border: 1px solid #EBEBEB;
+  border: 1px solid #000;
 }
 
 .radical-menu-container {
@@ -63,7 +78,7 @@ a {
   overflow-x: hidden;
   // overflow: hidden;
   background: white;
-  border: 1px solid #EBEBEB;
+  border: 1px solid #000;
 }
 
 .scrollbar{
@@ -103,7 +118,7 @@ a {
   border-radius: 15pt;
   overflow: hidden;
   background: white;
-  border: 1px solid #EBEBEB;
+  border: 1px solid #000;
 }
 
 
@@ -201,8 +216,9 @@ svg-definition-word {
 
 .canvas-container {
   order:1;
+  // width: 300px;
   // margin: 2em;
-  border: 1px solid #000;
+  border: 3px solid #000;
   background: white;
   margin-bottom: 25px;
   display: flex;
@@ -275,7 +291,7 @@ button.config-2-horizontal {
   height: 40px;
   width: 300px;
   border-radius: 10pt;
-  border: 1px solid #EBEBEB;
+  border: 1px solid #000;
   // margin-right: 15px;
 }
 
@@ -293,15 +309,24 @@ button.config-2-horizontal {
   padding-bottom: 0px;
 }
 
+.cornerAction{
+  margin-top: 2px;
+  // font-size: 10px;
+  // background: #fff;
+  // height: 20px;
+  // margin-bottom: 15px;
+  // border-radius: 10pt;
+  // border: 1px solid #EBEBEB;
+  margin-left: 10px;
+}
+
 .cornerButton{
   padding: 0.2rem 0.4rem;
   font-size: 10px;
   background: #fff;
   height: 20px;
-  // margin-bottom: 15px;
   border-radius: 10pt;
   border: 1px solid #EBEBEB;
-  margin-left: 10px;
 }
 
 .testButton{
@@ -310,7 +335,7 @@ button.config-2-horizontal {
   height: 40px;
   // margin-bottom: 15px;
   border-radius: 10pt;
-  border: 1px solid #EBEBEB;
+  border: 1px solid #000;
   margin-left: 10px;
 }
 
@@ -381,9 +406,7 @@ div#radical-group-heading {
 }
 
 
-.main-page{
-  // margin:30px;
-}
+
 
 .title {
   padding-bottom: 4em;

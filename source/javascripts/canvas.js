@@ -22,13 +22,13 @@ function submitTextToCanvas(id) {
        event.preventDefault();
   });
 
-  var canvasHeight=600;
-  var canvasWidth=600;
+  var canvasHeight=window.innerWidth*0.4;
+  var canvasWidth=window.innerWidth*0.4;
 
   var canvas = new fabric.Canvas('canvas', {
     selection: false,
-    height: 600,
-    width: 600
+    height: window.innerWidth*0.4,
+    width: window.innerWidth*0.4
     });
 
 
@@ -40,7 +40,7 @@ function submitTextToCanvas(id) {
           height: c.height,
           param: {
             stroke: "#ebebeb",
-            strokeWidth: 2.5,
+            strokeWidth: 1,
             selectable: false
           }
         },
@@ -151,7 +151,7 @@ $("body").on("keydown", function(e) {
 });
 
 var link = document.getElementById('download-link-href');
-    link.innerHTML = 'download image';
+    // link.innerHTML = 'download image';
     link.addEventListener('click', function(ev) {
     link.href = canvas.toDataURL();
     link.download = "my-new-hanzi.jpg";
