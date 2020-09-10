@@ -22,13 +22,16 @@ function submitTextToCanvas(id) {
        event.preventDefault();
   });
 
-  var canvasHeight=window.innerWidth*0.4;
-  var canvasWidth=window.innerWidth*0.4;
+  //  var canvasHeight=600;
+  // var canvasWidth=600;
+
+  var canvasHeight=window.innerWidth*0.45;
+  var canvasWidth=window.innerWidth*0.45;
 
   var canvas = new fabric.Canvas('canvas', {
     selection: false,
-    height: window.innerWidth*0.4,
-    width: window.innerWidth*0.4
+    height: window.innerWidth*0.45,
+    width: window.innerWidth*0.45
     });
 
 
