@@ -11,7 +11,15 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="FOM Game Script" startnode="1" creator="Twine" creator-version="2.3.9" ifid="CEDA8FBA-4FF8-4E25-95CF-44CED8122FDE" zoom="0.6" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Begininng" tags="" position="125,100" size="100,100">(set: $name to (prompt: &quot;What is your first name?&quot;, &quot;Cameron&quot;))
+<tw-storydata name="FOM Game Script" startnode="1" creator="Twine" creator-version="2.3.9" ifid="CEDA8FBA-4FF8-4E25-95CF-44CED8122FDE" zoom="0.6" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">#cm-ui {
+  width:700px;
+}
+
+#30-60-90-plan {
+	border: 10px solid red;
+  position: absolute;
+  display: block !important;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Begininng" tags="" position="125,100" size="100,100">(set: $name to (prompt: &quot;What is your first name?&quot;, &quot;Cameron&quot;))
 [[Wake up for your first day at work! -&gt;1-Getting ready]]</tw-passagedata><tw-passagedata pid="2" name="1-Getting ready" tags="" position="225,225" size="100,100">&lt;div class=&#39;getting-ready&#39;&gt;
 It&#39;s your first day of work at The Future of Memory! You&#39;re feeling nervous and excited. It&#39;s a huge deal to have this job. You&#39;ve worked hard at your previous company. This new job at The Future of Memory is a huge upgrade for you.
 
@@ -145,9 +153,9 @@ What&#39;s your cal like?
 Hi $name! I&#39;m Taylor, junior engineer. Let&#39;s do a virtual hang out soon. Is your calendar the most up to date? I am also a huge fan of my Vitamix -- I&#39;ve been making a lot of nut butter in it. Look forward to chatting. 
 In the meantime, I wanted to show you the content moderation tool that our content moderators use.
 
-
-TK
-
+&lt;div id=&quot;cm-ui&quot;&gt;
+&lt;img src=&quot;https://xrw-xrw.s3-us-west-2.amazonaws.com/fom-game/content-moderation-screen.png&quot; id=&quot;cm-ui&quot;&gt;
+&lt;/div&gt;
 This is the content moderation tool UI. On the left TK
 &lt;/div&gt;
 [[Open up Slack alert from Devon]]
