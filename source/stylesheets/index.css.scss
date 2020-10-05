@@ -10,5 +10,28 @@ html {
 
 
 a {
-  border: 1px solid red;
+  font-family: sans-serif;
+  color: #7d7d7d;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 1em;
+}
+
+
+.menu {
+    // border: 1px solid red;
+    display: inline-block;
+    width: 50%;
+    margin-top: 2em;
+    margin-left: 2em;
+}
+
+.menu .button {
+  // border: 1px solid blue;
+  // background: brown;
+  padding: 1em;
+  width: 70%;
+  border-radius: 40px;
+  background: #cfcfcf;
+
 }
