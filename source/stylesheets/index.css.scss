@@ -44,6 +44,13 @@ a {
   bottom:   0;
 }
 
+audio::-webkit-media-controls-panel {
+  color: white;
+}
+audio::-webkit-media-controls-play-button{
+  color: pink;
+}
+
 button {
   // border: 1px solid blue;
   // background: brown;
