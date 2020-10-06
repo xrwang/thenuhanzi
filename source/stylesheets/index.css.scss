@@ -1,0 +1,56 @@
+html {
+  height: 100%;
+}
+
+body {
+  background: image-url("landing/fom-buid-7.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+}
+
+
+.overall {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
+
+
+a {
+  font-family: sans-serif;
+  color: #7d7d7d;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 1em;
+}
+
+
+.menu {
+    // border: 1px solid red;
+    // border: 1px solid red;
+    margin-top:20em;
+}
+
+
+
+
+.audio {
+  position: absolute;
+  right:    0;
+  bottom:   0;
+}
+
+button {
+  // border: 1px solid blue;
+  // background: brown;
+  // width: 70%;
+  border-radius: 40px;
+  background: #cfcfcf !important;
+  border: none;
+  margin-bottom: 1em;
+  padding: 1em;
+}

@@ -1,209 +1,34 @@
 ---
-title: Hanzi Maker
+title: Welcome to The Future of Memory
 ---
 
-<!-- insert landing partial -->
-<%=partial 'landing'%>
 
-<marquee behavior="scroll" direction="left">In recent years, automated moderation of politically sensitive content and censorship online has been increasing. In response, users have been creatively bypassing such automation by using homophones, memes and images, as well as occasionally creating their own new characters.</marquee>
+<div class="overall">
+    <div class ="menu">
 
-<div class ="main-page">  
-
-  <div class = "title">
-    <h1>
-    Hanzi Maker
-    </h1>
-
-    <h2>
-    自造汉字
-    </h2>
-
-    <h4>New Hanzi to bypass automated censorship</h4>
-
-      <div class="top-bar">
-        <%= partial "responsive-modal" %>
-      </div>
-  </div>
-
-
-  <div class="background-context">
-  </div>
-
-  <div class="background-context-images">
-  </div>
-
-
-  <div class="parent-container">
-
-      <div id="center-div-canvas">
-
-        <div class="tooltip left-column">
-            <h3>Hanzi Canvas</h3>
-
-            <div class="right-corner">
-                <div id="download-link">
-                  <!-- <button class="cornerButton"> <a href="" id="download-link-href"></a> </button> -->
-                  <div class="cornerAction"> <a href="" id="download-link-href"><img src="assets/images/icons/download.svg" ></a> </div>
-                </div>
-
-                <div id="clear-the-canvas">
-                  <button onclick="clearAll()" id="clearAll" class="cornerButton cornerAction"> Clear Canvas </button>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="alert alert-warn-two" style="display:none">This auto-config requires two radicals</div>
-        <div class="alert alert-warn-three" style="display:none">This auto-config requires three radicals</div>
-
-        <div id="canvas-container">
-
-          <canvas id="canvas"></canvas>
-        </div>
-
-
-        <div class="tooltip left-column">       
-            <div><h3>English definition</h3> 
-          </div>
-        </div>
-
-          <div class="definition-box left-column">        
-          <div id="definition-tracker">
-          </div>
-        </div>
-
-        <div class="configuration-options left-column">
-
-          <div class="menu-heading">
-              <h3>Configuration</h3>
-              <div class="tooltip">
-              <div aria-label="Auto-arrange radicals on canvas" data-balloon-pos="up" class="question-label">
-                  <img src="assets/images/icons/info.svg" class="config-info">
-              </div>
-              </div>
-          </div>
-
-            <div class="arrange">
-              <button class="config-2-horizontal" onclick="horizontalTwo()">
-                 <img src="assets/images/icons/1.svg" class="arrange-svg">
-              </button>
-              <button class="config-2-horizontal" onclick="horizontalThree()">
-                <img src="assets/images/icons/2.svg" class="arrange-svg">
-              </button>
-              <button class="config-2-horizontal" onclick="subDivideRight()">
-                <img src="assets/images/icons/3.svg" class="arrange-svg">
-              </button>
-              <button class="config-2-horizontal" onclick="subDivideLeft()">
-                <img src="assets/images/icons/4.svg" class="arrange-svg">
-              </button>
-              <button class="config-2-horizontal" onclick="verticalTwo()">
-                <img src="assets/images/icons/5.svg" class="arrange-svg">
-              </button>
-              <button class="config-2-horizontal" onclick="verticalThree()">
-                <img src="assets/images/icons/6.svg" class="arrange-svg">
-              </button>
-              <button class="config-2-horizontal" onclick="subDivideTop()">
-                <img src="assets/images/icons/7.svg" class="arrange-svg">
-              </button>
-              <button class="config-2-horizontal" onclick="subDivideBottom()">
-                <img src="assets/images/icons/8.svg" class="arrange-svg">
-              </button>
-            </div>
-        </div>
-      </div>
- 
-      <!-- Everything on the right of the page -->
-      <div class="radicals right">
-
-            <div class="menu-heading">
-              <h3>Radical List</h3>
-              <div class="tooltip">
-                  <div aria-label="Building blocks of Chinese characters" data-balloon-pos="up" class="question-label">
-                    <img src="assets/images/icons/info.svg" class="config-info">
-                  </div>
-              </div>
-            </div>
-
-            <div class="radical-menu-container">
-              <div class="radicals radical-menu">
-                <% data.radicals.group_by(&:category).each do |category, radicals| %>
-                  <div id="radical-group-heading">
-                    <%=category%>
-                  </div>
-                  <div class="radical-group-category">
-                  <%radicals.each do |f|%>
-
-                      <div class="radical-button">
-                        <div class="radical-svg">
-                          <%= image_tag "radicals/radical-#{f.id}.svg", :data=>"assets/images/radicals/radical-#{f.id}.svg", :"data-rad-type" => "#{f.definition}", :class => 'radical-svg-link'%>
-                        </div>
-                        <div class="svg-definition">
-                          <%=link_to "#{f.definition}","#", :relative => true, :data =>"assets/images/radicals/radical-#{f.id}.svg", :"data-rad-type" => "#{f.definition}", :class => "radical-svg-link"%>
-                        </div>
-                      </div>
-
-                      <%end%>
-                  </div>
-                  <%end%>
-              </div>
-
-             <div class="scrollbar" >
-              <!-- <div class=".radical-menu" > -->
-                <!-- <div class="force-overflow"></div> -->
-              </div>
-
-            </div>
-
-            <div class="freeText">
-                <div class="menu-heading">
-                   <h3>Freetype</h3>
-                   <div class="tooltip">
-                     <div aria-label="Add anything to canvas" data-balloon-pos="up" class="question-label">
-                         <img src="assets/images/icons/info.svg" class="config-info">
-                     </div>
-                   </div>
-                 </div>
-
-                    <div class="input-container">
-                    <input type="text" id="addText"  value="" />
-                   <!--  <button onclick="submitTextToCanvas()" id="testButton"> Add to Canvas </button> -->
-                     <button onclick="submitTextToCanvas()" class="testButton"> Add to Canvas </button>
-                   </div>
-            </div>
-
-            <div class=censored-words-box>
-                <div class="menu-heading">
-                  <h3>Censored Words in China</h3>
-
-                  <div class="tooltip">
-                    <div aria-label="Sourced from China Digital Times" data-balloon-pos="up" class="question-label">
-                        <img src="assets/images/icons/info.svg" class="config-info">
-                    </div>
-                  </div>
-                </div>
-            </div>
-
-            <div class="word-container">
-              <div class="radicals word-menu">
-                    <% data.words.each do |word| %>
-                      <div class="word-button">
-                          <div class="word-svg">
-                            <%= image_tag "words/#{word.id}.svg", :data=>"assets/images/words/#{word.id}.svg", :"data-rad-type" => "#{word.en}", :class => 'word-svg'%>
-                          </div>
-                          <div class="svg-definition-word">
-                            <%=link_to "#{word.en}","#", :relative => true, :data =>"assets/images/words/#{word.id}.svg", :"data-rad-type" => "#{word.en}", :class => "radical-svg-link"%>
-                          </div>
-                      </div>
-                      <% end %>
-
-              </div>
-            </div>
+      <div class="button">
+      <button aria-label="Make your own language to bypass automated censorship" data-balloon-pos="up"><%= link_to 'Hanzi Maker', '/hanzi-maker.html', :relative => true %></button>
       </div>
 
+      <div class="button">
+
+      <button aria-label="Look at the collected toolkit for ways online users have bypassed automated censorship" data-balloon-pos="up"><%= link_to 'Bypassing Automated Censorship Toolkit', '/toolkit-full.html', :relative => true %></button>
+      </div>
+
+      <div class="button">
+
+      <button aria-label="Play a text based adventure game" data-balloon-pos="up"><%= link_to 'Play The Future of Memory', '/fom-game.html', :relative => true %></button>
+
+
+      </div>
+
+    </div>
+
+
+    <div class="audio">
+      <audio src="/assets/FOM-YBCA.mp3" loop autoplay>
+                Your browser does not support the
+                <code>audio</code> element.
+      </audio>
+    </div>
   </div>
-
-</div>
-
-<%= javascript_include_tag 'canvas' %>
-<%= javascript_include_tag 'common' %>
-<%= javascript_include_tag 'onboarding' %>

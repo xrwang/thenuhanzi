@@ -60,3 +60,6 @@ activate :deploy do |deploy|
   deploy.branch = 'gh-pages'
   deploy.build_before = true
 end
+
+
+page "index.html", :layout => "landing"
