@@ -35,20 +35,22 @@ a {
     margin-top:20em;
 }
 
-.button {
-  // border: 1px solid blue;
-  // background: brown;
-  padding: 1em;
-  // width: 70%;
-  margin: 1em;
-  border-radius: 40px;
-  background: #cfcfcf;
 
-}
 
 
 .audio {
   position: absolute;
   right:    0;
   bottom:   0;
+}
+
+button {
+  // border: 1px solid blue;
+  // background: brown;
+  // width: 70%;
+  border-radius: 40px;
+  background: #cfcfcf !important;
+  border: none;
+  margin-bottom: 1em;
+  padding: 1em;
 }
