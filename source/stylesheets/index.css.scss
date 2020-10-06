@@ -1,12 +1,23 @@
 html {
-  background-image: image-url("landing/fom-buid-7.png");
   height: 100%;
+}
+
+body {
+  background: image-url("landing/fom-buid-7.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 100%;
 }
 
+
+.overall {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
 
 
 a {
@@ -20,18 +31,24 @@ a {
 
 .menu {
     // border: 1px solid red;
-    display: inline-block;
-    width: 50%;
-    margin-top: 2em;
-    margin-left: 2em;
+    // border: 1px solid red;
+    margin-top:20em;
 }
 
-.menu .button {
+.button {
   // border: 1px solid blue;
   // background: brown;
   padding: 1em;
-  width: 70%;
+  // width: 70%;
+  margin: 1em;
   border-radius: 40px;
   background: #cfcfcf;
 
+}
+
+
+.audio {
+  position: absolute;
+  right:    0;
+  bottom:   0;
 }
