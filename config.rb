@@ -63,3 +63,7 @@ end
 
 
 page "index.html", :layout => "landing"
+
+page "fom-game.html", :layout => "game"
+
+set :fonts_dir,  'fonts'
