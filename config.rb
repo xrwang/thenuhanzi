@@ -61,6 +61,7 @@ activate :deploy do |deploy|
   deploy.build_before = true
 end
 
+activate :directory_indexes
 
 page "index.html", :layout => "landing"
 
