@@ -1,0 +1,164 @@
+body {
+/*  padding: 0;
+  margin: 0;*/
+    font-family: -apple-system, BlinkMacSystemFont, "Microsoft yahei","Avenir Next", "Avenir",
+    "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
+    "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
+    "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+  padding: 3vh 1rem;
+/*  text-align: center;*/
+  justify-content: center;
+  /*background-image: url("censored-word-homophone.png") no-repeat center center fixed;*/
+/*    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
+
+  background: #DCDAFF;
+
+   /*background:
+      -webkit-linear-gradient(rgba(220,112,148, 0.4), rgba(135, 60, 255, 0.0) 80%),
+      -webkit-linear-gradient(-45deg, rgba(191,193,221, 0.9) 25%, rgba(72,219,205, 0.4) 75%);
+*/
+  
+}
+
+@font-face {
+    font-family: AdieuRegular;
+    src: url('asset/font/Adieu-Regular.otf') format('opentype');
+    src: url('asset/font/Adieu-Regular.woff') format('woff');
+    src: url('asset/font/Adieu-Regular.woff2') format('woff2');
+}
+
+.container {
+    display: -webkit-flex;
+    display: flex -webkit-flex-direction: row;
+    flex-direction: row;
+    padding: 4vw;
+    padding-top: 0vh;
+}
+
+
+.side-column {
+    width: 50%;
+    border-right: 2px solid #000;
+    margin-top: 0;
+    padding: 2vw;
+/*    margin-left: 5vw;*/
+/*    padding-left: vw;*/
+}
+
+.side-column--section h2 {
+    font-size: 3vw;
+    border-bottom: 2px solid #000;
+    padding-bottom: 20px
+}
+
+.main-column {
+    width: 50%;
+    padding: 4vw
+}
+
+
+#title {
+	padding-bottom: 10px;
+ 
+}
+
+h1 {
+    font-family: AdieuRegular;
+  font-size: 50px;
+/*  font-weight: 600;*/
+/*    padding-top: 0px;*/
+  
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}
+
+
+h2 {
+/*    font-family: AdieuRegular;*/
+  font-size: 38px;
+  font-weight: 900;
+/*  margin: 0px;*/
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #000;
+
+}
+
+h3 {
+    font-family: AdieuRegular;
+    font-size: 16px;
+/*    padding-bottom: 1vh;*/
+}
+
+p{
+	font-size: 14px;
+}
+
+#main {
+	margin-top: 30px;
+	margin-bottom: 20px;
+/*  justify-content: center;*/
+  display: flex;
+}
+
+#type{
+  /*border-radius: 5pt;  */
+  height: 40px;;
+  border: 1px solid #000;
+  background: none;
+}
+
+#type:focus{
+  border-radius: 0pt; 
+  /*background: #eee; */
+  border: 2px solid #000;
+  outline: #000;
+}
+
+.searchButton{
+	margin-left: 10px;
+  font-size: 16px;
+  background: none;
+  border: 1px solid #000;
+  color: #fff;
+  border-color: #0d0d0d;
+  border-radius: 0px;
+  color: #0d0d0d;
+  outline: #000;
+  transition: color 0.1s ease 0s, background-color 0.15s ease 0s;
+}
+
+
+.searchButton:hover {
+  border-radius: 0;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+  outline: #000;
+  /*box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5), 0 10px 40px rgba(0, 0, 0, 0.2);*/
+}
+
+.searchButton:active {
+  outline: #000;
+
+  }
+
+#searcResultBox{
+	/*padding: 10px;*/
+	font-size: 18px;
+}
+
+.searchResult{
+	padding: 5px;
+}
+
+#bg img {
+    width: 80%; 
+    margin-top:-30px;
+    margin-left:10%;
+    
+}
