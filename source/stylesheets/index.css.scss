@@ -1,3 +1,17 @@
+$icon-font-path: '../fonts/' !default;
+
+@font-face {
+    font-family: 'mad-sans-bold';
+    src: url('#{$icon-font-path}mad-sans-bold.eot');
+    src: url('#{$icon-font-path}mad-sans-bold.eot?#iefix') format('embedded-opentype'),
+         url('#{$icon-font-path}mad-sans-bold.woff2') format('woff2'),
+         url('#{$icon-font-path}mad-sans-bold.woff') format('woff'),
+         url('#{$icon-font-path}mad-sans-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 html {
   height: 100%;
 }
@@ -21,11 +35,12 @@ body {
 
 
 a {
-  font-family: sans-serif;
   color: #7d7d7d;
   text-decoration: none;
   font-size: 20px;
   padding: 1em;
+  font-family: 'mad-sans-bold', sans-serif;
+
 }
 
 
@@ -42,6 +57,13 @@ a {
   position: absolute;
   right:    0;
   bottom:   0;
+}
+
+audio::-webkit-media-controls-panel {
+  color: white;
+}
+audio::-webkit-media-controls-play-button{
+  color: pink;
 }
 
 button {

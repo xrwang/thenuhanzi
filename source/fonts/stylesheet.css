@@ -1,0 +1,23 @@
+/*
+ * Web Fonts from colophon-foundry.org
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Colophon Foundry. The fonts are protected under domestic and international trademark and
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2020 Colophon Foundry
+ *
+ * Licenced to Xiaowei Wang Logic Magazine
+ */
+
+@font-face {
+    font-family: 'mad-sans-bold';
+    src: url('mad-sans-bold.eot');
+    src: url('mad-sans-bold.eot?#iefix') format('embedded-opentype'),
+         url('mad-sans-bold.woff2') format('woff2'),
+         url('mad-sans-bold.woff') format('woff'),
+         url('mad-sans-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
