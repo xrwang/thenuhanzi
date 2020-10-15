@@ -3,7 +3,7 @@ var homephoneData;
 var foundHomephone=[];
 
 function preload(){
-	JSONArray = loadJSON("./sample.json");
+	JSONArray = loadJSON("javascripts/sample.json");
 }
 
 function setup(){
@@ -11,7 +11,7 @@ function setup(){
 }
 
 function buildFoundDivs(filterItem, inList){
-	
+
 	const keys = Object.keys(inList)
 	var destDiv = select("#searcResultBox")
 
@@ -20,10 +20,9 @@ function buildFoundDivs(filterItem, inList){
 			var valN = inList[key];
 			if(valN != filterItem){
 				var newDiv = createDiv(valN);
-				console.log("add newdiv "+ valN)
 				newDiv.class('searchResult');
 				destDiv.child(newDiv);
-			}	
+			}
 		}
 	}
 }
@@ -33,7 +32,7 @@ function removeFoundElements(){
 	for (var i = 0; i < pdivs.length; i++) {
 		pdivs[i].remove();
 	}
-	
+
 }
 
  function searchHomophone(){
@@ -53,6 +52,3 @@ function removeFoundElements(){
 		}
 	}
  }
-
-
-

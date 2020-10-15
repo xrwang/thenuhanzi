@@ -76,5 +76,7 @@ page "fom-game.html", :layout => "game"
 
 page "toolkit/*", :layout => "toolkit"
 
+page "homophone-search/*", :layout => "homophone-search"
+
 
 set :fonts_dir,  'fonts'
