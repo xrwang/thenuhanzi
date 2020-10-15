@@ -51,6 +51,7 @@ set :relative_links, true
 # end
 
 activate :livereload
+activate :directory_indexes
 
 
 # Middleman-deploy configuration
@@ -61,10 +62,17 @@ activate :deploy do |deploy|
   deploy.build_before = true
 end
 
-activate :directory_indexes
+# activate :toolkit do |toolkit|
+#   # toolkit.prefix = "toolkit"
+#   toolkit.permalink = ":toolkit.html"
+# end
+
 
 page "index.html", :layout => "landing"
 
 page "fom-game.html", :layout => "game"
+
+page "toolkit/*", :layout => "toolkit"
+
 
 set :fonts_dir,  'fonts'
