@@ -72,10 +72,12 @@
 
             <div class="row gallery">
                 <div class="col-lg-4 col-md-4 col-xs-6 col-sm-6 thumb">
-                    <a href="https://futureofmemory.netlify.app/">
-                        <figure>
-                          <%= image_tag 'toolkit/hanzi-maker.jpg', :class => 'img-fluid img-thumbnail' %></figure>
-                    </a>
+                  <figure>
+
+                    <% link_to '/hanzi-maker' do %>
+                          <%= image_tag 'toolkit/hanzi-maker.jpg', :class => 'img-fluid img-thumbnail'%>
+                    <% end %>
+                  </figure>
                     <h3>Hanzi Maker </h3>
                      <p>
                        Creating new characters using the Chinese (Mandarin) radical system. Based on invented characters from the 2014 Hong Kong Protests, documented in the paper “Tranßcripting: playful subversion with Chinese characters”
@@ -88,9 +90,12 @@
 
 
                 <div class="col-lg-4 col-md-4 col-xs-6 col-sm-6 thumb">
-                    <a href="http://www.qianqian-ye.com/chinese-homophone-search/">
-                        <figure><img class="img-fluid img-thumbnail" src="asset/chinese-homophone.jpg"></figure>
-                    </a>
+
+                    <figure>
+                    <% link_to '/homophone-search' do %>
+                          <%= image_tag 'toolkit/chinese-homophone.jpg', :class => 'img-fluid img-thumbnail'%>
+                    <% end %>
+                    </figure>
                     <h3>Chinese Homophone </h3>
                     <p>
                      In Chinese, a tonal language, words can be represented by different characters but sound similar. For example, 河蟹; pinyin: héxiè (river crab) sounds similar to 和谐; pinyin: héxié (harmony, used to mock the CCP espousal of a “harmonious society”). This tool translates censored words into their homophones — readers will know the real meaning of the word depending on the context.
@@ -105,86 +110,96 @@
 
 
                 <div class="col-lg-4 col-md-4 col-xs-6 col-sm-6 thumb">
-                    <a href="https://morsedecoder.com/">
-                        <figure><img class="img-fluid img-thumbnail" src="asset/morse-code-generator.png"></figure>
-                    </a>
+
+                    <figure>
+                    <% link_to 'https://morsedecoder.com/', :target=> '_blank' do %>
+                          <%= image_tag 'toolkit/morse-code-generator.png', :class => 'img-fluid img-thumbnail'%>
+                    <% end %>
+                    </figure>
+
                     <h3>Morse Code Generator </h3>
                      <p>
                    In recent years, online netizens in China have been using Morse code as a way to post sensitive information onto WeChat and Weibo.
 
                     </p>
                     <p class="credit">
-<!--                       Made by: The Future of Memory team -->
+                      Made by: <%= link_to 'Burak Özdemir','https://github.com/ozdemirburak', :target=> '_blank'%>
                     </p>
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-xs-6 col-sm-6 thumb">
-                    <a href="https://incoherency.co.uk/mojibake/">
-                        <figure><img class="img-fluid img-thumbnail" src="asset/mojibake.png"></figure>
-                    </a>
+
+                    <figure>
+                    <% link_to 'https://incoherency.co.uk/mojibake/', :target=> '_blank' do %>
+                          <%= image_tag 'toolkit/mojibake.png', :class => 'img-fluid img-thumbnail'%>
+                    <% end %>
+                    </figure>
+
                     <h3>Mojibake Generator </h3>
                     <p>
                    Mojibake is a phenomenon that describes when text is garbled, as a result of being decoded using a different character encoding than the one it was generated with. For more on Mojibake, which in Japanese means “character changing”, take a look <a href="https://revealingerrors.com/mojibake" >here</a>.
 
                     </p>
                     <p class="credit">
-<!--                       Made by: The Future of Memory team -->
+                      Made by: <%= link_to 'James Stanley','https://incoherency.co.uk/blog/', :target=> '_blank'%>
                     </p>
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-xs-6 col-sm-6 thumb">
-                    <a href="https://emojitranslate.com/">
-                        <figure><img class="img-fluid img-thumbnail" src="asset/text-to-emoji.png"></figure>
-                    </a>
+
+                  <figure>
+                  <% link_to 'https://emojitranslate.com/', :target=> '_blank' do %>
+                        <%= image_tag 'toolkit/mojibake.png', :class => 'img-fluid img-thumbnail'%>
+                  <% end %>
+                  </figure>
                     <h3>Text to Emoji Converter </h3>
                     <p>
                    Used throughout the world, emoji is an efficient and expressive way to convey all manner of content, from politically sensitive topics to whole novels.
 
                     </p>
                     <p class="credit">
-<!--                       Made by: The Future of Memory team -->
+                      Made by: <%= link_to 'Emoji Translate Team','https://emojitranslate.com/', :target=> '_blank'%>
                     </p>
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-xs-6 col-sm-6 thumb">
-                    <a href="https://www.online-toolz.com/tools/text-hex-convertor.php">
-                        <figure><img class="img-fluid img-thumbnail" src="asset/text-to-hex.png"></figure>
-                    </a>
+
+                  <figure>
+
+                    <% link_to 'https://onlinehextools.com/convert-ascii-to-hex', :target=> '_blank' do %>
+                          <%= image_tag 'toolkit/mojibake.png', :class => 'img-fluid img-thumbnail'%>
+                    <% end %>
+
+                  </figure>
+
                     <h3>Text to Hex Converter </h3>
-                    <p>
-                   Used to translate plain text (ASCII) into hexadecimal, students have also been storing messages on the Ethereum blockchain in hex to avoid censorship and takedown.
-
+                        <p>
+                       Used to translate plain text (ASCII) into hexadecimal, students have also been storing messages on the Ethereum blockchain in hex to avoid censorship and takedown.
+                        </p>
+                    <p class="credit">
+                      Made by: <%= link_to 'Browserling','https://www.browserling.com/', :target=> '_blank'%>
                     </p>
 
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-xs-6 col-sm-6 thumb">
-                    <a href="https://www.aies.cn/huoxingwen.htm">
-                        <figure><img class="img-fluid img-thumbnail" src="asset/martian-language-generator.png"></figure>
-                    </a>
+                  <figure>
+                    <% link_to 'https://www.aies.cn/huoxingwen.htm', :target=> '_blank' do %>
+                          <%= image_tag 'toolkit/martian-language-generator.png', :class => 'img-fluid img-thumbnail'%>
+                    <% end %>
+                  </figure>
+
                     <h3>Martian Language Generator</h3>
                     <p>
                   Martian Language, or 火星文; pinyin: huǒxīng, is popular amongst bloggers and is a combination of many strategies to bypass censorship — including replacing character with homophones, SMS slang and characters with similar radicals.
 
                     </p>
                     <p class="credit">
-<!--                       Made by: The Future of Memory team -->
+                      Made by: <%= link_to 'Aies','https://www.aies.cn/', :target=> '_blank'%>
                     </p>
                 </div>
 
-                <div class="col-lg-4 col-md-4 col-xs-6 col-sm-6 thumb">
-                    <a href="https://www.brailletranslator.org/">
-                        <figure><img class="img-fluid img-thumbnail" src="asset/braille-translator.png"></figure>
-                    </a>
-                    <h3>Braille Translator</h3>
-                    <p>
-                  Translating into Braille is also another strategy Chinese netizens have used to bypass takedown of posts. Braille is readable via a refreshable Braille display.
 
-                    </p>
-                    <p class="credit">
-<!--                       Made by: The Future of Memory team -->
-                    </p>
-                </div>
 
 
             </div>
