@@ -1,13 +1,16 @@
+$icon-font-path: '../fonts/' !default;
+
+
 body {
-    font-family: "Fira Sans", sans-serif;
+//     font-family: "Fira Sans", sans-serif;
     background: #BBF0A8;
 }
 
 @font-face {
     font-family: AdieuRegular;
-    src: url('asset/font/Adieu-Regular.otf') format('opentype');
-    src: url('asset/font/Adieu-Regular.woff') format('woff');
-    src: url('asset/font/Adieu-Regular.woff2') format('woff2');
+    src: url('#{$icon-font-path}Adieu-Regular.otf') format('opentype');
+    src: url('#{$icon-font-path}Adieu-Regular.woff') format('woff');
+    src: url('#{$icon-font-path}Adieu-Regular.woff2') format('woff2');
 }
 
 .container {
@@ -84,7 +87,7 @@ a {
 }
 
 h1 {
-    font-family: AdieuRegular;
+    font-family: AdieuRegular, sans-serif;
     /*    padding-bottom: 2vh;*/
     font-size: 4.6vw;
 }

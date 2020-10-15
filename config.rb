@@ -14,6 +14,8 @@ page '/*.json', layout: false
 page '/*.txt', layout: false
 
 set :images_dir, 'assets/images'
+set :js_dir, 'javascripts'
+
 
 activate :relative_assets
 set :relative_links, true

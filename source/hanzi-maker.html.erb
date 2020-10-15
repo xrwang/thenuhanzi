@@ -42,7 +42,7 @@ title: Hanzi Maker
             <div class="right-corner">
                 <div id="download-link">
                   <!-- <button class="cornerButton"> <a href="" id="download-link-href"></a> </button> -->
-                  <div class="cornerAction"> <a href="" id="download-link-href"><img src="assets/images/icons/download.svg" ></a> </div>
+                  <div class="cornerAction"> <a href="" id="download-link-href">  <%= image_tag 'icons/download.svg' %></a> </div>
                 </div>
 
                 <div id="clear-the-canvas">
@@ -77,35 +77,35 @@ title: Hanzi Maker
               <h3>Configuration</h3>
               <div class="tooltip">
               <div aria-label="Auto-arrange radicals on canvas" data-balloon-pos="up" class="question-label">
-                  <img src="assets/images/icons/info.svg" class="config-info">
+                  <%= image_tag 'icons/info.svg', :class => 'config-info'%>
               </div>
               </div>
           </div>
 
             <div class="arrange">
               <button class="config-2-horizontal" onclick="horizontalTwo()">
-                 <img src="assets/images/icons/1.svg" class="arrange-svg">
+                <%= image_tag 'icons/1.svg' , :class=>'arrange-svg' %>
               </button>
               <button class="config-2-horizontal" onclick="horizontalThree()">
-                <img src="assets/images/icons/2.svg" class="arrange-svg">
+                <%= image_tag 'icons/2.svg' , :class=>'arrange-svg' %>
               </button>
               <button class="config-2-horizontal" onclick="subDivideRight()">
-                <img src="assets/images/icons/3.svg" class="arrange-svg">
+                <%= image_tag 'icons/3.svg' , :class=>'arrange-svg' %>
               </button>
               <button class="config-2-horizontal" onclick="subDivideLeft()">
-                <img src="assets/images/icons/4.svg" class="arrange-svg">
+                <%= image_tag 'icons/4.svg' , :class=>'arrange-svg' %>
               </button>
               <button class="config-2-horizontal" onclick="verticalTwo()">
-                <img src="assets/images/icons/5.svg" class="arrange-svg">
+                <%= image_tag 'icons/5.svg' , :class=>'arrange-svg' %>
               </button>
               <button class="config-2-horizontal" onclick="verticalThree()">
-                <img src="assets/images/icons/6.svg" class="arrange-svg">
+                <%= image_tag 'icons/6.svg' , :class=>'arrange-svg' %>
               </button>
               <button class="config-2-horizontal" onclick="subDivideTop()">
-                <img src="assets/images/icons/7.svg" class="arrange-svg">
+                <%= image_tag 'icons/7.svg' , :class=>'arrange-svg' %>
               </button>
               <button class="config-2-horizontal" onclick="subDivideBottom()">
-                <img src="assets/images/icons/8.svg" class="arrange-svg">
+                <%= image_tag 'icons/8.svg' , :class=>'arrange-svg' %>
               </button>
             </div>
         </div>
@@ -118,7 +118,7 @@ title: Hanzi Maker
               <h3>Radical List</h3>
               <div class="tooltip">
                   <div aria-label="Building blocks of Chinese characters" data-balloon-pos="up" class="question-label">
-                    <img src="assets/images/icons/info.svg" class="config-info">
+                    <%= image_tag 'icons/info.svg', :class => 'config-info'%>
                   </div>
               </div>
             </div>
@@ -134,10 +134,10 @@ title: Hanzi Maker
 
                       <div class="radical-button">
                         <div class="radical-svg">
-                          <%= image_tag "radicals/radical-#{f.id}.svg", :data=>"assets/images/radicals/radical-#{f.id}.svg", :"data-rad-type" => "#{f.definition}", :class => 'radical-svg-link'%>
+                          <%= image_tag "radicals/radical-#{f.id}.svg", :data=>"../radicals/radical-#{f.id}.svg", :"data-rad-type" => "#{f.definition}", :class => 'radical-svg-link'%>
                         </div>
                         <div class="svg-definition">
-                          <%=link_to "#{f.definition}","#", :relative => true, :data =>"assets/images/radicals/radical-#{f.id}.svg", :"data-rad-type" => "#{f.definition}", :class => "radical-svg-link"%>
+                          <%=link_to "#{f.definition}","#", :relative => true, :data =>"../assets/images/radicals/radical-#{f.id}.svg", :"data-rad-type" => "#{f.definition}", :class => "radical-svg-link"%>
                         </div>
                       </div>
 
@@ -158,7 +158,7 @@ title: Hanzi Maker
                    <h3>Freetype</h3>
                    <div class="tooltip">
                      <div aria-label="Add anything to canvas" data-balloon-pos="up" class="question-label">
-                         <img src="assets/images/icons/info.svg" class="config-info">
+                       <%= image_tag 'icons/info.svg', :class => 'config-info'%>
                      </div>
                    </div>
                  </div>
@@ -176,7 +176,7 @@ title: Hanzi Maker
 
                   <div class="tooltip">
                     <div aria-label="Sourced from China Digital Times" data-balloon-pos="up" class="question-label">
-                        <img src="assets/images/icons/info.svg" class="config-info">
+                      <%= image_tag 'icons/info.svg', :class => 'config-info'%>
                     </div>
                   </div>
                 </div>
