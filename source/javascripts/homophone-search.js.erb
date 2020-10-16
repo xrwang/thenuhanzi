@@ -2,8 +2,12 @@ var input;
 var homephoneData;
 var foundHomephone=[];
 
+
+var json_data = <%= config[:json]  %>;
+console.log('json_data');
+
 function preload(){
-	JSONArray = loadJSON("javascripts/sample.json");
+	JSONArray = loadJSON(json_data);
 }
 
 function setup(){
