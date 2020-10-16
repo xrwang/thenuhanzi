@@ -72,7 +72,7 @@ function submitTextToCanvas(id) {
   drawGrid(canvas);
 
 
-  var textbox = new fabric.Textbox('Click radicals on the right onto this canvas, double click me to type', {
+  var textbox = new fabric.Textbox('This is a textbox. You can double click to edit, or press delete to get rid of me.', {
     left:100,
     top: 100,
     width: 200,
@@ -104,13 +104,15 @@ function add(e) {
   console.log(definition)
   fabric.loadSVGFromURL(svgURL, function(objects, options) {
     for(var i=0; i < objects.length; i++) {
+        console.log(objects[i])
+        objects[i].definition = definition;
         objects[i].scaleToWidth(canvasWidth/2);
         objects[i].scaleToHeight(canvasHeight/2);
        canvas.add(objects[i]);
     }
   });
 
-  document.getElementById('definition-tracker').innerHTML += definition + ",";
+  document.getElementById('definition-tracker').innerHTML += definition + ' ';
 
   //commented out below is grouping SVG
   // fabric.loadSVGFromURL(svgURL, function(objects, options) {
@@ -141,8 +143,14 @@ function clearAll() {
 
 //Deleting active object
 
+function definitionDeleter (definition) {
+  var newDefinition = document.getElementById('definition-tracker').innerHTML.replace(definition, '');
+  document.getElementById('definition-tracker').innerHTML = newDefinition;
+}
+
 function deleteActiveObject() {
   var activeObject = canvas.getActiveObject();
+  definitionDeleter(activeObject.definition);
   canvas.remove(activeObject);
 }
 

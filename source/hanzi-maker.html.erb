@@ -52,9 +52,6 @@ title: Hanzi Maker
 
         </div>
 
-        <div class="alert alert-warn-two" style="display:none">This auto-config requires two radicals</div>
-        <div class="alert alert-warn-three" style="display:none">This auto-config requires three radicals</div>
-
         <div id="canvas-container">
 
           <canvas id="canvas"></canvas>
@@ -74,14 +71,19 @@ title: Hanzi Maker
         <div class="configuration-options left-column">
 
           <div class="menu-heading">
-              <h3>Configuration</h3>
-              <div class="tooltip">
-              <div aria-label="Auto-arrange radicals on canvas" data-balloon-pos="up" class="question-label">
-                  <%= image_tag 'icons/info.svg', :class => 'config-info'%>
-              </div>
-              </div>
-          </div>
+              <h3>Layout</h3>
 
+              <div class="tooltip">
+                <div aria-label="Auto-arrange radicals on canvas" data-balloon-pos="up" class="question-label">
+                    <%= image_tag 'icons/info.svg', :class => 'config-info'%>
+                </div>
+              </div>
+
+
+          </div>
+            <div class="alert alert-warn-two" style="display:none">This auto-config requires two radicals</div>
+            <div class="alert alert-warn-three" style="display:none">This auto-config requires three radicals</div>
+            
             <div class="arrange">
               <button class="config-2-horizontal" onclick="horizontalTwo()">
                 <%= image_tag 'icons/1.svg' , :class=>'arrange-svg' %>
