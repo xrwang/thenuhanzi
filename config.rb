@@ -80,7 +80,3 @@ page "homophone-search/*", :layout => "homophone-search"
 
 
 set :fonts_dir,  'fonts'
-
-
-string = File.read('data/sample.json')
-config[:json] = JSON.parse(string)

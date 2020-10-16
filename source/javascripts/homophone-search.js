@@ -2,18 +2,15 @@ var input;
 var homephoneData;
 var foundHomephone=[];
 
-
-var json_data = <%= config[:json]  %>;
-
 function preload(){
-	JSONArray = loadJSON(json_data);
+	JSONArray = loadJSON('/homophone-search/homophone-search.json');
 }
 
 function setup(){
 	homephoneData= JSONArray["dataset"];
 }
 
-function buildFoundDivs(filterItem, inList){
+function buildFoundDivs(filterItem, inList) {
 
 	const keys = Object.keys(inList)
 	var destDiv = select("#searcResultBox")
