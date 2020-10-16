@@ -101,10 +101,8 @@ function submitTextToCanvas(id) {
 function add(e) {
   var svgURL = e.target.getAttribute('data');
   var definition = e.target.getAttribute('data-rad-type');
-  console.log(definition)
   fabric.loadSVGFromURL(svgURL, function(objects, options) {
     for(var i=0; i < objects.length; i++) {
-        console.log(objects[i])
         objects[i].definition = definition;
         objects[i].scaleToWidth(canvasWidth/2);
         objects[i].scaleToHeight(canvasHeight/2);
@@ -355,7 +353,6 @@ function verticalTwo() {
     canvas.renderAll();
   } else {
     var x = document.getElementsByClassName("alert-warn-two")[0];
-    console.log(x)
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
@@ -392,7 +389,6 @@ function verticalThree() {
     canvas.renderAll();
   } else {
     var x = document.getElementsByClassName("alert-warn-three")[0];
-    console.log(x)
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
@@ -429,7 +425,6 @@ function subDivideTop() {
     canvas.renderAll();
   } else {
     var x = document.getElementsByClassName("alert-warn-three")[0];
-    console.log(x)
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
@@ -466,7 +461,6 @@ function subDivideBottom() {
     canvas.renderAll();
   } else {
     var x = document.getElementsByClassName("alert-warn-three")[0];
-    console.log(x)
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
