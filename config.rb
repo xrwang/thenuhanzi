@@ -14,6 +14,8 @@ page '/*.json', layout: false
 page '/*.txt', layout: false
 
 set :images_dir, 'assets/images'
+set :js_dir, 'javascripts'
+
 
 activate :relative_assets
 set :relative_links, true
@@ -51,6 +53,7 @@ set :relative_links, true
 # end
 
 activate :livereload
+activate :directory_indexes
 
 
 # Middleman-deploy configuration
@@ -61,9 +64,19 @@ activate :deploy do |deploy|
   deploy.build_before = true
 end
 
+# activate :toolkit do |toolkit|
+#   # toolkit.prefix = "toolkit"
+#   toolkit.permalink = ":toolkit.html"
+# end
+
 
 page "index.html", :layout => "landing"
 
 page "fom-game.html", :layout => "game"
+
+page "toolkit/*", :layout => "toolkit"
+
+page "homophone-search/*", :layout => "homophone-search"
+
 
 set :fonts_dir,  'fonts'
