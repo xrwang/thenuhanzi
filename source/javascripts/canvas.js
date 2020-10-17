@@ -159,10 +159,50 @@ $("body").on("keydown", function(e) {
   }
 });
 
+
+
+// Downloading the image
+
+function backgroundColor (c) {
+  c.setBackgroundColor('rgba(255, 73, 64, 0.6)', canvas.renderAll.bind(canvas));
+}
+
+function showBg (c) {
+  c.setBackgroundColor('rgba(0, 0, 0, 0.6)', canvas.renderAll.bind(canvas));
+}
+
+function removeGrid() {
+    var objects = canvas.getObjects('line');
+    for (let i in objects) {
+        canvas.remove(objects[i]);
+    }
+}
+
 var link = document.getElementById('download-link-href');
     // link.innerHTML = 'download image';
     link.addEventListener('click', function(ev) {
-    link.href = canvas.toDataURL();
+
+    // destinationCanvas = document.createElement("canvas");
+    // destinationCanvas.width = srcCanvas.width;
+    // destinationCanvas.height = srcCanvas.height;
+    //
+    // destCtx = destinationCanvas.getContext('2d');
+    //
+    // //create a rectangle with the desired color
+    // destCtx.fillStyle = "#FFFFFF";
+    // destCtx.fillRect(0,0,srcCanvas.width,srcCanvas.height);
+    //
+    // //draw the original canvas onto the destination canvas
+    // destCtx.drawImage(srcCanvas, 0, 0);
+
+    //finally use the destinationCanvas.toDataURL() method to get the desired output;
+
+    var destCtx = canvas.getContext('2d');
+
+    backgroundColor(destCtx);
+
+
+    link.href =  destCtx.toDataURL();
     link.download = "my-new-hanzi.jpg";
 }, false);
 
@@ -170,8 +210,7 @@ document.body.getElementById('download-link').appendChild(link);
 
 
 
-//Autoconfig buttons
-
+// Auto-arrange layout buttons
 // The main class
 
 
