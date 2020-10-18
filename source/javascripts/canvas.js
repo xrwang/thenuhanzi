@@ -72,7 +72,7 @@ function submitTextToCanvas(id) {
   drawGrid(canvas);
 
 
-  var textbox = new fabric.Textbox('Click radicals on the right onto this canvas, double click me to type', {
+  var textbox = new fabric.Textbox('This is a textbox. You can double click to edit, or press delete to get rid of me.', {
     left:100,
     top: 100,
     width: 200,
@@ -101,16 +101,16 @@ function submitTextToCanvas(id) {
 function add(e) {
   var svgURL = e.target.getAttribute('data');
   var definition = e.target.getAttribute('data-rad-type');
-  console.log(definition)
   fabric.loadSVGFromURL(svgURL, function(objects, options) {
     for(var i=0; i < objects.length; i++) {
+        objects[i].definition = definition;
         objects[i].scaleToWidth(canvasWidth/2);
         objects[i].scaleToHeight(canvasHeight/2);
        canvas.add(objects[i]);
     }
   });
 
-  document.getElementById('definition-tracker').innerHTML += definition + ",";
+  document.getElementById('definition-tracker').innerHTML += definition + ' ';
 
   //commented out below is grouping SVG
   // fabric.loadSVGFromURL(svgURL, function(objects, options) {
@@ -141,8 +141,14 @@ function clearAll() {
 
 //Deleting active object
 
+function definitionDeleter (definition) {
+  var newDefinition = document.getElementById('definition-tracker').innerHTML.replace(definition, '');
+  document.getElementById('definition-tracker').innerHTML = newDefinition;
+}
+
 function deleteActiveObject() {
   var activeObject = canvas.getActiveObject();
+  definitionDeleter(activeObject.definition);
   canvas.remove(activeObject);
 }
 
@@ -153,10 +159,50 @@ $("body").on("keydown", function(e) {
   }
 });
 
+
+
+// Downloading the image
+
+function backgroundColor (c) {
+  c.setBackgroundColor('rgba(255, 73, 64, 0.6)', canvas.renderAll.bind(canvas));
+}
+
+function showBg (c) {
+  c.setBackgroundColor('rgba(0, 0, 0, 0.6)', canvas.renderAll.bind(canvas));
+}
+
+function removeGrid() {
+    var objects = canvas.getObjects('line');
+    for (let i in objects) {
+        canvas.remove(objects[i]);
+    }
+}
+
 var link = document.getElementById('download-link-href');
     // link.innerHTML = 'download image';
     link.addEventListener('click', function(ev) {
-    link.href = canvas.toDataURL();
+
+    // destinationCanvas = document.createElement("canvas");
+    // destinationCanvas.width = srcCanvas.width;
+    // destinationCanvas.height = srcCanvas.height;
+    //
+    // destCtx = destinationCanvas.getContext('2d');
+    //
+    // //create a rectangle with the desired color
+    // destCtx.fillStyle = "#FFFFFF";
+    // destCtx.fillRect(0,0,srcCanvas.width,srcCanvas.height);
+    //
+    // //draw the original canvas onto the destination canvas
+    // destCtx.drawImage(srcCanvas, 0, 0);
+
+    //finally use the destinationCanvas.toDataURL() method to get the desired output;
+
+    var destCtx = canvas.getContext('2d');
+
+    backgroundColor(destCtx);
+
+
+    link.href =  destCtx.toDataURL();
     link.download = "my-new-hanzi.jpg";
 }, false);
 
@@ -164,8 +210,7 @@ document.body.getElementById('download-link').appendChild(link);
 
 
 
-//Autoconfig buttons
-
+// Auto-arrange layout buttons
 // The main class
 
 
@@ -347,7 +392,6 @@ function verticalTwo() {
     canvas.renderAll();
   } else {
     var x = document.getElementsByClassName("alert-warn-two")[0];
-    console.log(x)
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
@@ -384,7 +428,6 @@ function verticalThree() {
     canvas.renderAll();
   } else {
     var x = document.getElementsByClassName("alert-warn-three")[0];
-    console.log(x)
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
@@ -421,7 +464,6 @@ function subDivideTop() {
     canvas.renderAll();
   } else {
     var x = document.getElementsByClassName("alert-warn-three")[0];
-    console.log(x)
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
@@ -458,7 +500,6 @@ function subDivideBottom() {
     canvas.renderAll();
   } else {
     var x = document.getElementsByClassName("alert-warn-three")[0];
-    console.log(x)
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
