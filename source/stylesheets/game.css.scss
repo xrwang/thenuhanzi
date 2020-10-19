@@ -55,11 +55,17 @@ div#30-60-90-plan {
 
 
 div#ui-bar {
-    max-width: 20%;
     background: #C0FF00;
-    color: black;
+    border-right: none;
 }
 
+ul#menu-core{
+  border: none !important;
+}
+
+li#menu-item-restart {
+    border: none !important;
+}
 
 h1#story-title {
   font-family:'mad-sans-bold', sans-serif;
