@@ -80,3 +80,13 @@ page "homophone-search/*", :layout => "homophone-search"
 
 
 set :fonts_dir,  'fonts'
+
+helpers do
+  def radical_svg_path(id)
+    image_path("radicals/radical-#{id}.svg")
+  end
+
+  def word_svg_path(id)
+    image_path("words/#{id}.svg")
+  end
+end

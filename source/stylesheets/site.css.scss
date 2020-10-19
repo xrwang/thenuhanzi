@@ -180,6 +180,8 @@ a {
   padding: 0.1em 0.1em;
   text-align: center;
   margin: 2px;
+  font-size: 10px;
+  cursor: pointer;
 }
 .radical-svg, .word-svg {
   border-right: 0.5px solid #EBEBEB;
@@ -191,7 +193,9 @@ a {
   // display: none;
   width: 100px;
   z-index: 100;
-
+  /* hack to vertically center text in button
+   * will need to change if font-size changes */
+  line-height: 30px;
 }
 
 svg-definition-word {

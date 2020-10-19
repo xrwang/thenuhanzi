@@ -17,11 +17,6 @@ function submitTextToCanvas(id) {
 
 // $(window).bind("load",function() {
 
-//prevent the page from scrolling up when clicking one of the buttons to add to canvas
-  $('.radical-svg-link').click(function (event) {
-       event.preventDefault();
-  });
-
   //  var canvasHeight=600;
   // var canvasWidth=600;
 
@@ -98,15 +93,26 @@ function submitTextToCanvas(id) {
 
 //Add to canvas
 
+var radicalCursor = 0;
 function add(e) {
-  var svgURL = e.target.getAttribute('data');
-  var definition = e.target.getAttribute('data-rad-type');
+  var svgURL = e.currentTarget.getAttribute('data');
+  var definition = e.currentTarget.getAttribute('data-rad-type');
   fabric.loadSVGFromURL(svgURL, function(objects, options) {
     for(var i=0; i < objects.length; i++) {
-        objects[i].definition = definition;
-        objects[i].scaleToWidth(canvasWidth/2);
+      objects[i].definition = definition;
+      if (objects[i].height > objects[i].width) {
         objects[i].scaleToHeight(canvasHeight/2);
-       canvas.add(objects[i]);
+      } else {
+        objects[i].scaleToWidth(canvasWidth/2);
+      }
+      if (radicalCursor % 4 == 1 || radicalCursor % 4 == 2) {
+        objects[i].left = canvasWidth / 2;
+      }
+      if (radicalCursor % 4 == 2 || radicalCursor % 4 == 3) {
+        objects[i].top = canvasHeight / 2;
+      }
+      radicalCursor++;
+      canvas.add(objects[i]);
     }
   });
 
@@ -124,10 +130,14 @@ function add(e) {
 }
 
 
-var elements = document.getElementsByClassName("radical-svg-link");
+var radicalButtons = document.getElementsByClassName("radical-button");
+for (var i = 0; i < radicalButtons.length; i++) {
+  radicalButtons[i].addEventListener('click', add, false);
+}
 
-for (var i = 0; i < elements.length; i++) {
-    elements[i].addEventListener('click', add, false);
+var wordButtons = document.getElementsByClassName("word-button");
+for (var i = 0; i < wordButtons.length; i++) {
+  wordButtons[i].addEventListener('click', add, false);
 }
 
 
