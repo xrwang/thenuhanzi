@@ -35,15 +35,13 @@ title: Welcome to The Future of Memory
       </div>
 
     </div>
-
-     <div class='bottom-right'><img id='vol' src='/assets/images/icons/vol-off.png' alt='volume off icon'>
-    </div>
-
-
-    <div class="audio">
-<!--       <audio controls src="/assets/FOM-YBCA.mp3" loop autoplay>
-                Your browser does not support the
-                <code>audio</code> element.
-      </audio> -->
-    </div>
   </div>
+
+<!-- hack to bypass autoplay restrictions on Chrome -->
+<!-- https://olafwempe.com/how-to-enable-audio-and-video-autoplay-with-sound-in-chrome-and-other-browsers-in-2019 -->
+<iframe src="/assets/audio/silence.mp3" type="audio/mp3" allow="autoplay" style="display:none"></iframe>
+<audio id="audio" autoplay loop>
+  <source src="/assets/audio/FOM-YBCA.mp3" type="audio/mp3">
+</audio>
+
+<button id="audio-btn"><img src="<%= image_path('mute.png') %>" /></button>

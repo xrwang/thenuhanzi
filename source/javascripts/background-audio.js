@@ -1,33 +1,25 @@
-let playing = false;
-let audioInit = false;
-
 $(document).ready(function() {
-  $('body').append('<audio loop id="music" src="/assets/FOM-YBCA.mp3" type="audio/mpeg"></audio>');
-  $('body').click(play);
+  var audio = document.getElementById('audio');
+  var audioBtn = document.getElementById('audio-btn');
+  var updateBtnText = function () {
+    if (audio.paused) {
+      audioBtn.innerHTML = '<img src="/assets/images/mute.png" alt="Unmute" />';
+    } else {
+      audioBtn.innerHTML = '<img src="/assets/images/audio.png" alt="Mute" />';
+    }
+  };
 
-  $('#vol').click(toggle);
+  audioBtn.onclick = function () {
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  };
+
+  audio.onplay = updateBtnText;
+  audio.onpause = updateBtnText;
+
+  // init button state
+  updateBtnText();
 });
-
-function play() {
-  if (!audioInit) {
-    $('#music').trigger('play');
-    $('#music').prop('volume', 0.1);
-    $('#vol').attr('src', '/assets/images/icons/vol-on.png');
-    audioInit = true;
-    playing = true;
-  }
-}
-
-function toggle() {
-  console.log('tog', playing)
-  if (playing) {
-    console.log('stop')
-    $('#vol').attr('src', '/assets/images/icons/vol-off.png');
-    $('#music').trigger('pause');
-    playing = false;
-  } else {
-    $('#vol').attr('src', '/assets/images/icons/vol-on.png');
-    $('#music').trigger('play');
-    playing = true;
-  }
-}
