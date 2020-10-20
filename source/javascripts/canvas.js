@@ -26,7 +26,8 @@ function submitTextToCanvas(id) {
   var canvas = new fabric.Canvas('canvas', {
     selection: false,
     height: window.innerWidth*0.45,
-    width: window.innerWidth*0.45
+    width: window.innerWidth*0.45,
+    backgroundColor : "#fff"
     });
 
 
@@ -65,6 +66,14 @@ function submitTextToCanvas(id) {
 
 
   drawGrid(canvas);
+
+
+  function removeGrid(c) {
+      var objects = canvas.getObjects('line');
+      for (let i in objects) {
+          canvas.remove(objects[i]);
+      }
+  }
 
 
   var textbox = new fabric.Textbox('This is a textbox. You can double click to edit, or press delete to get rid of me.', {
@@ -173,15 +182,8 @@ $("body").on("keydown", function(e) {
 
 // Downloading the image
 
-function backgroundColor (c) {
-  c.setBackgroundColor('rgba(255, 73, 64, 0.6)', canvas.renderAll.bind(canvas));
-}
 
-function showBg (c) {
-  c.setBackgroundColor('rgba(0, 0, 0, 0.6)', canvas.renderAll.bind(canvas));
-}
-
-function removeGrid() {
+function removeGrid(c) {
     var objects = canvas.getObjects('line');
     for (let i in objects) {
         canvas.remove(objects[i]);
@@ -206,14 +208,10 @@ var link = document.getElementById('download-link-href');
     // destCtx.drawImage(srcCanvas, 0, 0);
 
     //finally use the destinationCanvas.toDataURL() method to get the desired output;
-
-    var destCtx = canvas.getContext('2d');
-
-    backgroundColor(destCtx);
-
-
-    link.href =  destCtx.toDataURL();
+    removeGrid(canvas);
+    link.href =  canvas.toDataURL();
     link.download = "my-new-hanzi.jpg";
+    drawGrid(canvas);
 }, false);
 
 document.body.getElementById('download-link').appendChild(link);
