@@ -139,3 +139,18 @@ button#ui-dialog-close,h1#ui-dialog-title {
     border-radius: 2em;
   }
 }
+
+.text-message-phone {
+  font-family: helvetica;
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  content: "";
+  background: #eee;
+  border-bottom-right-radius: 15px;
+}
+
+.slack-alert {
+    font-family: 'Lato' !important;
+}
