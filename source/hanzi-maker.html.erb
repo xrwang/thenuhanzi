@@ -59,8 +59,7 @@ title: Hanzi Maker
 
 
         <div class="tooltip left-column">
-            <div><h3>English definition</h3>
-          </div>
+            <div class="heading-new-section"><h3>English definition</h3></div>
         </div>
 
           <div class="definition-box left-column">
@@ -75,7 +74,7 @@ title: Hanzi Maker
 
               <div class="tooltip">
                 <div aria-label="Auto-arrange radicals on canvas" data-balloon-pos="up" class="question-label">
-                    <%= image_tag 'icons/info.svg', :class => 'config-info'%>
+                    <%= image_tag 'icons/info2.svg', :class => 'config-info'%>
                 </div>
               </div>
 
@@ -83,7 +82,7 @@ title: Hanzi Maker
           </div>
             <div class="alert alert-warn-two" style="display:none">This auto-config requires two radicals</div>
             <div class="alert alert-warn-three" style="display:none">This auto-config requires three radicals</div>
-            
+
             <div class="arrange">
               <button class="config-2-horizontal" onclick="horizontalTwo()">
                 <%= image_tag 'icons/1.svg' , :class=>'arrange-svg' %>
@@ -120,7 +119,7 @@ title: Hanzi Maker
               <h3>Radical List</h3>
               <div class="tooltip">
                   <div aria-label="Building blocks of Chinese characters" data-balloon-pos="up" class="question-label">
-                    <%= image_tag 'icons/info.svg', :class => 'config-info'%>
+                    <%= image_tag 'icons/info2.svg', :class => 'config-info'%>
                   </div>
               </div>
             </div>
@@ -132,20 +131,20 @@ title: Hanzi Maker
                     <%=category%>
                   </div>
                   <div class="radical-group-category">
-                  <%radicals.each do |f|%>
+                    <%radicals.each do |f|%>
 
-                      <div class="radical-button">
+                      <div class="radical-button" data="<%= radical_svg_path(f.id) %>" data-rad-type="<%= f.definition %>" role="button">
                         <div class="radical-svg">
-                          <%= image_tag "radicals/radical-#{f.id}.svg", :data=>"../radicals/radical-#{f.id}.svg", :"data-rad-type" => "#{f.definition}", :class => 'radical-svg-link'%>
+                          <%= image_tag radical_svg_path(f.id) %>
                         </div>
                         <div class="svg-definition">
-                          <%=link_to "#{f.definition}","#", :relative => true, :data =>"../assets/images/radicals/radical-#{f.id}.svg", :"data-rad-type" => "#{f.definition}", :class => "radical-svg-link"%>
+                          <%= f.definition %>
                         </div>
                       </div>
 
-                      <%end%>
+                    <%end%>
                   </div>
-                  <%end%>
+                <%end%>
               </div>
 
              <div class="scrollbar" >
@@ -160,7 +159,7 @@ title: Hanzi Maker
                    <h3>Freetype</h3>
                    <div class="tooltip">
                      <div aria-label="Add anything to canvas" data-balloon-pos="up" class="question-label">
-                       <%= image_tag 'icons/info.svg', :class => 'config-info'%>
+                       <%= image_tag 'icons/info2.svg', :class => 'config-info'%>
                      </div>
                    </div>
                  </div>
@@ -178,7 +177,7 @@ title: Hanzi Maker
 
                   <div class="tooltip">
                     <div aria-label="Sourced from China Digital Times" data-balloon-pos="up" class="question-label">
-                      <%= image_tag 'icons/info.svg', :class => 'config-info'%>
+                      <%= image_tag 'icons/info2.svg', :class => 'config-info'%>
                     </div>
                   </div>
                 </div>
@@ -186,17 +185,16 @@ title: Hanzi Maker
 
             <div class="word-container">
               <div class="radicals word-menu">
-                    <% data.words.each do |word| %>
-                      <div class="word-button">
-                          <div class="word-svg">
-                            <%= image_tag "words/#{word.id}.svg", :data=>"assets/images/words/#{word.id}.svg", :"data-rad-type" => "#{word.en}", :class => 'word-svg'%>
-                          </div>
-                          <div class="svg-definition-word">
-                            <%=link_to "#{word.en}","#", :relative => true, :data =>"assets/images/words/#{word.id}.svg", :"data-rad-type" => "#{word.en}", :class => "radical-svg-link"%>
-                          </div>
-                      </div>
-                      <% end %>
-
+                <% data.words.each do |word| %>
+                  <div class="word-button" data="<%= word_svg_path(word.id) %>" data-rad-type="<%= word.en %>" role="button">
+                    <div class="word-svg">
+                      <%= image_tag word_svg_path(word.id), class: "word-svg" %>
+                    </div>
+                    <div class="svg-definition-word">
+                      <%= word.en %>
+                    </div>
+                  </div>
+                <% end %>
               </div>
             </div>
       </div>

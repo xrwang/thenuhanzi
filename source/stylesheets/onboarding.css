@@ -315,6 +315,8 @@ a {
   position: absolute;
   /*transform: translateX(-72px);*/
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* content was overlaying next button */
+  max-height: 385px;
 }
 .walkthrough .screens .screen.active {
   opacity: 1;

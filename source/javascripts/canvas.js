@@ -17,11 +17,6 @@ function submitTextToCanvas(id) {
 
 // $(window).bind("load",function() {
 
-//prevent the page from scrolling up when clicking one of the buttons to add to canvas
-  $('.radical-svg-link').click(function (event) {
-       event.preventDefault();
-  });
-
   //  var canvasHeight=600;
   // var canvasWidth=600;
 
@@ -31,7 +26,8 @@ function submitTextToCanvas(id) {
   var canvas = new fabric.Canvas('canvas', {
     selection: false,
     height: window.innerWidth*0.45,
-    width: window.innerWidth*0.45
+    width: window.innerWidth*0.45,
+    backgroundColor : "#fff"
     });
 
 
@@ -72,6 +68,14 @@ function submitTextToCanvas(id) {
   drawGrid(canvas);
 
 
+  function removeGrid(c) {
+      var objects = canvas.getObjects('line');
+      for (let i in objects) {
+          canvas.remove(objects[i]);
+      }
+  }
+
+
   var textbox = new fabric.Textbox('This is a textbox. You can double click to edit, or press delete to get rid of me.', {
     left:100,
     top: 100,
@@ -98,15 +102,26 @@ function submitTextToCanvas(id) {
 
 //Add to canvas
 
+var radicalCursor = 0;
 function add(e) {
-  var svgURL = e.target.getAttribute('data');
-  var definition = e.target.getAttribute('data-rad-type');
+  var svgURL = e.currentTarget.getAttribute('data');
+  var definition = e.currentTarget.getAttribute('data-rad-type');
   fabric.loadSVGFromURL(svgURL, function(objects, options) {
     for(var i=0; i < objects.length; i++) {
-        objects[i].definition = definition;
-        objects[i].scaleToWidth(canvasWidth/2);
+      objects[i].definition = definition;
+      if (objects[i].height > objects[i].width) {
         objects[i].scaleToHeight(canvasHeight/2);
-       canvas.add(objects[i]);
+      } else {
+        objects[i].scaleToWidth(canvasWidth/2);
+      }
+      if (radicalCursor % 4 == 1 || radicalCursor % 4 == 2) {
+        objects[i].left = canvasWidth / 2;
+      }
+      if (radicalCursor % 4 == 2 || radicalCursor % 4 == 3) {
+        objects[i].top = canvasHeight / 2;
+      }
+      radicalCursor++;
+      canvas.add(objects[i]);
     }
   });
 
@@ -124,10 +139,14 @@ function add(e) {
 }
 
 
-var elements = document.getElementsByClassName("radical-svg-link");
+var radicalButtons = document.getElementsByClassName("radical-button");
+for (var i = 0; i < radicalButtons.length; i++) {
+  radicalButtons[i].addEventListener('click', add, false);
+}
 
-for (var i = 0; i < elements.length; i++) {
-    elements[i].addEventListener('click', add, false);
+var wordButtons = document.getElementsByClassName("word-button");
+for (var i = 0; i < wordButtons.length; i++) {
+  wordButtons[i].addEventListener('click', add, false);
 }
 
 
@@ -163,15 +182,8 @@ $("body").on("keydown", function(e) {
 
 // Downloading the image
 
-function backgroundColor (c) {
-  c.setBackgroundColor('rgba(255, 73, 64, 0.6)', canvas.renderAll.bind(canvas));
-}
 
-function showBg (c) {
-  c.setBackgroundColor('rgba(0, 0, 0, 0.6)', canvas.renderAll.bind(canvas));
-}
-
-function removeGrid() {
+function removeGrid(c) {
     var objects = canvas.getObjects('line');
     for (let i in objects) {
         canvas.remove(objects[i]);
@@ -196,14 +208,10 @@ var link = document.getElementById('download-link-href');
     // destCtx.drawImage(srcCanvas, 0, 0);
 
     //finally use the destinationCanvas.toDataURL() method to get the desired output;
-
-    var destCtx = canvas.getContext('2d');
-
-    backgroundColor(destCtx);
-
-
-    link.href =  destCtx.toDataURL();
+    removeGrid(canvas);
+    link.href =  canvas.toDataURL();
     link.download = "my-new-hanzi.jpg";
+    drawGrid(canvas);
 }, false);
 
 document.body.getElementById('download-link').appendChild(link);

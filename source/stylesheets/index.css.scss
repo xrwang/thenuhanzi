@@ -11,13 +11,20 @@ $icon-font-path: '../fonts/' !default;
     font-style: normal;
 }
 
+@font-face {
+    font-family: AdieuRegular;
+    src: url('#{$icon-font-path}Adieu-Regular.otf') format('opentype');
+    src: url('#{$icon-font-path}Adieu-Regular.woff') format('woff');
+    src: url('#{$icon-font-path}Adieu-Regular.woff2') format('woff2');
+}
 
 html {
   height: 100%;
 }
 
 body {
-  background: image-url("landing/fom-buid-7.png") no-repeat center center fixed;
+  // background: image-url("landing/fom-buid-7.png") no-repeat center center fixed;
+  background: image-url("landing/fom-office.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -27,30 +34,45 @@ body {
 
 
 .overall {
+  display: -webkit-flex;
   display: flex;
-  justify-content: center;
-  height: 100%;
-  align-items: center;
+  -webkit-flex-direction: row;
+    flex-direction: row;
+
 }
 
+.intro{
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+
+p{
+  font-family: AdieuRegular;
+  font-size: 26px;
+  margin:0px;
+
+}
 
 a {
-  color: #7d7d7d;
+  color: #000;
   text-decoration: none;
-  font-size: 20px;
+  text-align: left;
+  font-size: 16px;
   padding: 1em;
-  font-family: 'mad-sans-bold', sans-serif;
+  font-family: AdieuRegular;
+  // font-family: 'mad-sans-bold', sans-serif;
 
 }
 
 
 .menu {
-    // border: 1px solid red;
-    // border: 1px solid red;
-    margin-top:20em;
+  margin-top: 15vh;
+  margin-left: 55%;
+  padding:2.2em;
+  width: 35%;
+  background: rgba(255,255,255,0.6);
+  height: 80%;
 }
-
-
 
 
 .audio {
@@ -67,12 +89,62 @@ audio::-webkit-media-controls-play-button{
 }
 
 button {
-  // border: 1px solid blue;
-  // background: brown;
-  // width: 70%;
-  border-radius: 40px;
-  background: #cfcfcf !important;
+  background: transparent;
   border: none;
-  margin-bottom: 1em;
-  padding: 1em;
+  padding-top: 30px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #000;
+  // margin-bottom: 1em;
+  // padding: 1em;
+}
+
+.vimeo-wrapper {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   pointer-events: none;
+   overflow: hidden;
+}
+.vimeo-wrapper iframe {
+   width: 100vw;
+   height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+   min-height: 100vh;
+   min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+#vol {
+  width: 1.2em;
+  opacity: 0.13;
+  cursor: pointer;
+}
+#vol:hover {
+  opacity: 1.0;
+}
+
+.bottom-right {
+    bottom: 1em;
+    left: 1.25em;
+  }
+
+#audio-btn {
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }

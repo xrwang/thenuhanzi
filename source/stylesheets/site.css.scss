@@ -11,7 +11,6 @@ $icon-font-path: '../fonts/' !default;
 
 body {
   // background-color: #FDF4F1;
-  background-color: white;
   color: #333;
   font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
     "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
@@ -20,8 +19,67 @@ body {
   padding: 5vh 2vw;
   text-align: center;
   // overflow: scroll;
-  // overflow-y: hidden;
+  // overflow-y: ffd7d4;
+    background: #ffe5e3;
+    -webkit-animation: toggle-background 30s infinite;
+    animation: toggle-background 30s infinite;
+
+    
+    
+    
+//  background: #BBF0A8;
+//  -webkit-font-smoothing: antialiased;
+//  background: -webkit-gradient(linear, left top, right top, from(rgba(155, 206, 238, 1)), color-stop(30%, rgba(255, 245, 204, 1)), color-stop(70%, rgba(223, 255, 212, 1)), to(rgba(207, 204, 255, 1)));
+//  background: -webkit-linear-gradient(left, rgba(168, 237, 234, 1) 0%, rgba(255, 245, 204, 1) 30%, rgba(223, 255, 212, 1) 70%, rgba(207, 204, 255, 1) 100%);
+//  background: -o-linear-gradient(left, rgba(168, 237, 234, 1) 0%, rgba(255, 245, 204, 1) 30%, rgba(223, 255, 212, 1) 70%, rgba(185, 141, 255, 1) 100%);
+//  background: linear-gradient(90deg, rgba(168, 237, 234, 1) 0%, rgba(221, 214, 243, 1) 30%, rgba(255, 245, 204, 1) 70%, rgba(254, 227, 255, 1) 100%);
+//  background-size: 400% 400%;
+//  -webkit-animation: gsradient 20s ease infinite;
+//  animation: gradient 20s ease infinite;
+    
 }
+
+@-webkit-keyframes toggle-background {
+	0% {
+		background: #ffe5e3
+	}
+	50% {
+		background: #e8deff
+	}
+	to {
+		background: #ffe5e3
+	}
+}
+
+
+//@-webkit-keyframes gradient {
+//    0% {
+//        background-position: 0% 50%;
+//    }
+//
+//    50% {
+//        background-position: 100% 50%;
+//    }
+//
+//    100% {
+//        background-position: 0% 50%;
+//    }
+//}
+//
+//@keyframes gradient {
+//    0% {
+//        background-position: 0% 50%;
+//    }
+//
+//    50% {
+//        background-position: 100% 50%;
+//    }
+//
+//    100% {
+//        background-position: 0% 50%;
+//    }
+//}
+
 
 .main-page{
   // padding: 5vh 2rem;
@@ -180,6 +238,8 @@ a {
   padding: 0.1em 0.1em;
   text-align: center;
   margin: 2px;
+  font-size: 10px;
+  cursor: pointer;
 }
 .radical-svg, .word-svg {
   border-right: 0.5px solid #EBEBEB;
@@ -191,7 +251,9 @@ a {
   // display: none;
   width: 100px;
   z-index: 100;
-
+  /* hack to vertically center text in button
+   * will need to change if font-size changes */
+  line-height: 30px;
 }
 
 svg-definition-word {
@@ -229,14 +291,13 @@ svg-definition-word {
 
 .canvas-container {
   order:1;
-  // width: 300px;
-  // margin: 2em;
-  border: 3px solid #000;
   background: white;
-  margin-bottom: 25px;
   display: flex;
-  margin-left: 2vw;
+}
 
+div#canvas-container {
+    border: 3px solid black;
+    margin-left: 2vw;
 }
 
 .freeText{
@@ -507,4 +568,9 @@ div#radical-group-heading {
 #definition-tracker {
   // border: 1px solid red;
   padding-bottom: 1em;
+}
+
+
+.heading-new-section {
+    padding-top: 1.5em;
 }

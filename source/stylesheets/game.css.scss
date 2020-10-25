@@ -1,4 +1,8 @@
 $icon-font-path: '../fonts/' !default;
+$gray: #918c7e;
+$light-orange: #fddb92;
+$light-blue: #92aefd;
+$neon-green: #C0FF00;
 
 @font-face {
     font-family: 'mad-sans-bold';
@@ -21,7 +25,7 @@ $icon-font-path: '../fonts/' !default;
 
 
 body {
-  background: linear-gradient(-45deg, #fddb92, #d1fdff);
+  background: linear-gradient(-45deg, $light-orange, #d1fdff);
 background-size: 400% 400%;
 animation: gradient 15s ease infinite;
 font-family: 'Karla', sans-serif;
@@ -53,15 +57,100 @@ div#30-60-90-plan {
   border: 5px solid red !important;
 }
 
+/*UI Bar*/
 
 div#ui-bar {
-    max-width: 20%;
-    background: #C0FF00;
-    color: black;
+    background: $neon-green;
+    border-right: none;
+}
+
+ul#menu-core, ul#menu-story {
+  border: none !important;
 }
 
 
+li#menu-item-restart, li#menu-story {
+    border: none !important;
+}
+
+#menu ul {
+  border-bottom-color: rgb(0, 0, 0) !important;
+}
 h1#story-title {
   font-family:'mad-sans-bold', sans-serif;
   size: 3em;
+  color: $gray;
+  padding-top: 1em;
+}
+#menu li a {
+  color: $gray !important;
+}
+
+#ui-bar-history {
+  border-bottom-color: rgb(0, 0, 0) !important;
+
+}
+
+#menu li:not(:first-child) {
+  border: none !important;
+}
+
+#menu li a:hover {
+  background-color: $light-orange !important;
+}
+
+#ui-bar-history [id|=history], #ui-bar-toggle {
+  border: none !important;
+  color: $gray !important;
+}
+
+#ui-bar-history [id|=history]:hover, #ui-bar-toggle:hover {
+  background-color: $light-orange !important;
+}
+
+#ui-bar-history [id|=history]:disabled {
+  color: white !important;
+}
+
+
+/*UI Dialog alert*/
+
+
+div#ui-dialog-titlebar {
+  background-color: $light-orange;
+}
+div#ui-dialog-body {
+  border: 3px solid $light-orange !important;
+  background-color: rgba(0,0,0,0) !important;
+}
+
+button#restart-cancel, button#restart-ok {
+  background-color: $light-blue;
+}
+
+button#ui-dialog-close,h1#ui-dialog-title {
+  color: $gray !important;
+}
+
+#passages {
+  a.link-internal {
+    background: #C0FF00;
+    padding: 0.2em;
+    border-radius: 2em;
+  }
+}
+
+.text-message-phone {
+  font-family: helvetica;
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  content: "";
+  background: #eee;
+  border-bottom-right-radius: 15px;
+}
+
+.slack-alert {
+    font-family: 'Lato' !important;
 }
