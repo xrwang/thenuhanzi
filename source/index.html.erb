@@ -12,7 +12,7 @@ title: Welcome to The Future of Memory
     <div class ="menu">
         <div class = "intro">
     <p>
-      Future of Memory is …  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis ante tellus. Praesent felis nisi, consectetur non ultrices non, semper a tortor. Nullam non posuere mauris, ut consequat dui. Morbi luctus et eros at gravida. Etiam quis aliquam orci. Phasellus non justo nec tortor viverra cursus. Integer justo arcu, pharetra sit amet laoreet nec, pretium in ex. Nam pellentesque elit id velit volutpat accumsan. Pellentesque habitant morbi tristique senect
+      Welcome to The Future of Memory, a provocation on algorithmic content moderation, power, profit and the ever shifting nature of language online.
     </p>
   </div>
 
@@ -35,15 +35,13 @@ title: Welcome to The Future of Memory
       </div>
 
     </div>
-
-     <div class='bottom-right'><img id='vol' src='/assets/images/icons/vol-off.png' alt='volume off icon'>
-    </div>
-
-
-    <div class="audio">
-<!--       <audio controls src="/assets/FOM-YBCA.mp3" loop autoplay>
-                Your browser does not support the
-                <code>audio</code> element.
-      </audio> -->
-    </div>
   </div>
+
+<!-- hack to bypass autoplay restrictions on Chrome -->
+<!-- https://olafwempe.com/how-to-enable-audio-and-video-autoplay-with-sound-in-chrome-and-other-browsers-in-2019 -->
+<iframe src="/assets/audio/silence.mp3" type="audio/mp3" allow="autoplay" style="display:none"></iframe>
+<audio id="audio" autoplay loop>
+  <source src="/assets/audio/FOM-YBCA.mp3" type="audio/mp3">
+</audio>
+
+<button id="audio-btn"><img src="<%= image_path('mute.png') %>" /></button>

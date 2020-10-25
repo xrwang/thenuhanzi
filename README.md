@@ -16,7 +16,7 @@ To get middleman set up, make sure you have [rvm](https://rvm.io/) installed as 
 
 ### To deploy
 
-The project uses middleman deploy to deploy to [https://xrwang.github.io/thenuhanzi/](https://xrwang.github.io/thenuhanzi/).
+The project uses middleman deploy to deploy to [http://thefutureofmemory.online/](http://thefutureofmemory.online/).
 Simply run:
 ```
 bundle exec middleman deploy
