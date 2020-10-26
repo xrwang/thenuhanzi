@@ -54,6 +54,7 @@ set :relative_links, true
 
 activate :livereload
 activate :directory_indexes
+activate :asset_hash, ignore: [/^fonts/]
 
 
 # Middleman-deploy configuration
