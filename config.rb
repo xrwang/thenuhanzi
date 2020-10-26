@@ -78,6 +78,7 @@ page "toolkit/*", :layout => "toolkit"
 
 page "homophone-search/*", :layout => "homophone-search"
 
+page "about.html", :layout => "about"
 
 set :fonts_dir,  'fonts'
 
