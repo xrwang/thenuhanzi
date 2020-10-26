@@ -32,15 +32,6 @@ body {
   height: 100%;
 }
 
-
-.overall {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-    flex-direction: row;
-
-}
-
 .intro{
   padding-top: 0px;
   padding-bottom: 10px;
@@ -64,14 +55,28 @@ a {
 
 }
 
+.menu-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
 
 .menu {
-  margin-top: 15vh;
-  margin-left: 55%;
-  padding:2.2em;
-  width: 35%;
+  // mobile
+  margin: 20px;
+  padding: 30px;
   background: rgba(255,255,255,0.6);
-  height: 80%;
+  width: auto;
+  // @media only screen and (max-width: 600px) {}
+  // @media only screen and (min-width: 600px) {}
+  @media only screen and (min-width: 768px) {
+    width: 500px;
+    margin: 40px;
+    padding: 40px;
+  }
+  // @media only screen and (min-width: 992px) {}
+  // @media only screen and (min-width: 1200px) {}
 }
 
 
@@ -94,8 +99,13 @@ button {
   padding-top: 30px;
   padding-bottom: 14px;
   border-bottom: 2px solid #000;
-  // margin-bottom: 1em;
-  // padding: 1em;
+}
+
+.nav-links > a {
+  margin-top: 20px;
+  padding: 15px 22px;
+  border-bottom: 2px solid #000;
+  display: inline-block;
 }
 
 .vimeo-wrapper {
