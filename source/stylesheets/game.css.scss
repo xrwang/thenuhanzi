@@ -78,10 +78,10 @@ li#menu-item-restart, li#menu-story {
 }
 h1#story-title {
   font-family:'mad-sans-bold', sans-serif;
-  size: 3em;
+  size: 4em;
   color: $gray;
-  padding-top: 1em;
 }
+
 #menu li a {
   color: $gray !important;
 }
@@ -134,11 +134,33 @@ button#ui-dialog-close,h1#ui-dialog-title {
 
 #passages {
   a.link-internal {
-    background: #C0FF00;
+    background: $neon-green;
     padding: 0.2em;
     border-radius: 2em;
   }
 }
+
+.end-text {
+  font-family:'mad-sans-bold', sans-serif;
+  font-size: 3em;
+  margin: 0 auto;
+  text-align: center !important;
+  color: $gray;
+
+}
+
+a.end-text-link.link-external {
+  background: $neon-green;
+  padding: 0.2em;
+  border-radius: 2em;
+  padding: 1em;
+  display: flex;
+  margin: 0 auto;
+  text-align: center !important;
+  align-items: center!important;
+  justify-content: center!important;
+}
+
 
 .text-message-phone {
   font-family: helvetica;
