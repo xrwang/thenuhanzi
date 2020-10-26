@@ -92,3 +92,5 @@ helpers do
     image_path("words/#{id}.svg")
   end
 end
+
+import_file File.expand_path("_headers", config[:source]), "/_headers"

@@ -1,0 +1,4 @@
+/fonts/*
+  cache-control: max-age=86400
+/assets/*
+  cache-control: max-age=86400
