@@ -1,11 +1,14 @@
 $(document).ready(function() {
   var audio = document.getElementById('audio');
   var audioBtn = document.getElementById('audio-btn');
+  var audioBtnImg = audioBtn.children[0];
   var updateBtnText = function () {
     if (audio.paused) {
-      audioBtn.innerHTML = '<img src="/assets/images/mute.png" alt="Unmute" />';
+      audioBtnImg.src = "/assets/images/mute.png";
+      audioBtnImg.alt = "Unmute";
     } else {
-      audioBtn.innerHTML = '<img src="/assets/images/audio.png" alt="Mute" />';
+      audioBtnImg.src = "/assets/images/audio.png";
+      audioBtnImg.alt = "Mute";
     }
   };
 

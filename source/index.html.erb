@@ -6,37 +6,22 @@ title: Welcome to The Future of Memory
   <iframe src="https://player.vimeo.com/video/469391372?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </div>
 
-<div class="overall">
+<div class="menu-container">
+  <div class="menu">
+    <div class="intro">
+      <p>
+        Welcome to The Future of Memory, a provocation on algorithmic content moderation, power, profit and the ever shifting nature of language online.
+      </p>
+    </div>
 
-
-    <div class ="menu">
-        <div class = "intro">
-    <p>
-      Welcome to The Future of Memory, a provocation on algorithmic content moderation, power, profit and the ever shifting nature of language online.
-    </p>
-  </div>
-
-      <div class="button">
-      <button aria-label="Play a text based adventure game" data-balloon-pos="up">
-        <%= link_to 'The Future of Memory Game', '/fom-game.html', :relative => true %>
-      </button>
-      </div>
-
-      <div class="button">
-      <button aria-label="Look at the collected toolkit for ways online users have bypassed automated censorship" data-balloon-pos="up">
-        <%= link_to 'Algorithmic Censorship Resistance Toolkit', '/toolkit', :relative => true %>
-      </button>
-      </div>
-
-      <div class="button">
-      <button aria-label="Make your own language to bypass automated censorship" data-balloon-pos="up">
-        <%= link_to 'Hanzi Maker', '/hanzi-maker', :relative => true %>
-      </button>
-      </div>
-
+    <div class="nav-links">
+      <a href="/fom-game" aria-label="Play a text based adventure game" data-balloon-pos="up">The Future of Memory Game</a>
+      <a href="/toolkit" aria-label="Look at the collected toolkit for ways online users have bypassed automated censorship" data-balloon-pos="up">Algorithmic Censorship Resistance Toolkit</a>
+      <a href="/hanzi-maker" aria-label="Make your own language to bypass automated censorship" data-balloon-pos="up">Hanzi Maker</a>
     </div>
 
   </div>
+</div>
 
 <!-- hack to bypass autoplay restrictions on Chrome -->
 <!-- https://olafwempe.com/how-to-enable-audio-and-video-autoplay-with-sound-in-chrome-and-other-browsers-in-2019 -->
