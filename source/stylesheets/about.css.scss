@@ -22,3 +22,50 @@ body {
     50%{background-position:4% 100%}
     100%{background-position:97% 0%}
 }
+
+
+
+$icon-font-path: '../fonts/' !default;
+
+
+@font-face {
+    font-family: AdieuRegular;
+    src: url('#{$icon-font-path}Adieu-Regular.otf') format('opentype');
+    src: url('#{$icon-font-path}Adieu-Regular.woff') format('woff');
+    src: url('#{$icon-font-path}Adieu-Regular.woff2') format('woff2');
+}
+
+.container {
+    display: -webkit-flex;
+    display: flex ;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    padding: 4vw;
+    padding-top: 0vh;
+}
+
+
+body {
+/*  padding: 0;
+  margin: 0;*/
+    font-family: -apple-system, BlinkMacSystemFont, "Microsoft yahei","Avenir Next", "Avenir",
+    "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
+    "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
+    "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+  padding: 3vh 1rem;
+/*  text-align: center;*/
+  justify-content: center;
+  /*background-image: url("censored-word-homophone.png") no-repeat center center fixed;*/
+/*    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
+
+  background: #DCDAFF;
+
+   /*background:
+      -webkit-linear-gradient(rgba(220,112,148, 0.4), rgba(135, 60, 255, 0.0) 80%),
+      -webkit-linear-gradient(-45deg, rgba(191,193,221, 0.9) 25%, rgba(72,219,205, 0.4) 75%);
+*/
+
+}
