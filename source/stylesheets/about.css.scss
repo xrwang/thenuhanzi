@@ -36,12 +36,14 @@ $icon-font-path: '../fonts/' !default;
 }
 
 .container {
-    display: -webkit-flex;
-    display: flex ;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    padding: 4vw;
-    padding-top: 0vh;
+    // display: -webkit-flex;
+    // display: flex ;
+    // -webkit-flex-direction: row;
+    // flex-direction: row;
+    padding: 6vw;
+    padding-top: 4vw;
+    color: #d6d6d6;
+    
 }
 
 
@@ -53,23 +55,40 @@ body {
     "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
     "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
   padding: 3vh 1rem;
-/*  text-align: center;*/
   justify-content: center;
-  /*background-image: url("censored-word-homophone.png") no-repeat center center fixed;*/
-/*    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;*/
-
-  background: #DCDAFF;
-
-   /*background:
-      -webkit-linear-gradient(rgba(220,112,148, 0.4), rgba(135, 60, 255, 0.0) 80%),
-      -webkit-linear-gradient(-45deg, rgba(191,193,221, 0.9) 25%, rgba(72,219,205, 0.4) 75%);
-*/
+  // background: #DCDAFF;
+  // background: #171717;
+  background: #000;
 
 }
 
 .about-text {
-  font-size: 1.25em;
+  // padding: 4vw;
+  
+}
+
+p{
+  // color: #1a1a1a;
+
+  font-size: 0.9em;
+  line-height: 1.4em;
+}
+
+h2 {
+    font-family: AdieuRegular;
+    // font-size: 1.5vw;
+    font-size: 1.2em;
+    color: #fff;
+
+    font-weight: 600;
+    padding-top: 26px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+a {
+    color: #fff;
+    // color: #000;
+    font-weight: 600;
+    text-decoration: underline;
 }
