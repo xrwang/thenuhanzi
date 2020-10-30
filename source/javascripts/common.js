@@ -16,7 +16,6 @@ function skip () {
   document.getElementById('landing').style.display="none";
   document.getElementById('landing-background').style.display="none";
   bindActions();
-
 }
 
 

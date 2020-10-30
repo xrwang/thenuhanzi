@@ -1,4 +1,4 @@
-
+$(document).ready(function() {
 $('.alert').click(function() {
   $(this).fadeOut();
 });
@@ -214,7 +214,7 @@ var link = document.getElementById('download-link-href');
     drawGrid(canvas);
 }, false);
 
-document.body.getElementById('download-link').appendChild(link);
+document.getElementById('download-link').appendChild(link);
 
 
 
@@ -515,3 +515,4 @@ function subDivideBottom() {
     }
   }
 }
+});
