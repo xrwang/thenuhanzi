@@ -19,7 +19,6 @@ function skip () {
 }
 
 
-
 var open = function(event) {
   event.preventDefault();
   var self = this;

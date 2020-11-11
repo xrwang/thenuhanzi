@@ -1,19 +1,12 @@
+
+var submitTextToCanvas;
+
 $(document).ready(function() {
+
 $('.alert').click(function() {
   $(this).fadeOut();
 });
 
-
-function submitTextToCanvas(id) {
-  var value = document.getElementById('addText').value;
-  var textbox = new fabric.Textbox(value, {
-    left:100,
-    top: 100,
-    width: 200,
-    fontSize: 40
-  });
-  canvas.add(textbox).setActiveObject(textbox);
-}
 
 // $(window).bind("load",function() {
 
@@ -217,6 +210,18 @@ var link = document.getElementById('download-link-href');
 document.getElementById('download-link').appendChild(link);
 
 
+
+
+submitTextToCanvas = function (id) {
+  var value = document.getElementById('addText').value;
+  var textbox = new fabric.Textbox(value, {
+    left:100,
+    top: 100,
+    width: 200,
+    fontSize: 40
+  });
+  canvas.add(textbox).setActiveObject(textbox);
+}
 
 // Auto-arrange layout buttons
 // The main class
