@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Chinese Homophone Search</title>
+
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+    <script src="../javascripts/homophone-search-5dcb4cf0.js"></script>
+    <link href="../stylesheets/homophone-search-aae54f97.css" rel="stylesheet" />
+  </head>
+
+  <body>
+        <div id="bg">
+      <img src="../assets/images/homophone-search/censored-word-homophone-85de3d92.png" class="logo" alt="Censored word homophone" />
+  </div>
+    <section class="container">
+
+<div class="side-column">
+    <div id = "title">
+        <h1>Chinese Homophone Search </h1>
+        <h2>中文同音词查找</h2>
+        </div>
+
+        <h3>About</h3>
+        <p> In Chinese, a tonal language, words can be represented by different characters but sound similar. For example, 河蟹; pinyin: héxiè (river crab) sounds similar to 和谐; pinyin: héxié (harmony, used to mock the CCP espousal of a “harmonious society”). This tool translates censored words into their homophones — readers will know the real meaning of the word depending on the context
+        <br><br>
+        Made for The Future of Memory
+        </p>
+</div>
+
+<div class="main-column">
+     <h3>Type a Chinese word and search for its homophone. <br>
+        Try typing in: 自由 (freedom)，言论 (expression of opinion)，民主 (human rights)，和谐 (harmony).
+      </h3>
+      <div id ="main">
+        <input type="text" id="type" name="type"><br><br>
+        <button class="searchButton"onmousedown="searchHomophone()" >search</button>
+      </div>
+
+      <div id = "searcResultBox"> </div>
+</div>
+    </section>
+
+  </body>
+</html>

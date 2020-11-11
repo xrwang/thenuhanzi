@@ -1,0 +1,136 @@
+@font-face {
+  font-family: 'mad-sans-bold';
+  src: url("../fonts/mad-sans-bold.eot");
+  src: url("../fonts/mad-sans-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/mad-sans-bold.woff2") format("woff2"), url("../fonts/mad-sans-bold.woff") format("woff"), url("../fonts/mad-sans-bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: AdieuRegular;
+  src: url("../fonts/Adieu-Regular.otf") format("opentype");
+  src: url("../fonts/Adieu-Regular.woff") format("woff");
+  src: url("../fonts/Adieu-Regular.woff2") format("woff2"); }
+
+html {
+  height: 100%; }
+
+body {
+  background: url("../assets/images/landing/fom-office-b1cc9a20.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100%; }
+
+.intro {
+  padding-top: 0px;
+  padding-bottom: 10px; }
+
+p {
+  font-family: AdieuRegular;
+  font-size: 26px;
+  margin: 0px; }
+
+a {
+  color: #000;
+  text-decoration: none;
+  text-align: left;
+  font-size: 16px;
+  padding: 1em;
+  font-family: AdieuRegular; }
+
+.menu-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%; }
+
+.menu {
+  margin: 20px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.6);
+  width: auto; }
+  @media only screen and (min-width: 768px) {
+    .menu {
+      width: 500px;
+      margin: 40px;
+      padding: 40px; } }
+
+.audio {
+  position: absolute;
+  right: 0;
+  bottom: 0; }
+
+audio::-webkit-media-controls-panel {
+  color: white; }
+
+audio::-webkit-media-controls-play-button {
+  color: pink; }
+
+.nav-links > a {
+  margin-top: 20px;
+  padding: 15px 22px;
+  border-bottom: 2px solid #000;
+  display: inline-block; }
+
+.vimeo-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden; }
+
+.vimeo-wrapper iframe {
+  width: 100vw;
+  height: 56.25vw;
+  /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+  min-height: 100vh;
+  min-width: 177.77vh;
+  /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+
+#vol {
+  width: 1.2em;
+  opacity: 0.13;
+  cursor: pointer; }
+
+#vol:hover {
+  opacity: 1.0; }
+
+.bottom-right {
+  bottom: 1em;
+  left: 1.25em; }
+
+#audio-btn {
+  cursor: pointer;
+  background: none;
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  position: absolute;
+  right: 10px;
+  top: 10px; }
+  #audio-btn img {
+    width: 100%;
+    height: 100%; }
+
+#about-btn {
+  background: none;
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  position: absolute;
+  position: absolute;
+  right: 46px;
+  top: 10px; }
+  #about-btn img {
+    width: 100%;
+    height: 100%; }

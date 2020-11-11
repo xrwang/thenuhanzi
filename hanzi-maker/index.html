@@ -1,0 +1,2741 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Hanzi Maker</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/fabric@4.0.0-beta.7/dist/fabric.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:700,300'>
+
+
+    <link href="../stylesheets/onboarding-204c0af6.css" rel="stylesheet" />
+    <link href="../stylesheets/landing-76e2763d.css" rel="stylesheet" />
+    <link href="../stylesheets/responsive-modal-48fc4935.css" rel="stylesheet" />
+    <link href="../stylesheets/site-9f203a47.css" rel="stylesheet" />
+
+  </head>
+  <body>
+    <!-- insert landing partial -->
+<!-- <div id ="info" class="info landing window"> -->
+<div id="landing-background">
+
+  <div id ="landing">
+
+    <div class = "main">
+      <greeting>你好 ni hao!</greeting> <br><br>
+      <description>
+        <p>Hanzi (汉字), or "Han words" are the Chinese language system of writing, where each character is a word.</p>
+
+        <p>In recent years, automated moderation of politically sensitive content and censorship online has been increasing. In response, users have been creatively bypassing such automation by using homophones, memes and images, as well as occasionally creating their own new characters.</p>
+
+        <p>Hanzimaker allows you to create new words using Chinese radicals — the building blocks of Chinese characters. Each radical has a meaning, and put together creatively with other radicals, can form a new character. It's as if each new word is a poem.</p>
+
+          <p>If you have no prior knowledge about Hanzi, we recommend you to go through the <strong>Hanzi 101</strong> session.</p>
+
+        <p>The data generated during your participation will not be stored. You can download your newly built characters as images. </p>
+
+      </description>
+    </div>
+
+     <div class="buttons info-footer">
+
+          <button class ='button-landing inactive' onmousedown="skip()">Sounds good!</button>
+
+
+    </div>
+
+    <!-- <div id="hanzi" class="modal modal__bg" role="dialog" aria-hidden="true">
+  		<div class="modal__dialog">
+  			<div class="modal__content">
+  				<div>
+  				</div>
+
+  				<a href="" class="modal__close demo-close">
+  					<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+  				</a>
+
+  			</div>
+  		</div>
+  	</div> -->
+
+
+  </div>
+
+</div>
+
+
+
+<div class ="main-page">
+
+  <div class = "title">
+    <h1>
+    Hanzi Maker
+    </h1>
+
+    <h2>
+    自造汉字
+    </h2>
+
+    <h4>New Hanzi to bypass automated censorship</h4>
+
+      <div class="top-bar">
+        <div class="demo-btns">
+		<div class="nav">
+			<div class="buttons">
+
+					<a href="" data-modal="#about-modal" class="modal__trigger">About</a>
+					<a href="" data-modal="#hanzi" class="modal__trigger">Hanzi 101</a>
+					<a href="" data-modal="#examples" class="modal__trigger">Example</a>
+
+			</div>
+
+		</div>
+	</div>
+
+	<!-- The About Modal -->
+	<div id="about-modal" class="modal modal__bg" role="dialog" aria-hidden="true">
+		<div class="modal__dialog">
+			<div class="modal__content">
+			     <p>
+			        Hanzi (汉字), or "Han words" are the Chinese language system of writing, where each character is a word. <br><br>
+
+                    In recent years, automated moderation of politically sensitive content and censorship online has been increasing. In response, users have been creatively bypassing such automation by using homophones, memes and images, as well as occasionally creating their own new characters.<br><br>
+
+                    Hanzimaker allows you to create new words using Chinese radicals — the building blocks of Chinese characters. Each radical has a meaning, and put together creatively with other radicals, can form a new character. It's as if each new word is a poem.<br><br>
+
+                    If you have no prior knowledge about Hanzi, we recommend you to go through the Hanzi 101 session.<br><br>
+
+                    The data generated during your participation will not be stored. You can download your newly built characters as images. <br>
+			     </p>
+				<!-- modal close button -->
+				<a href="" class="modal__close demo-close">
+					<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+				</a>
+			</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- The Hanzi101 Modal -->
+
+	<div id="hanzi" class="modal modal__bg" role="dialog" aria-hidden="true">
+		<div class="modal__dialog">
+			<div class="modal__content">
+				<div>
+					<div class='walkthrough show reveal'>
+
+    <div class='walkthrough-pagination'>
+      <a class='dot active'></a>
+      <a class='dot'></a>
+      <a class='dot'></a>
+      <a class='dot'></a>
+      <a class='dot'></a>
+    </div>
+
+    <div class='walkthrough-body'>
+
+      <ul class='screens animate'>
+
+        <li class='screen'>
+          <h3>
+            Radicals are building blocks
+            <br>of Chinese characters</br>
+          </h3>
+
+          <div class='media books'>
+            <img src="../assets/images/onboarding/book_icon_1-57937a34.png" class="icon" alt="Book icon 1" />
+            <img src="../assets/images/onboarding/book_icon_2-9cccf3c0.png" class="icon" alt="Book icon 2" />
+            <img src="../assets/images/onboarding/book_icon_3-5313dcf0.png" class="icon" alt="Book icon 3" />
+          </div>
+
+          <p>For example, radical 木(tree) is used as building blocks for a lot of characters. Double 木 forms 林(woods), while triple 木 becomes 森(forest).</p>
+        </li>
+
+
+        <li class='screen'>
+          <h3>
+             Most of the radicals
+            <br>resemble objects</br>
+          </h3>
+
+          <div class='media object'>
+                      <img src="../assets/images/onboarding/object_icon_1-432c86d3.png" class="icon" alt="Object icon 1" />
+                      <img src="../assets/images/onboarding/object_icon_2-86d74f44.png" class="icon" alt="Object icon 2" />
+
+          </div>
+
+          <p>Radical 山 means mountain and its pictographic form depicts mountain peaks.</p>
+
+        </li>
+
+        <li class='screen'>
+          <h3>
+            Radicals can be categorized
+            <br>by their meanings</br>
+
+          </h3>
+          <div class='media bars'>
+            <img src="../assets/images/onboarding/bar_icon_1-2bad85d6.png" class="icon" alt="Bar icon 1" />
+            <img src="../assets/images/onboarding/bar_icon_2-753bc953.png" class="icon" alt="Bar icon 2" />
+            <img src="../assets/images/onboarding/bar_icon_3-d79db5a3.png" class="icon" alt="Bar icon 3" />
+            <img src="../assets/images/onboarding/bar_icon_4-3a5581d0.png" class="icon" alt="Bar icon 4" />
+          </div>
+
+          <p>The radicals above — "grain", "grass", "tree", and "rice" — are shown alongside their English definitions. They can all be found under the "Plant" category. </p>
+        </li>
+
+
+        <li class='screen'>
+
+          <h3>
+            Radicals can appear in different
+            <br>positions of a Chinese character</br>
+          </h3>
+          <div class='media files'>
+
+            <img src="../assets/images/onboarding/file_icon_1-00687202.png" class="icon" alt="File icon 1" />
+            <img src="../assets/images/onboarding/file_icon_2-99aa6e0f.png" class="icon" alt="File icon 2" />
+            <img src="../assets/images/onboarding/file_icon_3-42648a70.png" class="icon" alt="File icon 3" />
+          </div>
+
+          <p>For example,the radical 口 (mouth) can be found at bottom, top, left, right, and inside of a character. </p>
+        </li>
+
+
+        <li class='screen'>
+          <h3>
+            Hanzi Maker can snap selected radicals
+            <br>to auto-configured positions</br>
+          </h3>
+          <div class='media comm'>
+
+            <img src="../assets/images/onboarding/comm_icon_1-c95aa09c.png" class="icon" alt="Comm icon 1" />
+            <img src="../assets/images/onboarding/comm_icon_2-f52155b6.png" class="icon" alt="Comm icon 2" />
+          </div>
+
+          <p> These are the most common configurations, but feel free to experiment with your own. A helpful tip is to imagine the final character as a square grid, and placing each radical as a square within it. </p>
+        </li>
+
+
+      </ul>
+
+
+      <button class='prev-screen'>
+        <i class='icon-angle-left'></i>
+      </button>
+      <button class='next-screen'>
+        <i class='icon-angle-right'></i>
+      </button>
+    </div>
+
+    <div class='walkthrough-footer'>
+      <button class='button next-screen'>Next</button>
+      <button class='button finish closeOnboardingModal' disabled='true'>Finish</button>
+    </div>
+</div>
+
+				</div>
+
+				<a href="" class="modal__close demo-close hanzi-modal-close">
+					<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+				</a>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- The Examples Modal -->
+	<div id="examples" class="modal modal__bg" role="dialog" aria-hidden="true">
+		<div class="modal__dialog">
+			<div class="modal__content">
+				<div id="examples left">
+		      <h3>Examples</h3>
+		      <figure>
+		        <img src="../assets/images/niubi-cc32ca38.jpg" width="50px" alt="Niubi" />
+		      </figure>
+		      <figcaption>
+		        <i>niu bi</i>, meaning awesome. Uses 牛 (niu) the character for cow, and B, the english letter for the phonetic sound "bi".
+		      </figcaption>
+		      <figure>
+		      <img src="../assets/images/shiwai-3b484314.jpg" width="50px" alt="Shiwai" />
+		      </figure>
+		      <figcaption>
+		        <i>shi wai</i>, or "deadly person", referring to CY Leung during the Umbrella Revolution.
+		        尸 (shi) and the English letter Y.
+		      </figcaption>
+		      <figure>
+		        <img src="../assets/images/ta-5941b127.jpg" width="50px" alt="Ta" />
+		      </figure>
+		      <figcaption>
+		        <i>ta</i>, a non-binary alternative to gendered third person of 他 (ta) and 她 (ta) alternative, third person non-binary.
+		      </figcaption>
+
+		      <!-- <figure>
+		        <img src="../assets/images/hk-c2f38343.jpg" width="50px" alt="Hk" />
+		      </figure>
+		      <figcaption>
+		        (a) Oppose China, Destabilize Hong Kong, (b) Thief/Seller of Hong Kong, and (c) Hong Kong independence.
+		      </figcaption> -->
+
+		      <figure>
+		        <img src="../assets/images/winnie-aa74e2ce.png" width="50px" alt="Winnie" />
+		      </figure>
+		      <figcaption>
+		       <i>wei ni xiong</i>,  维尼熊, Winnie the Pooh
+		      </figcaption>
+		    </div>
+
+
+				<!-- modal close button -->
+				<a href="" class="modal__close demo-close">
+					<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+				</a>
+			</div>
+		</div>
+	</div>
+
+      </div>
+  </div>
+
+
+  <div class="background-context">
+  </div>
+
+  <div class="background-context-images">
+  </div>
+
+
+  <div class="parent-container">
+
+      <div id="center-div-canvas">
+
+        <div class="tooltip left-column">
+            <h3>Hanzi Canvas</h3>
+
+            <div class="right-corner">
+                <div id="download-link">
+                  <!-- <button class="cornerButton"> <a href="" id="download-link-href"></a> </button> -->
+                  <div class="cornerAction"> <a href="" id="download-link-href">  <img src="../assets/images/icons/download-464a3241.svg" alt="Download" /></a> </div>
+                </div>
+
+                <div id="clear-the-canvas">
+                  <button onclick="clearAll()" id="clearAll" class="cornerButton cornerAction"> Clear Canvas </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="canvas-container">
+
+          <canvas id="canvas"></canvas>
+        </div>
+
+
+        <div class="tooltip left-column">
+            <div class="heading-new-section"><h3>English definition</h3></div>
+        </div>
+
+          <div class="definition-box left-column">
+          <div id="definition-tracker">
+          </div>
+        </div>
+
+        <div class="configuration-options left-column">
+
+          <div class="menu-heading">
+              <h3>Layout</h3>
+
+              <div class="tooltip">
+                <div aria-label="Auto-arrange radicals on canvas" data-balloon-pos="up" class="question-label">
+                    <img src="../assets/images/icons/info2-1c1e9e6f.svg" class="config-info" alt="Info2" />
+                </div>
+              </div>
+
+
+          </div>
+            <div class="alert alert-warn-two" style="display:none">This auto-config requires two radicals</div>
+            <div class="alert alert-warn-three" style="display:none">This auto-config requires three radicals</div>
+
+            <div class="arrange">
+              <button class="config-2-horizontal" onclick="horizontalTwo()">
+                <img src="../assets/images/icons/1-057e7b45.svg" class="arrange-svg" alt="1" />
+              </button>
+              <button class="config-2-horizontal" onclick="horizontalThree()">
+                <img src="../assets/images/icons/2-c946d95b.svg" class="arrange-svg" alt="2" />
+              </button>
+              <button class="config-2-horizontal" onclick="subDivideRight()">
+                <img src="../assets/images/icons/3-1c9a9744.svg" class="arrange-svg" alt="3" />
+              </button>
+              <button class="config-2-horizontal" onclick="subDivideLeft()">
+                <img src="../assets/images/icons/4-af7b0f79.svg" class="arrange-svg" alt="4" />
+              </button>
+              <button class="config-2-horizontal" onclick="verticalTwo()">
+                <img src="../assets/images/icons/5-b1e88f20.svg" class="arrange-svg" alt="5" />
+              </button>
+              <button class="config-2-horizontal" onclick="verticalThree()">
+                <img src="../assets/images/icons/6-e33e8542.svg" class="arrange-svg" alt="6" />
+              </button>
+              <button class="config-2-horizontal" onclick="subDivideTop()">
+                <img src="../assets/images/icons/7-b62ad748.svg" class="arrange-svg" alt="7" />
+              </button>
+              <button class="config-2-horizontal" onclick="subDivideBottom()">
+                <img src="../assets/images/icons/8-afd2c30c.svg" class="arrange-svg" alt="8" />
+              </button>
+            </div>
+        </div>
+      </div>
+
+      <!-- Everything on the right of the page -->
+      <div class="radicals right">
+
+            <div class="menu-heading">
+              <h3>Radical List</h3>
+              <div class="tooltip">
+                  <div aria-label="Building blocks of Chinese characters" data-balloon-pos="up" class="question-label">
+                    <img src="../assets/images/icons/info2-1c1e9e6f.svg" class="config-info" alt="Info2" />
+                  </div>
+              </div>
+            </div>
+
+            <div class="radical-menu-container">
+              <div class="radicals radical-menu">
+                  <div id="radical-group-heading">
+                    数字 Number
+                  </div>
+                  <div class="radical-group-category">
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-1-8228cb14.svg" data-rad-type="one" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-1-8228cb14.svg" alt="Radical 1 8228cb14" />
+                        </div>
+                        <div class="svg-definition">
+                          one
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-5-eacfceba.svg" data-rad-type="second" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-5-eacfceba.svg" alt="Radical 5 eacfceba" />
+                        </div>
+                        <div class="svg-definition">
+                          second
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-7-6890da43.svg" data-rad-type="two" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-7-6890da43.svg" alt="Radical 7 6890da43" />
+                        </div>
+                        <div class="svg-definition">
+                          two
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-12-f0ff1453.svg" data-rad-type="eight" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-12-f0ff1453.svg" alt="Radical 12 f0ff1453" />
+                        </div>
+                        <div class="svg-definition">
+                          eight
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-24-99893585.svg" data-rad-type="ten" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-24-99893585.svg" alt="Radical 24 99893585" />
+                        </div>
+                        <div class="svg-definition">
+                          ten
+                        </div>
+                      </div>
+
+                  </div>
+                  <div id="radical-group-heading">
+                    其他 Other
+                  </div>
+                  <div class="radical-group-category">
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-2-f74d16f6.svg" data-rad-type="line" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-2-f74d16f6.svg" alt="Radical 2 f74d16f6" />
+                        </div>
+                        <div class="svg-definition">
+                          line
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-3-802b010d.svg" data-rad-type="dot" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-3-802b010d.svg" alt="Radical 3 802b010d" />
+                        </div>
+                        <div class="svg-definition">
+                          dot
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-4-575758d3.svg" data-rad-type="slash" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-4-575758d3.svg" alt="Radical 4 575758d3" />
+                        </div>
+                        <div class="svg-definition">
+                          slash
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-11-a5d43e04.svg" data-rad-type="enter" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-11-a5d43e04.svg" alt="Radical 11 a5d43e04" />
+                        </div>
+                        <div class="svg-definition">
+                          enter
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-17-328c1132.svg" data-rad-type="open box" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-17-328c1132.svg" alt="Radical 17 328c1132" />
+                        </div>
+                        <div class="svg-definition">
+                          open box
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-20-f02a6512.svg" data-rad-type="wrap" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-20-f02a6512.svg" alt="Radical 20 f02a6512" />
+                        </div>
+                        <div class="svg-definition">
+                          wrap
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-22-86212cb5.svg" data-rad-type="right open box" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-22-86212cb5.svg" alt="Radical 22 86212cb5" />
+                        </div>
+                        <div class="svg-definition">
+                          right open box
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-23-7d652c1e.svg" data-rad-type="hiding enclosure" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-23-7d652c1e.svg" alt="Radical 23 7d652c1e" />
+                        </div>
+                        <div class="svg-definition">
+                          hiding enclosure
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-26-3303e837.svg" data-rad-type="seal" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-26-3303e837.svg" alt="Radical 26 3303e837" />
+                        </div>
+                        <div class="svg-definition">
+                          seal
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-48-77e5c963.svg" data-rad-type="work" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-48-77e5c963.svg" alt="Radical 48 77e5c963" />
+                        </div>
+                        <div class="svg-definition">
+                          work
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-51-70c39c59.svg" data-rad-type="dry" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-51-70c39c59.svg" alt="Radical 51 70c39c59" />
+                        </div>
+                        <div class="svg-definition">
+                          dry
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-56-098ad5e3.svg" data-rad-type="shoot with a bow" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-56-098ad5e3.svg" alt="Radical 56 098ad5e3" />
+                        </div>
+                        <div class="svg-definition">
+                          shoot with a bow
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-65-5900cbe0.svg" data-rad-type="branch" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-65-5900cbe0.svg" alt="Radical 65 5900cbe0" />
+                        </div>
+                        <div class="svg-definition">
+                          branch
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-67-600c80be.svg" data-rad-type="script" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-67-600c80be.svg" alt="Radical 67 600c80be" />
+                        </div>
+                        <div class="svg-definition">
+                          script
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-73-29560e0b.svg" data-rad-type="say" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-73-29560e0b.svg" alt="Radical 73 29560e0b" />
+                        </div>
+                        <div class="svg-definition">
+                          say
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-89-fab0be18.svg" data-rad-type="lines on a trigram" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-89-fab0be18.svg" alt="Radical 89 fab0be18" />
+                        </div>
+                        <div class="svg-definition">
+                          lines on a trigram
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-91-23791fbd.svg" data-rad-type="slice" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-91-23791fbd.svg" alt="Radical 91 23791fbd" />
+                        </div>
+                        <div class="svg-definition">
+                          slice
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-114-1d2989c8.svg" data-rad-type="track" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-114-1d2989c8.svg" alt="Radical 114 1d2989c8" />
+                        </div>
+                        <div class="svg-definition">
+                          track
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-183-16453ce3.svg" data-rad-type="fly" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-183-16453ce3.svg" alt="Radical 183 16453ce3" />
+                        </div>
+                        <div class="svg-definition">
+                          fly
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-184-3537eb81.svg" data-rad-type="eat" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-184-3537eb81.svg" alt="Radical 184 3537eb81" />
+                        </div>
+                        <div class="svg-definition">
+                          eat
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-191-2db85971.svg" data-rad-type="fight" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-191-2db85971.svg" alt="Radical 191 2db85971" />
+                        </div>
+                        <div class="svg-definition">
+                          fight
+                        </div>
+                      </div>
+
+                  </div>
+                  <div id="radical-group-heading">
+                    器物 Object
+                  </div>
+                  <div class="radical-group-category">
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-6-3f595271.svg" data-rad-type="hook" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-6-3f595271.svg" alt="Radical 6 3f595271" />
+                        </div>
+                        <div class="svg-definition">
+                          hook
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-8-6550f7e1.svg" data-rad-type="lid" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-8-6550f7e1.svg" alt="Radical 8 6550f7e1" />
+                        </div>
+                        <div class="svg-definition">
+                          lid
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-13-abd5ea15.svg" data-rad-type="down box" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-13-abd5ea15.svg" alt="Radical 13 abd5ea15" />
+                        </div>
+                        <div class="svg-definition">
+                          down box
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-14-efac2c0d.svg" data-rad-type="cover" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-14-efac2c0d.svg" alt="Radical 14 efac2c0d" />
+                        </div>
+                        <div class="svg-definition">
+                          cover
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-16-6f6176c3.svg" data-rad-type="table" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-16-6f6176c3.svg" alt="Radical 16 6f6176c3" />
+                        </div>
+                        <div class="svg-definition">
+                          table
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-18-02953446.svg" data-rad-type="knife" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-18-02953446.svg" alt="Radical 18 02953446" />
+                        </div>
+                        <div class="svg-definition">
+                          knife
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-21-ef09d9c6.svg" data-rad-type="ladle" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-21-ef09d9c6.svg" alt="Radical 21 ef09d9c6" />
+                        </div>
+                        <div class="svg-definition">
+                          ladle
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-50-cc2b2d40.svg" data-rad-type="towel" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-50-cc2b2d40.svg" alt="Radical 50 cc2b2d40" />
+                        </div>
+                        <div class="svg-definition">
+                          towel
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-52-0c4b253f.svg" data-rad-type="thread" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-52-0c4b253f.svg" alt="Radical 52 0c4b253f" />
+                        </div>
+                        <div class="svg-definition">
+                          thread
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-57-4c86fb55.svg" data-rad-type="bow" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-57-4c86fb55.svg" alt="Radical 57 4c86fb55" />
+                        </div>
+                        <div class="svg-definition">
+                          bow
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-62-c4089000.svg" data-rad-type="spear" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-62-c4089000.svg" alt="Radical 62 c4089000" />
+                        </div>
+                        <div class="svg-definition">
+                          spear
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-68-c9d760bd.svg" data-rad-type="dipper" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-68-c9d760bd.svg" alt="Radical 68 c9d760bd" />
+                        </div>
+                        <div class="svg-definition">
+                          dipper
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-69-a776730e.svg" data-rad-type="axe" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-69-a776730e.svg" alt="Radical 69 a776730e" />
+                        </div>
+                        <div class="svg-definition">
+                          axe
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-70-1066369a.svg" data-rad-type="square" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-70-1066369a.svg" alt="Radical 70 1066369a" />
+                        </div>
+                        <div class="svg-definition">
+                          square
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-79-133ab0ae.svg" data-rad-type="weapon" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-79-133ab0ae.svg" alt="Radical 79 133ab0ae" />
+                        </div>
+                        <div class="svg-definition">
+                          weapon
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-96-8b1cc097.svg" data-rad-type="jade" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-96-8b1cc097.svg" alt="Radical 96 8b1cc097" />
+                        </div>
+                        <div class="svg-definition">
+                          jade
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-98-ae36694d.svg" data-rad-type="tile" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-98-ae36694d.svg" alt="Radical 98 ae36694d" />
+                        </div>
+                        <div class="svg-definition">
+                          tile
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-103-b4ad650b.svg" data-rad-type="cloth" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-103-b4ad650b.svg" alt="Radical 103 b4ad650b" />
+                        </div>
+                        <div class="svg-definition">
+                          cloth
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-108-399d4671.svg" data-rad-type="dish" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-108-399d4671.svg" alt="Radical 108 399d4671" />
+                        </div>
+                        <div class="svg-definition">
+                          dish
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-110-861e3e43.svg" data-rad-type="spear" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-110-861e3e43.svg" alt="Radical 110 861e3e43" />
+                        </div>
+                        <div class="svg-definition">
+                          spear
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-111-096ebe02.svg" data-rad-type="arrow" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-111-096ebe02.svg" alt="Radical 111 096ebe02" />
+                        </div>
+                        <div class="svg-definition">
+                          arrow
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-120-c1680c8c.svg" data-rad-type="silk" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-120-c1680c8c.svg" alt="Radical 120 c1680c8c" />
+                        </div>
+                        <div class="svg-definition">
+                          silk
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-121-c8764df9.svg" data-rad-type="jar" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-121-c8764df9.svg" alt="Radical 121 c8764df9" />
+                        </div>
+                        <div class="svg-definition">
+                          jar
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-122-b183539b.svg" data-rad-type="net" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-122-b183539b.svg" alt="Radical 122 b183539b" />
+                        </div>
+                        <div class="svg-definition">
+                          net
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-124-9292b202.svg" data-rad-type="feather" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-124-9292b202.svg" alt="Radical 124 9292b202" />
+                        </div>
+                        <div class="svg-definition">
+                          feather
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-127-4203929e.svg" data-rad-type="plow" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-127-4203929e.svg" alt="Radical 127 4203929e" />
+                        </div>
+                        <div class="svg-definition">
+                          plow
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-129-4c9afadd.svg" data-rad-type="brush" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-129-4c9afadd.svg" alt="Radical 129 4c9afadd" />
+                        </div>
+                        <div class="svg-definition">
+                          brush
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-134-2b21dedc.svg" data-rad-type="mortar" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-134-2b21dedc.svg" alt="Radical 134 2b21dedc" />
+                        </div>
+                        <div class="svg-definition">
+                          mortar
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-145-e9352c5e.svg" data-rad-type="clothes" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-145-e9352c5e.svg" alt="Radical 145 e9352c5e" />
+                        </div>
+                        <div class="svg-definition">
+                          clothes
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-148-8d30b4f9.svg" data-rad-type="horn" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-148-8d30b4f9.svg" alt="Radical 148 8d30b4f9" />
+                        </div>
+                        <div class="svg-definition">
+                          horn
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-154-90831854.svg" data-rad-type="shell" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-154-90831854.svg" alt="Radical 154 90831854" />
+                        </div>
+                        <div class="svg-definition">
+                          shell
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-164-94eef070.svg" data-rad-type="wine" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-164-94eef070.svg" alt="Radical 164 94eef070" />
+                        </div>
+                        <div class="svg-definition">
+                          wine
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-167-4e6d9dbc.svg" data-rad-type="metal" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-167-4e6d9dbc.svg" alt="Radical 167 4e6d9dbc" />
+                        </div>
+                        <div class="svg-definition">
+                          metal
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-177-1ef9f134.svg" data-rad-type="leather" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-177-1ef9f134.svg" alt="Radical 177 1ef9f134" />
+                        </div>
+                        <div class="svg-definition">
+                          leather
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-178-456b8608.svg" data-rad-type="soft leather" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-178-456b8608.svg" alt="Radical 178 456b8608" />
+                        </div>
+                        <div class="svg-definition">
+                          soft leather
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-192-22820c69.svg" data-rad-type="sacrificial wine" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-192-22820c69.svg" alt="Radical 192 22820c69" />
+                        </div>
+                        <div class="svg-definition">
+                          sacrificial wine
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-193-80c9edee.svg" data-rad-type="cauldron" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-193-80c9edee.svg" alt="Radical 193 80c9edee" />
+                        </div>
+                        <div class="svg-definition">
+                          cauldron
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-204-acadaed0.svg" data-rad-type="embroidery" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-204-acadaed0.svg" alt="Radical 204 acadaed0" />
+                        </div>
+                        <div class="svg-definition">
+                          embroidery
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-206-035616c7.svg" data-rad-type="tripod" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-206-035616c7.svg" alt="Radical 206 035616c7" />
+                        </div>
+                        <div class="svg-definition">
+                          tripod
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-207-b5368929.svg" data-rad-type="drum" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-207-b5368929.svg" alt="Radical 207 b5368929" />
+                        </div>
+                        <div class="svg-definition">
+                          drum
+                        </div>
+                      </div>
+
+                  </div>
+                  <div id="radical-group-heading">
+                    人 Human
+                  </div>
+                  <div class="radical-group-category">
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-9-cb0216af.svg" data-rad-type="person" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-9-cb0216af.svg" alt="Radical 9 cb0216af" />
+                        </div>
+                        <div class="svg-definition">
+                          person
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-10-858e64b6.svg" data-rad-type="legs" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-10-858e64b6.svg" alt="Radical 10 858e64b6" />
+                        </div>
+                        <div class="svg-definition">
+                          legs
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-33-c29e3460.svg" data-rad-type="scholar" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-33-c29e3460.svg" alt="Radical 33 c29e3460" />
+                        </div>
+                        <div class="svg-definition">
+                          scholar
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-37-b7ef2d77.svg" data-rad-type="big" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-37-b7ef2d77.svg" alt="Radical 37 b7ef2d77" />
+                        </div>
+                        <div class="svg-definition">
+                          big
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-38-55a1c6f0.svg" data-rad-type="woman" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-38-55a1c6f0.svg" alt="Radical 38 55a1c6f0" />
+                        </div>
+                        <div class="svg-definition">
+                          woman
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-39-f6f5d2c9.svg" data-rad-type="child" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-39-f6f5d2c9.svg" alt="Radical 39 f6f5d2c9" />
+                        </div>
+                        <div class="svg-definition">
+                          child
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-49-50ac48e1.svg" data-rad-type="oneself" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-49-50ac48e1.svg" alt="Radical 49 50ac48e1" />
+                        </div>
+                        <div class="svg-definition">
+                          oneself
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-80-f5e2e92c.svg" data-rad-type="mother" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-80-f5e2e92c.svg" alt="Radical 80 f5e2e92c" />
+                        </div>
+                        <div class="svg-definition">
+                          mother
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-88-175e3d66.svg" data-rad-type="father" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-88-175e3d66.svg" alt="Radical 88 175e3d66" />
+                        </div>
+                        <div class="svg-definition">
+                          father
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-117-f5cf46fb.svg" data-rad-type="stand" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-117-f5cf46fb.svg" alt="Radical 117 f5cf46fb" />
+                        </div>
+                        <div class="svg-definition">
+                          stand
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-131-361dca2a.svg" data-rad-type="minister" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-131-361dca2a.svg" alt="Radical 131 361dca2a" />
+                        </div>
+                        <div class="svg-definition">
+                          minister
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-132-87f98520.svg" data-rad-type="oneself" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-132-87f98520.svg" alt="Radical 132 87f98520" />
+                        </div>
+                        <div class="svg-definition">
+                          oneself
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-171-d23cfe83.svg" data-rad-type="slave" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-171-d23cfe83.svg" alt="Radical 171 d23cfe83" />
+                        </div>
+                        <div class="svg-definition">
+                          slave
+                        </div>
+                      </div>
+
+                  </div>
+                  <div id="radical-group-heading">
+                    天文地理 Astronomy & Geography
+                  </div>
+                  <div class="radical-group-category">
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-15-68ef8114.svg" data-rad-type="ice" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-15-68ef8114.svg" alt="Radical 15 68ef8114" />
+                        </div>
+                        <div class="svg-definition">
+                          ice
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-27-0685f60c.svg" data-rad-type="cliff" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-27-0685f60c.svg" alt="Radical 27 0685f60c" />
+                        </div>
+                        <div class="svg-definition">
+                          cliff
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-32-346ca200.svg" data-rad-type="earth" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-32-346ca200.svg" alt="Radical 32 346ca200" />
+                        </div>
+                        <div class="svg-definition">
+                          earth
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-36-177a5c1b.svg" data-rad-type="night" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-36-177a5c1b.svg" alt="Radical 36 177a5c1b" />
+                        </div>
+                        <div class="svg-definition">
+                          night
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-46-3e86015a.svg" data-rad-type="mountain" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-46-3e86015a.svg" alt="Radical 46 3e86015a" />
+                        </div>
+                        <div class="svg-definition">
+                          mountain
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-47-12aa3784.svg" data-rad-type="river" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-47-12aa3784.svg" alt="Radical 47 12aa3784" />
+                        </div>
+                        <div class="svg-definition">
+                          river
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-72-3471314b.svg" data-rad-type="sun" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-72-3471314b.svg" alt="Radical 72 3471314b" />
+                        </div>
+                        <div class="svg-definition">
+                          sun
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-74-a74938df.svg" data-rad-type="moon" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-74-a74938df.svg" alt="Radical 74 a74938df" />
+                        </div>
+                        <div class="svg-definition">
+                          moon
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-84-416e294d.svg" data-rad-type="steam" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-84-416e294d.svg" alt="Radical 84 416e294d" />
+                        </div>
+                        <div class="svg-definition">
+                          steam
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-85-3a137c75.svg" data-rad-type="water" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-85-3a137c75.svg" alt="Radical 85 3a137c75" />
+                        </div>
+                        <div class="svg-definition">
+                          water
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-86-edfbb1e4.svg" data-rad-type="fire" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-86-edfbb1e4.svg" alt="Radical 86 edfbb1e4" />
+                        </div>
+                        <div class="svg-definition">
+                          fire
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-112-1c4ebf7f.svg" data-rad-type="stone" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-112-1c4ebf7f.svg" alt="Radical 112 1c4ebf7f" />
+                        </div>
+                        <div class="svg-definition">
+                          stone
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-116-16c36130.svg" data-rad-type="cave" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-116-16c36130.svg" alt="Radical 116 16c36130" />
+                        </div>
+                        <div class="svg-definition">
+                          cave
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-138-187c66d2.svg" data-rad-type="mountain" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-138-187c66d2.svg" alt="Radical 138 187c66d2" />
+                        </div>
+                        <div class="svg-definition">
+                          mountain
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-150-2e818400.svg" data-rad-type="valley" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-150-2e818400.svg" alt="Radical 150 2e818400" />
+                        </div>
+                        <div class="svg-definition">
+                          valley
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-161-c7fb5a16.svg" data-rad-type="morning" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-161-c7fb5a16.svg" alt="Radical 161 c7fb5a16" />
+                        </div>
+                        <div class="svg-definition">
+                          morning
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-170-bef7ca11.svg" data-rad-type="mound" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-170-bef7ca11.svg" alt="Radical 170 bef7ca11" />
+                        </div>
+                        <div class="svg-definition">
+                          mound
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-173-99695be9.svg" data-rad-type="rain" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-173-99695be9.svg" alt="Radical 173 99695be9" />
+                        </div>
+                        <div class="svg-definition">
+                          rain
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-182-c435b112.svg" data-rad-type="wind" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-182-c435b112.svg" alt="Radical 182 c435b112" />
+                        </div>
+                        <div class="svg-definition">
+                          wind
+                        </div>
+                      </div>
+
+                  </div>
+                  <div id="radical-group-heading">
+                    抽象 Abstract
+                  </div>
+                  <div class="radical-group-category">
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-19-4cbdbd74.svg" data-rad-type="power" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-19-4cbdbd74.svg" alt="Radical 19 4cbdbd74" />
+                        </div>
+                        <div class="svg-definition">
+                          power
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-28-ed66b31f.svg" data-rad-type="private" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-28-ed66b31f.svg" alt="Radical 28 ed66b31f" />
+                        </div>
+                        <div class="svg-definition">
+                          private
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-41-e7e28af1.svg" data-rad-type="inch" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-41-e7e28af1.svg" alt="Radical 41 e7e28af1" />
+                        </div>
+                        <div class="svg-definition">
+                          inch
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-42-823a8bdd.svg" data-rad-type="small" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-42-823a8bdd.svg" alt="Radical 42 823a8bdd" />
+                        </div>
+                        <div class="svg-definition">
+                          small
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-43-5c66e5c1.svg" data-rad-type="lame" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-43-5c66e5c1.svg" alt="Radical 43 5c66e5c1" />
+                        </div>
+                        <div class="svg-definition">
+                          lame
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-71-7c5694c4.svg" data-rad-type="not" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-71-7c5694c4.svg" alt="Radical 71 7c5694c4" />
+                        </div>
+                        <div class="svg-definition">
+                          not
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-78-3d9cdc4c.svg" data-rad-type="death" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-78-3d9cdc4c.svg" alt="Radical 78 3d9cdc4c" />
+                        </div>
+                        <div class="svg-definition">
+                          death
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-81-293976d2.svg" data-rad-type="compare" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-81-293976d2.svg" alt="Radical 81 293976d2" />
+                        </div>
+                        <div class="svg-definition">
+                          compare
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-83-090d2499.svg" data-rad-type="clan" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-83-090d2499.svg" alt="Radical 83 090d2499" />
+                        </div>
+                        <div class="svg-definition">
+                          clan
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-100-41afd670.svg" data-rad-type="life" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-100-41afd670.svg" alt="Radical 100 41afd670" />
+                        </div>
+                        <div class="svg-definition">
+                          life
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-101-bb49be48.svg" data-rad-type="use" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-101-bb49be48.svg" alt="Radical 101 bb49be48" />
+                        </div>
+                        <div class="svg-definition">
+                          use
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-104-8428fd01.svg" data-rad-type="ill" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-104-8428fd01.svg" alt="Radical 104 8428fd01" />
+                        </div>
+                        <div class="svg-definition">
+                          ill
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-125-764a4a33.svg" data-rad-type="old" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-125-764a4a33.svg" alt="Radical 125 764a4a33" />
+                        </div>
+                        <div class="svg-definition">
+                          old
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-126-84ba493c.svg" data-rad-type="and" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-126-84ba493c.svg" alt="Radical 126 84ba493c" />
+                        </div>
+                        <div class="svg-definition">
+                          and
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-136-2805b05d.svg" data-rad-type="contrary" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-136-2805b05d.svg" alt="Radical 136 2805b05d" />
+                        </div>
+                        <div class="svg-definition">
+                          contrary
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-146-732b6c8e.svg" data-rad-type="west" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-146-732b6c8e.svg" alt="Radical 146 732b6c8e" />
+                        </div>
+                        <div class="svg-definition">
+                          west
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-165-997cfa28.svg" data-rad-type="distinguish" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-165-997cfa28.svg" alt="Radical 165 997cfa28" />
+                        </div>
+                        <div class="svg-definition">
+                          distinguish
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-168-8cf47e8c.svg" data-rad-type="long" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-168-8cf47e8c.svg" alt="Radical 168 8cf47e8c" />
+                        </div>
+                        <div class="svg-definition">
+                          long
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-175-4d78fd5a.svg" data-rad-type="wrong" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-175-4d78fd5a.svg" alt="Radical 175 4d78fd5a" />
+                        </div>
+                        <div class="svg-definition">
+                          wrong
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-180-629b36f9.svg" data-rad-type="sound" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-180-629b36f9.svg" alt="Radical 180 629b36f9" />
+                        </div>
+                        <div class="svg-definition">
+                          sound
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-186-7d2db812.svg" data-rad-type="fragrant" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-186-7d2db812.svg" alt="Radical 186 7d2db812" />
+                        </div>
+                        <div class="svg-definition">
+                          fragrant
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-189-80fdbe8e.svg" data-rad-type="high" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-189-80fdbe8e.svg" alt="Radical 189 80fdbe8e" />
+                        </div>
+                        <div class="svg-definition">
+                          high
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-197-484d22ad.svg" data-rad-type="salty" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-197-484d22ad.svg" alt="Radical 197 484d22ad" />
+                        </div>
+                        <div class="svg-definition">
+                          salty
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-210-88ad518d.svg" data-rad-type="even" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-210-88ad518d.svg" alt="Radical 210 88ad518d" />
+                        </div>
+                        <div class="svg-definition">
+                          even
+                        </div>
+                      </div>
+
+                  </div>
+                  <div id="radical-group-heading">
+                    鬼神 Ghost & Spirit
+                  </div>
+                  <div class="radical-group-category">
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-25-e0c7c5a0.svg" data-rad-type="divination" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-25-e0c7c5a0.svg" alt="Radical 25 e0c7c5a0" />
+                        </div>
+                        <div class="svg-definition">
+                          divination
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-95-f2660047.svg" data-rad-type="profound" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-95-f2660047.svg" alt="Radical 95 f2660047" />
+                        </div>
+                        <div class="svg-definition">
+                          profound
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-113-5022613f.svg" data-rad-type="spirit" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-113-5022613f.svg" alt="Radical 113 5022613f" />
+                        </div>
+                        <div class="svg-definition">
+                          spirit
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-194-c7470d38.svg" data-rad-type="ghost" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-194-c7470d38.svg" alt="Radical 194 c7470d38" />
+                        </div>
+                        <div class="svg-definition">
+                          ghost
+                        </div>
+                      </div>
+
+                  </div>
+                  <div id="radical-group-heading">
+                    四肢五官 Limbs & Facial Features
+                  </div>
+                  <div class="radical-group-category">
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-29-d382f617.svg" data-rad-type="again" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-29-d382f617.svg" alt="Radical 29 d382f617" />
+                        </div>
+                        <div class="svg-definition">
+                          again
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-30-6168d522.svg" data-rad-type="mouth" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-30-6168d522.svg" alt="Radical 30 6168d522" />
+                        </div>
+                        <div class="svg-definition">
+                          mouth
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-44-47484a8a.svg" data-rad-type="corpse" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-44-47484a8a.svg" alt="Radical 44 47484a8a" />
+                        </div>
+                        <div class="svg-definition">
+                          corpse
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-55-fa7a854e.svg" data-rad-type="hands joined" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-55-fa7a854e.svg" alt="Radical 55 fa7a854e" />
+                        </div>
+                        <div class="svg-definition">
+                          hands joined
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-58-013e5b31.svg" data-rad-type="snout" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-58-013e5b31.svg" alt="Radical 58 013e5b31" />
+                        </div>
+                        <div class="svg-definition">
+                          snout
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-59-cfa2aac5.svg" data-rad-type="hair" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-59-cfa2aac5.svg" alt="Radical 59 cfa2aac5" />
+                        </div>
+                        <div class="svg-definition">
+                          hair
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-60-5db1aa44.svg" data-rad-type="step" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-60-5db1aa44.svg" alt="Radical 60 5db1aa44" />
+                        </div>
+                        <div class="svg-definition">
+                          step
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-61-af0a01ed.svg" data-rad-type="heart" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-61-af0a01ed.svg" alt="Radical 61 af0a01ed" />
+                        </div>
+                        <div class="svg-definition">
+                          heart
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-64-7adebc26.svg" data-rad-type="hand" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-64-7adebc26.svg" alt="Radical 64 7adebc26" />
+                        </div>
+                        <div class="svg-definition">
+                          hand
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-66-575600d8.svg" data-rad-type="rap" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-66-575600d8.svg" alt="Radical 66 575600d8" />
+                        </div>
+                        <div class="svg-definition">
+                          rap
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-76-8f3f9c0f.svg" data-rad-type="lack" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-76-8f3f9c0f.svg" alt="Radical 76 8f3f9c0f" />
+                        </div>
+                        <div class="svg-definition">
+                          lack
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-77-c3f77e94.svg" data-rad-type="stop" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-77-c3f77e94.svg" alt="Radical 77 c3f77e94" />
+                        </div>
+                        <div class="svg-definition">
+                          stop
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-82-c98cc690.svg" data-rad-type="fur" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-82-c98cc690.svg" alt="Radical 82 c98cc690" />
+                        </div>
+                        <div class="svg-definition">
+                          fur
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-92-187072dd.svg" data-rad-type="tooth" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-92-187072dd.svg" alt="Radical 92 187072dd" />
+                        </div>
+                        <div class="svg-definition">
+                          tooth
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-99-a6e7712c.svg" data-rad-type="sweet" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-99-a6e7712c.svg" alt="Radical 99 a6e7712c" />
+                        </div>
+                        <div class="svg-definition">
+                          sweet
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-107-cee8b6d0.svg" data-rad-type="skin" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-107-cee8b6d0.svg" alt="Radical 107 cee8b6d0" />
+                        </div>
+                        <div class="svg-definition">
+                          skin
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-109-52ed2d77.svg" data-rad-type="eye" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-109-52ed2d77.svg" alt="Radical 109 52ed2d77" />
+                        </div>
+                        <div class="svg-definition">
+                          eye
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-128-3bf6c2fd.svg" data-rad-type="ear" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-128-3bf6c2fd.svg" alt="Radical 128 3bf6c2fd" />
+                        </div>
+                        <div class="svg-definition">
+                          ear
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-130-19212d6f.svg" data-rad-type="meat" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-130-19212d6f.svg" alt="Radical 130 19212d6f" />
+                        </div>
+                        <div class="svg-definition">
+                          meat
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-135-f7806aa8.svg" data-rad-type="tongue" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-135-f7806aa8.svg" alt="Radical 135 f7806aa8" />
+                        </div>
+                        <div class="svg-definition">
+                          tongue
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-143-79dff79e.svg" data-rad-type="blood" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-143-79dff79e.svg" alt="Radical 143 79dff79e" />
+                        </div>
+                        <div class="svg-definition">
+                          blood
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-147-d432a40a.svg" data-rad-type="see" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-147-d432a40a.svg" alt="Radical 147 d432a40a" />
+                        </div>
+                        <div class="svg-definition">
+                          see
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-149-ca3adc43.svg" data-rad-type="speech" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-149-ca3adc43.svg" alt="Radical 149 ca3adc43" />
+                        </div>
+                        <div class="svg-definition">
+                          speech
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-157-ccdbc335.svg" data-rad-type="foot" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-157-ccdbc335.svg" alt="Radical 157 ccdbc335" />
+                        </div>
+                        <div class="svg-definition">
+                          foot
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-158-3d91937b.svg" data-rad-type="body" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-158-3d91937b.svg" alt="Radical 158 3d91937b" />
+                        </div>
+                        <div class="svg-definition">
+                          body
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-160-15f23acc.svg" data-rad-type="bitter" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-160-15f23acc.svg" alt="Radical 160 15f23acc" />
+                        </div>
+                        <div class="svg-definition">
+                          bitter
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-176-3e9e288c.svg" data-rad-type="face" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-176-3e9e288c.svg" alt="Radical 176 3e9e288c" />
+                        </div>
+                        <div class="svg-definition">
+                          face
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-181-bcf9c96c.svg" data-rad-type="page" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-181-bcf9c96c.svg" alt="Radical 181 bcf9c96c" />
+                        </div>
+                        <div class="svg-definition">
+                          page
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-185-5c60deb2.svg" data-rad-type="head" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-185-5c60deb2.svg" alt="Radical 185 5c60deb2" />
+                        </div>
+                        <div class="svg-definition">
+                          head
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-188-4da07455.svg" data-rad-type="bone" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-188-4da07455.svg" alt="Radical 188 4da07455" />
+                        </div>
+                        <div class="svg-definition">
+                          bone
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-190-ee706b95.svg" data-rad-type="long hair" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-190-ee706b95.svg" alt="Radical 190 ee706b95" />
+                        </div>
+                        <div class="svg-definition">
+                          long hair
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-209-5342c7a9.svg" data-rad-type="nose" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-209-5342c7a9.svg" alt="Radical 209 5342c7a9" />
+                        </div>
+                        <div class="svg-definition">
+                          nose
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-211-4b22c3e0.svg" data-rad-type="tooth" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-211-4b22c3e0.svg" alt="Radical 211 4b22c3e0" />
+                        </div>
+                        <div class="svg-definition">
+                          tooth
+                        </div>
+                      </div>
+
+                  </div>
+                  <div id="radical-group-heading">
+                    邑居宫室  Home & Domestic
+                  </div>
+                  <div class="radical-group-category">
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-31-bfe07636.svg" data-rad-type="enclosure" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-31-bfe07636.svg" alt="Radical 31 bfe07636" />
+                        </div>
+                        <div class="svg-definition">
+                          enclosure
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-40-45834814.svg" data-rad-type="roof" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-40-45834814.svg" alt="Radical 40 45834814" />
+                        </div>
+                        <div class="svg-definition">
+                          roof
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-53-da4b6c23.svg" data-rad-type="shelter" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-53-da4b6c23.svg" alt="Radical 53 da4b6c23" />
+                        </div>
+                        <div class="svg-definition">
+                          shelter
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-63-4e1eb8cd.svg" data-rad-type="door" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-63-4e1eb8cd.svg" alt="Radical 63 4e1eb8cd" />
+                        </div>
+                        <div class="svg-definition">
+                          door
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-163-e9df0a13.svg" data-rad-type="city" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-163-e9df0a13.svg" alt="Radical 163 e9df0a13" />
+                        </div>
+                        <div class="svg-definition">
+                          city
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-166-938623ea.svg" data-rad-type="village" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-166-938623ea.svg" alt="Radical 166 938623ea" />
+                        </div>
+                        <div class="svg-definition">
+                          village
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-169-a745f7a1.svg" data-rad-type="gate" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-169-a745f7a1.svg" alt="Radical 169 a745f7a1" />
+                        </div>
+                        <div class="svg-definition">
+                          gate
+                        </div>
+                      </div>
+
+                  </div>
+                  <div id="radical-group-heading">
+                    交通 Transportation
+                  </div>
+                  <div class="radical-group-category">
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-34-14621297.svg" data-rad-type="go" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-34-14621297.svg" alt="Radical 34 14621297" />
+                        </div>
+                        <div class="svg-definition">
+                          go
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-35-fe4b95de.svg" data-rad-type="go slowly" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-35-fe4b95de.svg" alt="Radical 35 fe4b95de" />
+                        </div>
+                        <div class="svg-definition">
+                          go slowly
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-54-4920c81a.svg" data-rad-type="stride" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-54-4920c81a.svg" alt="Radical 54 4920c81a" />
+                        </div>
+                        <div class="svg-definition">
+                          stride
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-105-839639bb.svg" data-rad-type="foot steps" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-105-839639bb.svg" alt="Radical 105 839639bb" />
+                        </div>
+                        <div class="svg-definition">
+                          foot steps
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-133-5bba0f39.svg" data-rad-type="arrive" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-133-5bba0f39.svg" alt="Radical 133 5bba0f39" />
+                        </div>
+                        <div class="svg-definition">
+                          arrive
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-137-09632795.svg" data-rad-type="boat" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-137-09632795.svg" alt="Radical 137 09632795" />
+                        </div>
+                        <div class="svg-definition">
+                          boat
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-144-bd90762a.svg" data-rad-type="walk" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-144-bd90762a.svg" alt="Radical 144 bd90762a" />
+                        </div>
+                        <div class="svg-definition">
+                          walk
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-156-b31879c0.svg" data-rad-type="walk" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-156-b31879c0.svg" alt="Radical 156 b31879c0" />
+                        </div>
+                        <div class="svg-definition">
+                          walk
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-159-c6b64bf5.svg" data-rad-type="cart" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-159-c6b64bf5.svg" alt="Radical 159 c6b64bf5" />
+                        </div>
+                        <div class="svg-definition">
+                          cart
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-162-8173d013.svg" data-rad-type="walk" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-162-8173d013.svg" alt="Radical 162 8173d013" />
+                        </div>
+                        <div class="svg-definition">
+                          walk
+                        </div>
+                      </div>
+
+                  </div>
+                  <div id="radical-group-heading">
+                    植物 Plant
+                  </div>
+                  <div class="radical-group-category">
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-45-69db9cba.svg" data-rad-type="sprout" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-45-69db9cba.svg" alt="Radical 45 69db9cba" />
+                        </div>
+                        <div class="svg-definition">
+                          sprout
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-75-67a97413.svg" data-rad-type="tree" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-75-67a97413.svg" alt="Radical 75 67a97413" />
+                        </div>
+                        <div class="svg-definition">
+                          tree
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-90-edd05954.svg" data-rad-type="half of a tree trunk" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-90-edd05954.svg" alt="Radical 90 edd05954" />
+                        </div>
+                        <div class="svg-definition">
+                          half of a tree trunk
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-97-69340a7a.svg" data-rad-type="melon" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-97-69340a7a.svg" alt="Radical 97 69340a7a" />
+                        </div>
+                        <div class="svg-definition">
+                          melon
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-102-3daa178b.svg" data-rad-type="field" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-102-3daa178b.svg" alt="Radical 102 3daa178b" />
+                        </div>
+                        <div class="svg-definition">
+                          field
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-115-c567299e.svg" data-rad-type="grain" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-115-c567299e.svg" alt="Radical 115 c567299e" />
+                        </div>
+                        <div class="svg-definition">
+                          grain
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-118-e3904e22.svg" data-rad-type="bamboo" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-118-e3904e22.svg" alt="Radical 118 e3904e22" />
+                        </div>
+                        <div class="svg-definition">
+                          bamboo
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-119-6c86ad11.svg" data-rad-type="rice" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-119-6c86ad11.svg" alt="Radical 119 6c86ad11" />
+                        </div>
+                        <div class="svg-definition">
+                          rice
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-140-a16eeda4.svg" data-rad-type="grass" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-140-a16eeda4.svg" alt="Radical 140 a16eeda4" />
+                        </div>
+                        <div class="svg-definition">
+                          grass
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-151-722147ae.svg" data-rad-type="bean" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-151-722147ae.svg" alt="Radical 151 722147ae" />
+                        </div>
+                        <div class="svg-definition">
+                          bean
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-179-e91ec4aa.svg" data-rad-type="leek" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-179-e91ec4aa.svg" alt="Radical 179 e91ec4aa" />
+                        </div>
+                        <div class="svg-definition">
+                          leek
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-199-5eee0e77.svg" data-rad-type="wheat" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-199-5eee0e77.svg" alt="Radical 199 5eee0e77" />
+                        </div>
+                        <div class="svg-definition">
+                          wheat
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-200-dd14ba30.svg" data-rad-type="hemp" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-200-dd14ba30.svg" alt="Radical 200 dd14ba30" />
+                        </div>
+                        <div class="svg-definition">
+                          hemp
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-202-61693c4a.svg" data-rad-type="millet" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-202-61693c4a.svg" alt="Radical 202 61693c4a" />
+                        </div>
+                        <div class="svg-definition">
+                          millet
+                        </div>
+                      </div>
+
+                  </div>
+                  <div id="radical-group-heading">
+                    动物 Animal
+                  </div>
+                  <div class="radical-group-category">
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-87-b25438be.svg" data-rad-type="claw" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-87-b25438be.svg" alt="Radical 87 b25438be" />
+                        </div>
+                        <div class="svg-definition">
+                          claw
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-93-41f5034c.svg" data-rad-type="cow" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-93-41f5034c.svg" alt="Radical 93 41f5034c" />
+                        </div>
+                        <div class="svg-definition">
+                          cow
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-94-a9ecbd82.svg" data-rad-type="dog" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-94-a9ecbd82.svg" alt="Radical 94 a9ecbd82" />
+                        </div>
+                        <div class="svg-definition">
+                          dog
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-123-26e2e3c2.svg" data-rad-type="sheep" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-123-26e2e3c2.svg" alt="Radical 123 26e2e3c2" />
+                        </div>
+                        <div class="svg-definition">
+                          sheep
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-141-ca457523.svg" data-rad-type="tiger" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-141-ca457523.svg" alt="Radical 141 ca457523" />
+                        </div>
+                        <div class="svg-definition">
+                          tiger
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-142-c51e0186.svg" data-rad-type="insect" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-142-c51e0186.svg" alt="Radical 142 c51e0186" />
+                        </div>
+                        <div class="svg-definition">
+                          insect
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-152-f0704e51.svg" data-rad-type="pig" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-152-f0704e51.svg" alt="Radical 152 f0704e51" />
+                        </div>
+                        <div class="svg-definition">
+                          pig
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-153-236a7c64.svg" data-rad-type="badger" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-153-236a7c64.svg" alt="Radical 153 236a7c64" />
+                        </div>
+                        <div class="svg-definition">
+                          badger
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-172-66c8ff30.svg" data-rad-type="short-tailed bird" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-172-66c8ff30.svg" alt="Radical 172 66c8ff30" />
+                        </div>
+                        <div class="svg-definition">
+                          short-tailed bird
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-187-c5c4ac4f.svg" data-rad-type="horse" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-187-c5c4ac4f.svg" alt="Radical 187 c5c4ac4f" />
+                        </div>
+                        <div class="svg-definition">
+                          horse
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-195-3e4e0cda.svg" data-rad-type="fish" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-195-3e4e0cda.svg" alt="Radical 195 3e4e0cda" />
+                        </div>
+                        <div class="svg-definition">
+                          fish
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-196-1b4cccef.svg" data-rad-type="bird" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-196-1b4cccef.svg" alt="Radical 196 1b4cccef" />
+                        </div>
+                        <div class="svg-definition">
+                          bird
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-198-61be1d37.svg" data-rad-type="deer" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-198-61be1d37.svg" alt="Radical 198 61be1d37" />
+                        </div>
+                        <div class="svg-definition">
+                          deer
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-205-1e3cc7f0.svg" data-rad-type="frog" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-205-1e3cc7f0.svg" alt="Radical 205 1e3cc7f0" />
+                        </div>
+                        <div class="svg-definition">
+                          frog
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-208-dc165dca.svg" data-rad-type="rat" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-208-dc165dca.svg" alt="Radical 208 dc165dca" />
+                        </div>
+                        <div class="svg-definition">
+                          rat
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-212-127027ca.svg" data-rad-type="dragon" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-212-127027ca.svg" alt="Radical 212 127027ca" />
+                        </div>
+                        <div class="svg-definition">
+                          dragon
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-213-ebfa9e05.svg" data-rad-type="turtle" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-213-ebfa9e05.svg" alt="Radical 213 ebfa9e05" />
+                        </div>
+                        <div class="svg-definition">
+                          turtle
+                        </div>
+                      </div>
+
+                  </div>
+                  <div id="radical-group-heading">
+                    颜色 color
+                  </div>
+                  <div class="radical-group-category">
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-106-8e27cbdf.svg" data-rad-type="white" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-106-8e27cbdf.svg" alt="Radical 106 8e27cbdf" />
+                        </div>
+                        <div class="svg-definition">
+                          white
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-139-0ba6b602.svg" data-rad-type="color" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-139-0ba6b602.svg" alt="Radical 139 0ba6b602" />
+                        </div>
+                        <div class="svg-definition">
+                          color
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-155-ed0cd260.svg" data-rad-type="red" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-155-ed0cd260.svg" alt="Radical 155 ed0cd260" />
+                        </div>
+                        <div class="svg-definition">
+                          red
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-174-8619de3e.svg" data-rad-type="blue" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-174-8619de3e.svg" alt="Radical 174 8619de3e" />
+                        </div>
+                        <div class="svg-definition">
+                          blue
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-201-a84d0bd9.svg" data-rad-type="yellow" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-201-a84d0bd9.svg" alt="Radical 201 a84d0bd9" />
+                        </div>
+                        <div class="svg-definition">
+                          yellow
+                        </div>
+                      </div>
+
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-203-c8dfa2d1.svg" data-rad-type="black" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-203-c8dfa2d1.svg" alt="Radical 203 c8dfa2d1" />
+                        </div>
+                        <div class="svg-definition">
+                          black
+                        </div>
+                      </div>
+
+                  </div>
+                  <div id="radical-group-heading">
+                    
+                  </div>
+                  <div class="radical-group-category">
+
+                      <div class="radical-button" data="../assets/images/radicals/radical-214-38301179.svg" data-rad-type="flute" role="button">
+                        <div class="radical-svg">
+                          <img src="../assets/images/radicals/radical-214-38301179.svg" alt="Radical 214 38301179" />
+                        </div>
+                        <div class="svg-definition">
+                          flute
+                        </div>
+                      </div>
+
+                  </div>
+              </div>
+
+             <div class="scrollbar" >
+              <!-- <div class=".radical-menu" > -->
+                <!-- <div class="force-overflow"></div> -->
+              </div>
+
+            </div>
+
+            <div class="freeText">
+                <div class="menu-heading">
+                   <h3>Freetype</h3>
+                   <div class="tooltip">
+                     <div aria-label="Add anything to canvas" data-balloon-pos="up" class="question-label">
+                       <img src="../assets/images/icons/info2-1c1e9e6f.svg" class="config-info" alt="Info2" />
+                     </div>
+                   </div>
+                 </div>
+
+                    <div class="input-container">
+                    <input type="text" id="addText"  value="" />
+                   <!--  <button onclick="submitTextToCanvas()" id="testButton"> Add to Canvas </button> -->
+                     <button onclick="submitTextToCanvas()" class="testButton"> Add to Canvas </button>
+                   </div>
+            </div>
+
+            <div class=censored-words-box>
+                <div class="menu-heading">
+                  <h3>Censored Words in China</h3>
+
+                  <div class="tooltip">
+                    <div aria-label="Sourced from China Digital Times" data-balloon-pos="up" class="question-label">
+                      <img src="../assets/images/icons/info2-1c1e9e6f.svg" class="config-info" alt="Info2" />
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="word-container">
+              <div class="radicals word-menu">
+                  <div class="word-button" data="../assets/images/words/1-75e70796.svg" data-rad-type="freedom of speech" role="button">
+                    <div class="word-svg">
+                      <img src="../assets/images/words/1-75e70796.svg" class="word-svg" alt="1 75e70796" />
+                    </div>
+                    <div class="svg-definition-word">
+                      freedom of speech
+                    </div>
+                  </div>
+                  <div class="word-button" data="../assets/images/words/2-36144f46.svg" data-rad-type="human rights" role="button">
+                    <div class="word-svg">
+                      <img src="../assets/images/words/2-36144f46.svg" class="word-svg" alt="2 36144f46" />
+                    </div>
+                    <div class="svg-definition-word">
+                      human rights
+                    </div>
+                  </div>
+                  <div class="word-button" data="../assets/images/words/3-a2b5bc0a.svg" data-rad-type="democracy movement" role="button">
+                    <div class="word-svg">
+                      <img src="../assets/images/words/3-a2b5bc0a.svg" class="word-svg" alt="3 a2b5bc0a" />
+                    </div>
+                    <div class="svg-definition-word">
+                      democracy movement
+                    </div>
+                  </div>
+                  <div class="word-button" data="../assets/images/words/4-da963bcb.svg" data-rad-type="winnie the pooh" role="button">
+                    <div class="word-svg">
+                      <img src="../assets/images/words/4-da963bcb.svg" class="word-svg" alt="4 da963bcb" />
+                    </div>
+                    <div class="svg-definition-word">
+                      winnie the pooh
+                    </div>
+                  </div>
+                  <div class="word-button" data="../assets/images/words/5-85c444c3.svg" data-rad-type="liu xiaobo" role="button">
+                    <div class="word-svg">
+                      <img src="../assets/images/words/5-85c444c3.svg" class="word-svg" alt="5 85c444c3" />
+                    </div>
+                    <div class="svg-definition-word">
+                      liu xiaobo
+                    </div>
+                  </div>
+                  <div class="word-button" data="../assets/images/words/6-36884acd.svg" data-rad-type="tiananmen" role="button">
+                    <div class="word-svg">
+                      <img src="../assets/images/words/6-36884acd.svg" class="word-svg" alt="6 36884acd" />
+                    </div>
+                    <div class="svg-definition-word">
+                      tiananmen
+                    </div>
+                  </div>
+                  <div class="word-button" data="../assets/images/words/7-04f4f8a3.svg" data-rad-type="tank" role="button">
+                    <div class="word-svg">
+                      <img src="../assets/images/words/7-04f4f8a3.svg" class="word-svg" alt="7 04f4f8a3" />
+                    </div>
+                    <div class="svg-definition-word">
+                      tank
+                    </div>
+                  </div>
+                  <div class="word-button" data="../assets/images/words/8-3da2f7d3.svg" data-rad-type="web surveillance" role="button">
+                    <div class="word-svg">
+                      <img src="../assets/images/words/8-3da2f7d3.svg" class="word-svg" alt="8 3da2f7d3" />
+                    </div>
+                    <div class="svg-definition-word">
+                      web surveillance
+                    </div>
+                  </div>
+              </div>
+            </div>
+      </div>
+
+  </div>
+
+</div>
+
+<script src="../javascripts/canvas-6523890a.js"></script>
+<script src="../javascripts/common-45b41241.js"></script>
+<script src="../javascripts/onboarding-81c56f36.js"></script>
+
+  </body>
+</html>

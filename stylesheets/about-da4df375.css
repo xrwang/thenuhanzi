@@ -1,0 +1,58 @@
+body {
+  background: linear-gradient(217deg, #a8edea, #ddd6f3, #fff5cc, #fcbdff);
+  background-size: 800% 800%;
+  -webkit-animation: gradientbackground 7s ease infinite;
+  animation: gradientbackground 7s ease infinite; }
+
+@-webkit-keyframes gradientbackground {
+  0% {
+    background-position: 97% 0%; }
+  50% {
+    background-position: 4% 100%; }
+  100% {
+    background-position: 97% 0%; } }
+
+@keyframes gradientbackground {
+  0% {
+    background-position: 97% 0%; }
+  50% {
+    background-position: 4% 100%; }
+  100% {
+    background-position: 97% 0%; } }
+
+@font-face {
+  font-family: AdieuRegular;
+  src: url("../fonts/Adieu-Regular.otf") format("opentype");
+  src: url("../fonts/Adieu-Regular.woff") format("woff");
+  src: url("../fonts/Adieu-Regular.woff2") format("woff2"); }
+
+.container {
+  padding: 6vw;
+  padding-top: 4vw;
+  color: #d6d6d6; }
+
+body {
+  /*  padding: 0;
+  margin: 0;*/
+  font-family: -apple-system, BlinkMacSystemFont, "Microsoft yahei","Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+  padding: 3vh 1rem;
+  justify-content: center;
+  background: #000; }
+
+p {
+  font-size: 1em;
+  line-height: 1.4em; }
+
+h2 {
+  font-family: AdieuRegular;
+  font-size: 1.2em;
+  color: #fff;
+  font-weight: 600;
+  padding-top: 26px;
+  padding-bottom: 0px;
+  margin-bottom: 0px; }
+
+a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline; }
